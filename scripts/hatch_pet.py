@@ -517,6 +517,31 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
         # compare hundreds of packages mechanically.
         seed = int(hashlib.sha256(slug.encode()).hexdigest()[:16], 16)
         archetype = seed % 16
+        # Respect the generated form suffix for future hatches so a queued
+        # "mushroom" cannot accidentally render as a wheel/crystal-like body
+        # solely because of hash collision. Existing packages remain untouched.
+        form_archetypes = {
+            "beetle": 0,
+            "lantern": 1,
+            "crawler": 2,
+            "kite": 3,
+            "totem": 4,
+            "serpent": 5,
+            "crystal": 6,
+            "wheel": 7,
+            "mushroom": 8,
+            "mask": 9,
+            "train": 10,
+            "manta": 11,
+            "book": 12,
+            "key": 13,
+            "jelly": 14,
+            "rabbit": 15,
+        }
+        for suffix, forced_archetype in form_archetypes.items():
+            if slug.endswith(f"-{suffix}"):
+                archetype = forced_archetype
+                break
         x = 20 + ((seed >> 4) % 25)
         yy = y + ((seed >> 9) % 7) - 3
         facing = -1 if (anim == "running-left" or (seed >> 2) & 1) else 1
@@ -594,11 +619,22 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.line((x, yy + 20, x + int(math.cos(ang) * r), yy + 20 + int(math.sin(ang) * r)), fill=glow, width=2)
             d.line((x + facing * r, yy + 20, x + facing * (r + 12), yy + 12 + sway), fill=accent, width=3)
         elif archetype == 8:  # mushroom relay
-            capw = 15 + (seed % 9)
-            d.pieslice((x - capw, yy + 8, x + capw, yy + 36), 180, 360, fill=outline)
-            d.pieslice((x - capw + 3, yy + 11, x + capw - 3, yy + 34), 180, 360, fill=accent)
-            d.rounded_rectangle((x - 8, yy + 27, x + 8, yy + 51), radius=4, fill=outline)
-            d.rounded_rectangle((x - 5, yy + 29, x + 5, yy + 48), radius=3, fill=secondary)
+            # Broad cap + offset sprout dish keeps mushroom familiars visually
+            # distinct from crystal/totem silhouettes in large generated sets.
+            capw = 21 + (seed % 6)
+            caph = 20 + ((seed >> 6) % 5)
+            cap_y = yy + 11 + (sway // 2)
+            d.pieslice((x - capw, cap_y, x + capw, cap_y + caph), 180, 360, fill=outline)
+            d.rectangle((x - capw + 1, cap_y + caph // 2, x + capw - 1, cap_y + caph // 2 + 5), fill=outline)
+            d.pieslice((x - capw + 4, cap_y + 4, x + capw - 4, cap_y + caph - 1), 180, 360, fill=accent)
+            d.rectangle((x - capw + 5, cap_y + caph // 2, x + capw - 5, cap_y + caph // 2 + 3), fill=accent)
+            d.rounded_rectangle((x - 7, yy + 30, x + 6, yy + 48), radius=5, fill=outline)
+            d.rounded_rectangle((x - 4, yy + 32, x + 3, yy + 46), radius=3, fill=secondary)
+            for sx, sy, rr in ((x - capw + 9, cap_y + 13, 3), (x - 3, cap_y + 9, 2), (x + capw - 11, cap_y + 14, 3)):
+                d.ellipse((sx - rr, sy - rr, sx + rr, sy + rr), fill=glow)
+            d.line((x - 13, yy + 45, x - 24 - pulse, yy + 53), fill=primary, width=3)
+            d.line((x + 11, yy + 45, x + 24 + pulse, yy + 52), fill=primary, width=3)
+            d.line((x + facing * (capw - 5), cap_y + 8, x + facing * (capw + 8), cap_y + 1 + sway), fill=glow, width=2)
         elif archetype == 9:  # split mask imp
             d.polygon([(x - 18, yy + 15), (x, yy + 4), (x + 18, yy + 15), (x + 14, yy + 43), (x, yy + 52), (x - 14, yy + 43)], fill=outline)
             d.polygon([(x - 14, yy + 17), (x, yy + 8), (x, yy + 48), (x - 10, yy + 40)], fill=primary)

@@ -279,19 +279,25 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-024-xenon-index-wheel/README.md">README</a> · <a href="pets/ravenbyte-024-xenon-index-wheel/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-025-yonder-latch-mushroom/README.md"><img src="pets/ravenbyte-025-yonder-latch-mushroom/previews/ravenbyte-025-yonder-latch-mushroom-showcase.gif" width="240" alt="Yonder Latch Mushroom stitched multi-motion showcase"></a><br>
+  <strong>Yonder Latch Mushroom</strong><br>
+  <sub>A mushroom-class Ravenbyte familiar that keeps latch work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-025-yonder-latch-mushroom/README.md">README</a> · <a href="pets/ravenbyte-025-yonder-latch-mushroom/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-026-zephyr-oracle-mask/README.md"><img src="pets/ravenbyte-026-zephyr-oracle-mask/previews/ravenbyte-026-zephyr-oracle-mask-showcase.gif" width="240" alt="Zephyr Oracle Mask stitched multi-motion showcase"></a><br>
   <strong>Zephyr Oracle Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps oracle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-026-zephyr-oracle-mask/README.md">README</a> · <a href="pets/ravenbyte-026-zephyr-oracle-mask/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-027-brass-relay-train/README.md"><img src="pets/ravenbyte-027-brass-relay-train/previews/ravenbyte-027-brass-relay-train-showcase.gif" width="240" alt="Brass Relay Train stitched multi-motion showcase"></a><br>
   <strong>Brass Relay Train</strong><br>
   <sub>A train-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-027-brass-relay-train/README.md">README</a> · <a href="pets/ravenbyte-027-brass-relay-train/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-028-cobalt-uplink-manta/README.md"><img src="pets/ravenbyte-028-cobalt-uplink-manta/previews/ravenbyte-028-cobalt-uplink-manta-showcase.gif" width="240" alt="Cobalt Uplink Manta stitched multi-motion showcase"></a><br>
   <strong>Cobalt Uplink Manta</strong><br>
@@ -304,14 +310,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A book-class Ravenbyte familiar that keeps xray work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-029-drift-xray-book/README.md">README</a> · <a href="pets/ravenbyte-029-drift-xray-book/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-030-echo-bundle-key/README.md"><img src="pets/ravenbyte-030-echo-bundle-key/previews/ravenbyte-030-echo-bundle-key-showcase.gif" width="240" alt="Echo Bundle Key stitched multi-motion showcase"></a><br>
   <strong>Echo Bundle Key</strong><br>
   <sub>A key-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-030-echo-bundle-key/README.md">README</a> · <a href="pets/ravenbyte-030-echo-bundle-key/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-031-fable-event-jelly/README.md"><img src="pets/ravenbyte-031-fable-event-jelly/previews/ravenbyte-031-fable-event-jelly-showcase.gif" width="240" alt="Fable Event Jelly stitched multi-motion showcase"></a><br>
   <strong>Fable Event Jelly</strong><br>
@@ -324,14 +330,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A rabbit-class Ravenbyte familiar that keeps audit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-032-grove-audit-rabbit/README.md">README</a> · <a href="pets/ravenbyte-032-grove-audit-rabbit/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-033-ash-engine-beetle/README.md"><img src="pets/ravenbyte-033-ash-engine-beetle/previews/ravenbyte-033-ash-engine-beetle-showcase.gif" width="240" alt="Ash Engine Beetle stitched multi-motion showcase"></a><br>
   <strong>Ash Engine Beetle</strong><br>
   <sub>A beetle-class Ravenbyte familiar that keeps engine work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-033-ash-engine-beetle/README.md">README</a> · <a href="pets/ravenbyte-033-ash-engine-beetle/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-034-basilisk-harvester-lantern/README.md"><img src="pets/ravenbyte-034-basilisk-harvester-lantern/previews/ravenbyte-034-basilisk-harvester-lantern-showcase.gif" width="240" alt="Basilisk Harvester Lantern stitched multi-motion showcase"></a><br>
   <strong>Basilisk Harvester Lantern</strong><br>
@@ -344,14 +350,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crawler-class Ravenbyte familiar that keeps kernel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-035-cipher-kernel-crawler/README.md">README</a> · <a href="pets/ravenbyte-035-cipher-kernel-crawler/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-036-dawn-nexus-kite/README.md"><img src="pets/ravenbyte-036-dawn-nexus-kite/previews/ravenbyte-036-dawn-nexus-kite-showcase.gif" width="240" alt="Dawn Nexus Kite stitched multi-motion showcase"></a><br>
   <strong>Dawn Nexus Kite</strong><br>
   <sub>A kite-class Ravenbyte familiar that keeps nexus work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-036-dawn-nexus-kite/README.md">README</a> · <a href="pets/ravenbyte-036-dawn-nexus-kite/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-037-ember-query-totem/README.md"><img src="pets/ravenbyte-037-ember-query-totem/previews/ravenbyte-037-ember-query-totem-showcase.gif" width="240" alt="Ember Query Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Query Totem</strong><br>
@@ -364,14 +370,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A serpent-class Ravenbyte familiar that keeps triage work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-038-frost-triage-serpent/README.md">README</a> · <a href="pets/ravenbyte-038-frost-triage-serpent/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-040-harbor-zenith-wheel/README.md"><img src="pets/ravenbyte-040-harbor-zenith-wheel/previews/ravenbyte-040-harbor-zenith-wheel-showcase.gif" width="240" alt="Harbor Zenith Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Zenith Wheel</strong><br>
   <sub>A wheel-class Ravenbyte familiar that keeps zenith work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-040-harbor-zenith-wheel/README.md">README</a> · <a href="pets/ravenbyte-040-harbor-zenith-wheel/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-041-ion-diff-mushroom/README.md"><img src="pets/ravenbyte-041-ion-diff-mushroom/previews/ravenbyte-041-ion-diff-mushroom-showcase.gif" width="240" alt="Ion Diff Mushroom stitched multi-motion showcase"></a><br>
   <strong>Ion Diff Mushroom</strong><br>
@@ -384,14 +390,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mask-class Ravenbyte familiar that keeps gate work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-042-jade-gate-mask/README.md">README</a> · <a href="pets/ravenbyte-042-jade-gate-mask/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-043-keystone-cache-train/README.md"><img src="pets/ravenbyte-043-keystone-cache-train/previews/ravenbyte-043-keystone-cache-train-showcase.gif" width="240" alt="Keystone Cache Train stitched multi-motion showcase"></a><br>
   <strong>Keystone Cache Train</strong><br>
   <sub>A train-class Ravenbyte familiar that keeps cache work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-043-keystone-cache-train/README.md">README</a> · <a href="pets/ravenbyte-043-keystone-cache-train/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-044-lumen-forge-manta/README.md"><img src="pets/ravenbyte-044-lumen-forge-manta/previews/ravenbyte-044-lumen-forge-manta-showcase.gif" width="240" alt="Lumen Forge Manta stitched multi-motion showcase"></a><br>
   <strong>Lumen Forge Manta</strong><br>
@@ -404,14 +410,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A book-class Ravenbyte familiar that keeps index work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-045-morrow-index-book/README.md">README</a> · <a href="pets/ravenbyte-045-morrow-index-book/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-046-nimbus-latch-key/README.md"><img src="pets/ravenbyte-046-nimbus-latch-key/previews/ravenbyte-046-nimbus-latch-key-showcase.gif" width="240" alt="Nimbus Latch Key stitched multi-motion showcase"></a><br>
   <strong>Nimbus Latch Key</strong><br>
   <sub>A key-class Ravenbyte familiar that keeps latch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-046-nimbus-latch-key/README.md">README</a> · <a href="pets/ravenbyte-046-nimbus-latch-key/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-047-obsidian-oracle-jelly/README.md"><img src="pets/ravenbyte-047-obsidian-oracle-jelly/previews/ravenbyte-047-obsidian-oracle-jelly-showcase.gif" width="240" alt="Obsidian Oracle Jelly stitched multi-motion showcase"></a><br>
   <strong>Obsidian Oracle Jelly</strong><br>
@@ -424,14 +430,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A rabbit-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-048-prairie-relay-rabbit/README.md">README</a> · <a href="pets/ravenbyte-048-prairie-relay-rabbit/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-049-quartz-uplink-beetle/README.md"><img src="pets/ravenbyte-049-quartz-uplink-beetle/previews/ravenbyte-049-quartz-uplink-beetle-showcase.gif" width="240" alt="Quartz Uplink Beetle stitched multi-motion showcase"></a><br>
   <strong>Quartz Uplink Beetle</strong><br>
   <sub>A beetle-class Ravenbyte familiar that keeps uplink work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-049-quartz-uplink-beetle/README.md">README</a> · <a href="pets/ravenbyte-049-quartz-uplink-beetle/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-050-rune-xray-lantern/README.md"><img src="pets/ravenbyte-050-rune-xray-lantern/previews/ravenbyte-050-rune-xray-lantern-showcase.gif" width="240" alt="Rune Xray Lantern stitched multi-motion showcase"></a><br>
   <strong>Rune Xray Lantern</strong><br>
@@ -444,14 +450,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A kite-class Ravenbyte familiar that keeps event work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-052-tundra-event-kite/README.md">README</a> · <a href="pets/ravenbyte-052-tundra-event-kite/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-053-umber-audit-totem/README.md"><img src="pets/ravenbyte-053-umber-audit-totem/previews/ravenbyte-053-umber-audit-totem-showcase.gif" width="240" alt="Umber Audit Totem stitched multi-motion showcase"></a><br>
   <strong>Umber Audit Totem</strong><br>
   <sub>A totem-class Ravenbyte familiar that keeps audit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-053-umber-audit-totem/README.md">README</a> · <a href="pets/ravenbyte-053-umber-audit-totem/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-054-violet-delta-serpent/README.md"><img src="pets/ravenbyte-054-violet-delta-serpent/previews/ravenbyte-054-violet-delta-serpent-showcase.gif" width="240" alt="Violet Delta Serpent stitched multi-motion showcase"></a><br>
   <strong>Violet Delta Serpent</strong><br>
@@ -464,14 +470,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crystal-class Ravenbyte familiar that keeps graph work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-055-warden-graph-crystal/README.md">README</a> · <a href="pets/ravenbyte-055-warden-graph-crystal/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-056-xenon-junction-wheel/README.md"><img src="pets/ravenbyte-056-xenon-junction-wheel/previews/ravenbyte-056-xenon-junction-wheel-showcase.gif" width="240" alt="Xenon Junction Wheel stitched multi-motion showcase"></a><br>
   <strong>Xenon Junction Wheel</strong><br>
   <sub>A wheel-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-056-xenon-junction-wheel/README.md">README</a> · <a href="pets/ravenbyte-056-xenon-junction-wheel/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-057-yonder-monitor-mushroom/README.md"><img src="pets/ravenbyte-057-yonder-monitor-mushroom/previews/ravenbyte-057-yonder-monitor-mushroom-showcase.gif" width="240" alt="Yonder Monitor Mushroom stitched multi-motion showcase"></a><br>
   <strong>Yonder Monitor Mushroom</strong><br>
@@ -484,14 +490,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mask-class Ravenbyte familiar that keeps patch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-058-zephyr-patch-mask/README.md">README</a> · <a href="pets/ravenbyte-058-zephyr-patch-mask/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-059-brass-sentinel-train/README.md"><img src="pets/ravenbyte-059-brass-sentinel-train/previews/ravenbyte-059-brass-sentinel-train-showcase.gif" width="240" alt="Brass Sentinel Train stitched multi-motion showcase"></a><br>
   <strong>Brass Sentinel Train</strong><br>
   <sub>A train-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-059-brass-sentinel-train/README.md">README</a> · <a href="pets/ravenbyte-059-brass-sentinel-train/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-060-cobalt-vector-manta/README.md"><img src="pets/ravenbyte-060-cobalt-vector-manta/previews/ravenbyte-060-cobalt-vector-manta-showcase.gif" width="240" alt="Cobalt Vector Manta stitched multi-motion showcase"></a><br>
   <strong>Cobalt Vector Manta</strong><br>
@@ -504,14 +510,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A book-class Ravenbyte familiar that keeps yield work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-061-drift-yield-book/README.md">README</a> · <a href="pets/ravenbyte-061-drift-yield-book/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-062-echo-circuit-key/README.md"><img src="pets/ravenbyte-062-echo-circuit-key/previews/ravenbyte-062-echo-circuit-key-showcase.gif" width="240" alt="Echo Circuit Key stitched multi-motion showcase"></a><br>
   <strong>Echo Circuit Key</strong><br>
   <sub>A key-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-062-echo-circuit-key/README.md">README</a> · <a href="pets/ravenbyte-062-echo-circuit-key/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-063-fable-flux-jelly/README.md"><img src="pets/ravenbyte-063-fable-flux-jelly/previews/ravenbyte-063-fable-flux-jelly-showcase.gif" width="240" alt="Fable Flux Jelly stitched multi-motion showcase"></a><br>
   <strong>Fable Flux Jelly</strong><br>
@@ -524,14 +530,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A rabbit-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-064-grove-beacon-rabbit/README.md">README</a> · <a href="pets/ravenbyte-064-grove-beacon-rabbit/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-065-ash-forge-beetle/README.md"><img src="pets/ravenbyte-065-ash-forge-beetle/previews/ravenbyte-065-ash-forge-beetle-showcase.gif" width="240" alt="Ash Forge Beetle stitched multi-motion showcase"></a><br>
   <strong>Ash Forge Beetle</strong><br>
   <sub>A beetle-class Ravenbyte familiar that keeps forge work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-065-ash-forge-beetle/README.md">README</a> · <a href="pets/ravenbyte-065-ash-forge-beetle/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-066-basilisk-index-lantern/README.md"><img src="pets/ravenbyte-066-basilisk-index-lantern/previews/ravenbyte-066-basilisk-index-lantern-showcase.gif" width="240" alt="Basilisk Index Lantern stitched multi-motion showcase"></a><br>
   <strong>Basilisk Index Lantern</strong><br>
@@ -544,14 +550,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crawler-class Ravenbyte familiar that keeps latch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-067-cipher-latch-crawler/README.md">README</a> · <a href="pets/ravenbyte-067-cipher-latch-crawler/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-068-dawn-oracle-kite/README.md"><img src="pets/ravenbyte-068-dawn-oracle-kite/previews/ravenbyte-068-dawn-oracle-kite-showcase.gif" width="240" alt="Dawn Oracle Kite stitched multi-motion showcase"></a><br>
   <strong>Dawn Oracle Kite</strong><br>
   <sub>A kite-class Ravenbyte familiar that keeps oracle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-068-dawn-oracle-kite/README.md">README</a> · <a href="pets/ravenbyte-068-dawn-oracle-kite/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-069-ember-relay-totem/README.md"><img src="pets/ravenbyte-069-ember-relay-totem/previews/ravenbyte-069-ember-relay-totem-showcase.gif" width="240" alt="Ember Relay Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Relay Totem</strong><br>
@@ -564,14 +570,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A serpent-class Ravenbyte familiar that keeps uplink work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-070-frost-uplink-serpent/README.md">README</a> · <a href="pets/ravenbyte-070-frost-uplink-serpent/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-071-glyph-xray-crystal/README.md"><img src="pets/ravenbyte-071-glyph-xray-crystal/previews/ravenbyte-071-glyph-xray-crystal-showcase.gif" width="240" alt="Glyph Xray Crystal stitched multi-motion showcase"></a><br>
   <strong>Glyph Xray Crystal</strong><br>
   <sub>A crystal-class Ravenbyte familiar that keeps xray work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-071-glyph-xray-crystal/README.md">README</a> · <a href="pets/ravenbyte-071-glyph-xray-crystal/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-072-harbor-bundle-wheel/README.md"><img src="pets/ravenbyte-072-harbor-bundle-wheel/previews/ravenbyte-072-harbor-bundle-wheel-showcase.gif" width="240" alt="Harbor Bundle Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Bundle Wheel</strong><br>
@@ -584,14 +590,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mushroom-class Ravenbyte familiar that keeps event work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-073-ion-event-mushroom/README.md">README</a> · <a href="pets/ravenbyte-073-ion-event-mushroom/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-074-jade-audit-mask/README.md"><img src="pets/ravenbyte-074-jade-audit-mask/previews/ravenbyte-074-jade-audit-mask-showcase.gif" width="240" alt="Jade Audit Mask stitched multi-motion showcase"></a><br>
   <strong>Jade Audit Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps audit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-074-jade-audit-mask/README.md">README</a> · <a href="pets/ravenbyte-074-jade-audit-mask/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-075-keystone-delta-train/README.md"><img src="pets/ravenbyte-075-keystone-delta-train/previews/ravenbyte-075-keystone-delta-train-showcase.gif" width="240" alt="Keystone Delta Train stitched multi-motion showcase"></a><br>
   <strong>Keystone Delta Train</strong><br>
@@ -604,14 +610,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A manta-class Ravenbyte familiar that keeps graph work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-076-lumen-graph-manta/README.md">README</a> · <a href="pets/ravenbyte-076-lumen-graph-manta/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-077-morrow-junction-book/README.md"><img src="pets/ravenbyte-077-morrow-junction-book/previews/ravenbyte-077-morrow-junction-book-showcase.gif" width="240" alt="Morrow Junction Book stitched multi-motion showcase"></a><br>
   <strong>Morrow Junction Book</strong><br>
   <sub>A book-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-077-morrow-junction-book/README.md">README</a> · <a href="pets/ravenbyte-077-morrow-junction-book/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-078-nimbus-monitor-key/README.md"><img src="pets/ravenbyte-078-nimbus-monitor-key/previews/ravenbyte-078-nimbus-monitor-key-showcase.gif" width="240" alt="Nimbus Monitor Key stitched multi-motion showcase"></a><br>
   <strong>Nimbus Monitor Key</strong><br>
@@ -624,14 +630,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A jelly-class Ravenbyte familiar that keeps patch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-079-obsidian-patch-jelly/README.md">README</a> · <a href="pets/ravenbyte-079-obsidian-patch-jelly/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-080-prairie-sentinel-rabbit/README.md"><img src="pets/ravenbyte-080-prairie-sentinel-rabbit/previews/ravenbyte-080-prairie-sentinel-rabbit-showcase.gif" width="240" alt="Prairie Sentinel Rabbit stitched multi-motion showcase"></a><br>
   <strong>Prairie Sentinel Rabbit</strong><br>
   <sub>A rabbit-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-080-prairie-sentinel-rabbit/README.md">README</a> · <a href="pets/ravenbyte-080-prairie-sentinel-rabbit/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-081-quartz-vector-beetle/README.md"><img src="pets/ravenbyte-081-quartz-vector-beetle/previews/ravenbyte-081-quartz-vector-beetle-showcase.gif" width="240" alt="Quartz Vector Beetle stitched multi-motion showcase"></a><br>
   <strong>Quartz Vector Beetle</strong><br>
@@ -644,14 +650,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A lantern-class Ravenbyte familiar that keeps yield work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-082-rune-yield-lantern/README.md">README</a> · <a href="pets/ravenbyte-082-rune-yield-lantern/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-083-signal-circuit-crawler/README.md"><img src="pets/ravenbyte-083-signal-circuit-crawler/previews/ravenbyte-083-signal-circuit-crawler-showcase.gif" width="240" alt="Signal Circuit Crawler stitched multi-motion showcase"></a><br>
   <strong>Signal Circuit Crawler</strong><br>
   <sub>A crawler-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-083-signal-circuit-crawler/README.md">README</a> · <a href="pets/ravenbyte-083-signal-circuit-crawler/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-084-tundra-flux-kite/README.md"><img src="pets/ravenbyte-084-tundra-flux-kite/previews/ravenbyte-084-tundra-flux-kite-showcase.gif" width="240" alt="Tundra Flux Kite stitched multi-motion showcase"></a><br>
   <strong>Tundra Flux Kite</strong><br>
@@ -664,14 +670,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A totem-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-085-umber-beacon-totem/README.md">README</a> · <a href="pets/ravenbyte-085-umber-beacon-totem/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-086-violet-engine-serpent/README.md"><img src="pets/ravenbyte-086-violet-engine-serpent/previews/ravenbyte-086-violet-engine-serpent-showcase.gif" width="240" alt="Violet Engine Serpent stitched multi-motion showcase"></a><br>
   <strong>Violet Engine Serpent</strong><br>
   <sub>A serpent-class Ravenbyte familiar that keeps engine work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-086-violet-engine-serpent/README.md">README</a> · <a href="pets/ravenbyte-086-violet-engine-serpent/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-087-warden-harvester-crystal/README.md"><img src="pets/ravenbyte-087-warden-harvester-crystal/previews/ravenbyte-087-warden-harvester-crystal-showcase.gif" width="240" alt="Warden Harvester Crystal stitched multi-motion showcase"></a><br>
   <strong>Warden Harvester Crystal</strong><br>
@@ -684,14 +690,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A wheel-class Ravenbyte familiar that keeps kernel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-088-xenon-kernel-wheel/README.md">README</a> · <a href="pets/ravenbyte-088-xenon-kernel-wheel/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-089-yonder-nexus-mushroom/README.md"><img src="pets/ravenbyte-089-yonder-nexus-mushroom/previews/ravenbyte-089-yonder-nexus-mushroom-showcase.gif" width="240" alt="Yonder Nexus Mushroom stitched multi-motion showcase"></a><br>
   <strong>Yonder Nexus Mushroom</strong><br>
   <sub>A mushroom-class Ravenbyte familiar that keeps nexus work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-089-yonder-nexus-mushroom/README.md">README</a> · <a href="pets/ravenbyte-089-yonder-nexus-mushroom/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-090-zephyr-query-mask/README.md"><img src="pets/ravenbyte-090-zephyr-query-mask/previews/ravenbyte-090-zephyr-query-mask-showcase.gif" width="240" alt="Zephyr Query Mask stitched multi-motion showcase"></a><br>
   <strong>Zephyr Query Mask</strong><br>
@@ -704,14 +710,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A train-class Ravenbyte familiar that keeps triage work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-091-brass-triage-train/README.md">README</a> · <a href="pets/ravenbyte-091-brass-triage-train/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-092-cobalt-widget-manta/README.md"><img src="pets/ravenbyte-092-cobalt-widget-manta/previews/ravenbyte-092-cobalt-widget-manta-showcase.gif" width="240" alt="Cobalt Widget Manta stitched multi-motion showcase"></a><br>
   <strong>Cobalt Widget Manta</strong><br>
   <sub>A manta-class Ravenbyte familiar that keeps widget work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-092-cobalt-widget-manta/README.md">README</a> · <a href="pets/ravenbyte-092-cobalt-widget-manta/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-093-drift-zenith-book/README.md"><img src="pets/ravenbyte-093-drift-zenith-book/previews/ravenbyte-093-drift-zenith-book-showcase.gif" width="240" alt="Drift Zenith Book stitched multi-motion showcase"></a><br>
   <strong>Drift Zenith Book</strong><br>
@@ -724,14 +730,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A key-class Ravenbyte familiar that keeps diff work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-094-echo-diff-key/README.md">README</a> · <a href="pets/ravenbyte-094-echo-diff-key/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-095-fable-gate-jelly/README.md"><img src="pets/ravenbyte-095-fable-gate-jelly/previews/ravenbyte-095-fable-gate-jelly-showcase.gif" width="240" alt="Fable Gate Jelly stitched multi-motion showcase"></a><br>
   <strong>Fable Gate Jelly</strong><br>
   <sub>A jelly-class Ravenbyte familiar that keeps gate work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-095-fable-gate-jelly/README.md">README</a> · <a href="pets/ravenbyte-095-fable-gate-jelly/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-096-grove-cache-rabbit/README.md"><img src="pets/ravenbyte-096-grove-cache-rabbit/previews/ravenbyte-096-grove-cache-rabbit-showcase.gif" width="240" alt="Grove Cache Rabbit stitched multi-motion showcase"></a><br>
   <strong>Grove Cache Rabbit</strong><br>
@@ -744,14 +750,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A beetle-class Ravenbyte familiar that keeps graph work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-097-ash-graph-beetle/README.md">README</a> · <a href="pets/ravenbyte-097-ash-graph-beetle/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-098-basilisk-junction-lantern/README.md"><img src="pets/ravenbyte-098-basilisk-junction-lantern/previews/ravenbyte-098-basilisk-junction-lantern-showcase.gif" width="240" alt="Basilisk Junction Lantern stitched multi-motion showcase"></a><br>
   <strong>Basilisk Junction Lantern</strong><br>
   <sub>A lantern-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-098-basilisk-junction-lantern/README.md">README</a> · <a href="pets/ravenbyte-098-basilisk-junction-lantern/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-099-cipher-monitor-crawler/README.md"><img src="pets/ravenbyte-099-cipher-monitor-crawler/previews/ravenbyte-099-cipher-monitor-crawler-showcase.gif" width="240" alt="Cipher Monitor Crawler stitched multi-motion showcase"></a><br>
   <strong>Cipher Monitor Crawler</strong><br>
@@ -764,14 +770,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A kite-class Ravenbyte familiar that keeps patch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-100-dawn-patch-kite/README.md">README</a> · <a href="pets/ravenbyte-100-dawn-patch-kite/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-101-ember-sentinel-totem/README.md"><img src="pets/ravenbyte-101-ember-sentinel-totem/previews/ravenbyte-101-ember-sentinel-totem-showcase.gif" width="240" alt="Ember Sentinel Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Sentinel Totem</strong><br>
   <sub>A totem-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-101-ember-sentinel-totem/README.md">README</a> · <a href="pets/ravenbyte-101-ember-sentinel-totem/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-102-frost-vector-serpent/README.md"><img src="pets/ravenbyte-102-frost-vector-serpent/previews/ravenbyte-102-frost-vector-serpent-showcase.gif" width="240" alt="Frost Vector Serpent stitched multi-motion showcase"></a><br>
   <strong>Frost Vector Serpent</strong><br>
@@ -784,14 +790,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crystal-class Ravenbyte familiar that keeps yield work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-103-glyph-yield-crystal/README.md">README</a> · <a href="pets/ravenbyte-103-glyph-yield-crystal/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-104-harbor-circuit-wheel/README.md"><img src="pets/ravenbyte-104-harbor-circuit-wheel/previews/ravenbyte-104-harbor-circuit-wheel-showcase.gif" width="240" alt="Harbor Circuit Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Circuit Wheel</strong><br>
   <sub>A wheel-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-104-harbor-circuit-wheel/README.md">README</a> · <a href="pets/ravenbyte-104-harbor-circuit-wheel/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-105-ion-flux-mushroom/README.md"><img src="pets/ravenbyte-105-ion-flux-mushroom/previews/ravenbyte-105-ion-flux-mushroom-showcase.gif" width="240" alt="Ion Flux Mushroom stitched multi-motion showcase"></a><br>
   <strong>Ion Flux Mushroom</strong><br>
@@ -804,14 +810,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mask-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-106-jade-beacon-mask/README.md">README</a> · <a href="pets/ravenbyte-106-jade-beacon-mask/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-107-keystone-engine-train/README.md"><img src="pets/ravenbyte-107-keystone-engine-train/previews/ravenbyte-107-keystone-engine-train-showcase.gif" width="240" alt="Keystone Engine Train stitched multi-motion showcase"></a><br>
   <strong>Keystone Engine Train</strong><br>
   <sub>A train-class Ravenbyte familiar that keeps engine work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-107-keystone-engine-train/README.md">README</a> · <a href="pets/ravenbyte-107-keystone-engine-train/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-108-lumen-harvester-manta/README.md"><img src="pets/ravenbyte-108-lumen-harvester-manta/previews/ravenbyte-108-lumen-harvester-manta-showcase.gif" width="240" alt="Lumen Harvester Manta stitched multi-motion showcase"></a><br>
   <strong>Lumen Harvester Manta</strong><br>
@@ -824,14 +830,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A book-class Ravenbyte familiar that keeps kernel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-109-morrow-kernel-book/README.md">README</a> · <a href="pets/ravenbyte-109-morrow-kernel-book/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-110-nimbus-nexus-key/README.md"><img src="pets/ravenbyte-110-nimbus-nexus-key/previews/ravenbyte-110-nimbus-nexus-key-showcase.gif" width="240" alt="Nimbus Nexus Key stitched multi-motion showcase"></a><br>
   <strong>Nimbus Nexus Key</strong><br>
   <sub>A key-class Ravenbyte familiar that keeps nexus work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-110-nimbus-nexus-key/README.md">README</a> · <a href="pets/ravenbyte-110-nimbus-nexus-key/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-111-obsidian-query-jelly/README.md"><img src="pets/ravenbyte-111-obsidian-query-jelly/previews/ravenbyte-111-obsidian-query-jelly-showcase.gif" width="240" alt="Obsidian Query Jelly stitched multi-motion showcase"></a><br>
   <strong>Obsidian Query Jelly</strong><br>
@@ -844,14 +850,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A rabbit-class Ravenbyte familiar that keeps triage work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-112-prairie-triage-rabbit/README.md">README</a> · <a href="pets/ravenbyte-112-prairie-triage-rabbit/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-113-quartz-widget-beetle/README.md"><img src="pets/ravenbyte-113-quartz-widget-beetle/previews/ravenbyte-113-quartz-widget-beetle-showcase.gif" width="240" alt="Quartz Widget Beetle stitched multi-motion showcase"></a><br>
   <strong>Quartz Widget Beetle</strong><br>
   <sub>A beetle-class Ravenbyte familiar that keeps widget work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-113-quartz-widget-beetle/README.md">README</a> · <a href="pets/ravenbyte-113-quartz-widget-beetle/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-114-rune-zenith-lantern/README.md"><img src="pets/ravenbyte-114-rune-zenith-lantern/previews/ravenbyte-114-rune-zenith-lantern-showcase.gif" width="240" alt="Rune Zenith Lantern stitched multi-motion showcase"></a><br>
   <strong>Rune Zenith Lantern</strong><br>
@@ -864,14 +870,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crawler-class Ravenbyte familiar that keeps diff work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-115-signal-diff-crawler/README.md">README</a> · <a href="pets/ravenbyte-115-signal-diff-crawler/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-116-tundra-gate-kite/README.md"><img src="pets/ravenbyte-116-tundra-gate-kite/previews/ravenbyte-116-tundra-gate-kite-showcase.gif" width="240" alt="Tundra Gate Kite stitched multi-motion showcase"></a><br>
   <strong>Tundra Gate Kite</strong><br>
   <sub>A kite-class Ravenbyte familiar that keeps gate work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-116-tundra-gate-kite/README.md">README</a> · <a href="pets/ravenbyte-116-tundra-gate-kite/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-117-umber-cache-totem/README.md"><img src="pets/ravenbyte-117-umber-cache-totem/previews/ravenbyte-117-umber-cache-totem-showcase.gif" width="240" alt="Umber Cache Totem stitched multi-motion showcase"></a><br>
   <strong>Umber Cache Totem</strong><br>
@@ -884,14 +890,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A serpent-class Ravenbyte familiar that keeps forge work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-118-violet-forge-serpent/README.md">README</a> · <a href="pets/ravenbyte-118-violet-forge-serpent/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-119-warden-index-crystal/README.md"><img src="pets/ravenbyte-119-warden-index-crystal/previews/ravenbyte-119-warden-index-crystal-showcase.gif" width="240" alt="Warden Index Crystal stitched multi-motion showcase"></a><br>
   <strong>Warden Index Crystal</strong><br>
   <sub>A crystal-class Ravenbyte familiar that keeps index work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-119-warden-index-crystal/README.md">README</a> · <a href="pets/ravenbyte-119-warden-index-crystal/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-120-xenon-latch-wheel/README.md"><img src="pets/ravenbyte-120-xenon-latch-wheel/previews/ravenbyte-120-xenon-latch-wheel-showcase.gif" width="240" alt="Xenon Latch Wheel stitched multi-motion showcase"></a><br>
   <strong>Xenon Latch Wheel</strong><br>
@@ -904,14 +910,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mushroom-class Ravenbyte familiar that keeps oracle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-121-yonder-oracle-mushroom/README.md">README</a> · <a href="pets/ravenbyte-121-yonder-oracle-mushroom/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-122-zephyr-relay-mask/README.md"><img src="pets/ravenbyte-122-zephyr-relay-mask/previews/ravenbyte-122-zephyr-relay-mask-showcase.gif" width="240" alt="Zephyr Relay Mask stitched multi-motion showcase"></a><br>
   <strong>Zephyr Relay Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-122-zephyr-relay-mask/README.md">README</a> · <a href="pets/ravenbyte-122-zephyr-relay-mask/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-123-brass-uplink-train/README.md"><img src="pets/ravenbyte-123-brass-uplink-train/previews/ravenbyte-123-brass-uplink-train-showcase.gif" width="240" alt="Brass Uplink Train stitched multi-motion showcase"></a><br>
   <strong>Brass Uplink Train</strong><br>
@@ -924,14 +930,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A manta-class Ravenbyte familiar that keeps xray work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-124-cobalt-xray-manta/README.md">README</a> · <a href="pets/ravenbyte-124-cobalt-xray-manta/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-125-drift-bundle-book/README.md"><img src="pets/ravenbyte-125-drift-bundle-book/previews/ravenbyte-125-drift-bundle-book-showcase.gif" width="240" alt="Drift Bundle Book stitched multi-motion showcase"></a><br>
   <strong>Drift Bundle Book</strong><br>
   <sub>A book-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-125-drift-bundle-book/README.md">README</a> · <a href="pets/ravenbyte-125-drift-bundle-book/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-126-echo-event-key/README.md"><img src="pets/ravenbyte-126-echo-event-key/previews/ravenbyte-126-echo-event-key-showcase.gif" width="240" alt="Echo Event Key stitched multi-motion showcase"></a><br>
   <strong>Echo Event Key</strong><br>
@@ -944,14 +950,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A jelly-class Ravenbyte familiar that keeps audit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-127-fable-audit-jelly/README.md">README</a> · <a href="pets/ravenbyte-127-fable-audit-jelly/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-128-grove-delta-rabbit/README.md"><img src="pets/ravenbyte-128-grove-delta-rabbit/previews/ravenbyte-128-grove-delta-rabbit-showcase.gif" width="240" alt="Grove Delta Rabbit stitched multi-motion showcase"></a><br>
   <strong>Grove Delta Rabbit</strong><br>
   <sub>A rabbit-class Ravenbyte familiar that keeps delta work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-128-grove-delta-rabbit/README.md">README</a> · <a href="pets/ravenbyte-128-grove-delta-rabbit/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-129-ash-harvester-beetle/README.md"><img src="pets/ravenbyte-129-ash-harvester-beetle/previews/ravenbyte-129-ash-harvester-beetle-showcase.gif" width="240" alt="Ash Harvester Beetle stitched multi-motion showcase"></a><br>
   <strong>Ash Harvester Beetle</strong><br>
@@ -964,14 +970,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crawler-class Ravenbyte familiar that keeps nexus work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-131-cipher-nexus-crawler/README.md">README</a> · <a href="pets/ravenbyte-131-cipher-nexus-crawler/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-132-dawn-query-kite/README.md"><img src="pets/ravenbyte-132-dawn-query-kite/previews/ravenbyte-132-dawn-query-kite-showcase.gif" width="240" alt="Dawn Query Kite stitched multi-motion showcase"></a><br>
   <strong>Dawn Query Kite</strong><br>
   <sub>A kite-class Ravenbyte familiar that keeps query work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-132-dawn-query-kite/README.md">README</a> · <a href="pets/ravenbyte-132-dawn-query-kite/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-133-ember-triage-totem/README.md"><img src="pets/ravenbyte-133-ember-triage-totem/previews/ravenbyte-133-ember-triage-totem-showcase.gif" width="240" alt="Ember Triage Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Triage Totem</strong><br>
@@ -984,14 +990,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A serpent-class Ravenbyte familiar that keeps widget work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-134-frost-widget-serpent/README.md">README</a> · <a href="pets/ravenbyte-134-frost-widget-serpent/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-135-glyph-zenith-crystal/README.md"><img src="pets/ravenbyte-135-glyph-zenith-crystal/previews/ravenbyte-135-glyph-zenith-crystal-showcase.gif" width="240" alt="Glyph Zenith Crystal stitched multi-motion showcase"></a><br>
   <strong>Glyph Zenith Crystal</strong><br>
   <sub>A crystal-class Ravenbyte familiar that keeps zenith work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-135-glyph-zenith-crystal/README.md">README</a> · <a href="pets/ravenbyte-135-glyph-zenith-crystal/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-136-harbor-diff-wheel/README.md"><img src="pets/ravenbyte-136-harbor-diff-wheel/previews/ravenbyte-136-harbor-diff-wheel-showcase.gif" width="240" alt="Harbor Diff Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Diff Wheel</strong><br>
@@ -1004,14 +1010,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mushroom-class Ravenbyte familiar that keeps gate work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-137-ion-gate-mushroom/README.md">README</a> · <a href="pets/ravenbyte-137-ion-gate-mushroom/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-138-jade-cache-mask/README.md"><img src="pets/ravenbyte-138-jade-cache-mask/previews/ravenbyte-138-jade-cache-mask-showcase.gif" width="240" alt="Jade Cache Mask stitched multi-motion showcase"></a><br>
   <strong>Jade Cache Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps cache work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-138-jade-cache-mask/README.md">README</a> · <a href="pets/ravenbyte-138-jade-cache-mask/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-139-keystone-forge-train/README.md"><img src="pets/ravenbyte-139-keystone-forge-train/previews/ravenbyte-139-keystone-forge-train-showcase.gif" width="240" alt="Keystone Forge Train stitched multi-motion showcase"></a><br>
   <strong>Keystone Forge Train</strong><br>
@@ -1024,14 +1030,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A manta-class Ravenbyte familiar that keeps index work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-140-lumen-index-manta/README.md">README</a> · <a href="pets/ravenbyte-140-lumen-index-manta/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-141-morrow-latch-book/README.md"><img src="pets/ravenbyte-141-morrow-latch-book/previews/ravenbyte-141-morrow-latch-book-showcase.gif" width="240" alt="Morrow Latch Book stitched multi-motion showcase"></a><br>
   <strong>Morrow Latch Book</strong><br>
   <sub>A book-class Ravenbyte familiar that keeps latch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-141-morrow-latch-book/README.md">README</a> · <a href="pets/ravenbyte-141-morrow-latch-book/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-142-nimbus-oracle-key/README.md"><img src="pets/ravenbyte-142-nimbus-oracle-key/previews/ravenbyte-142-nimbus-oracle-key-showcase.gif" width="240" alt="Nimbus Oracle Key stitched multi-motion showcase"></a><br>
   <strong>Nimbus Oracle Key</strong><br>
@@ -1044,14 +1050,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A jelly-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-143-obsidian-relay-jelly/README.md">README</a> · <a href="pets/ravenbyte-143-obsidian-relay-jelly/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-144-prairie-uplink-rabbit/README.md"><img src="pets/ravenbyte-144-prairie-uplink-rabbit/previews/ravenbyte-144-prairie-uplink-rabbit-showcase.gif" width="240" alt="Prairie Uplink Rabbit stitched multi-motion showcase"></a><br>
   <strong>Prairie Uplink Rabbit</strong><br>
   <sub>A rabbit-class Ravenbyte familiar that keeps uplink work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-144-prairie-uplink-rabbit/README.md">README</a> · <a href="pets/ravenbyte-144-prairie-uplink-rabbit/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-145-quartz-xray-beetle/README.md"><img src="pets/ravenbyte-145-quartz-xray-beetle/previews/ravenbyte-145-quartz-xray-beetle-showcase.gif" width="240" alt="Quartz Xray Beetle stitched multi-motion showcase"></a><br>
   <strong>Quartz Xray Beetle</strong><br>
@@ -1064,14 +1070,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A lantern-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-146-rune-bundle-lantern/README.md">README</a> · <a href="pets/ravenbyte-146-rune-bundle-lantern/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-147-signal-event-crawler/README.md"><img src="pets/ravenbyte-147-signal-event-crawler/previews/ravenbyte-147-signal-event-crawler-showcase.gif" width="240" alt="Signal Event Crawler stitched multi-motion showcase"></a><br>
   <strong>Signal Event Crawler</strong><br>
   <sub>A crawler-class Ravenbyte familiar that keeps event work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-147-signal-event-crawler/README.md">README</a> · <a href="pets/ravenbyte-147-signal-event-crawler/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-148-tundra-audit-kite/README.md"><img src="pets/ravenbyte-148-tundra-audit-kite/previews/ravenbyte-148-tundra-audit-kite-showcase.gif" width="240" alt="Tundra Audit Kite stitched multi-motion showcase"></a><br>
   <strong>Tundra Audit Kite</strong><br>
@@ -1084,14 +1090,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A totem-class Ravenbyte familiar that keeps delta work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-149-umber-delta-totem/README.md">README</a> · <a href="pets/ravenbyte-149-umber-delta-totem/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-151-warden-junction-crystal/README.md"><img src="pets/ravenbyte-151-warden-junction-crystal/previews/ravenbyte-151-warden-junction-crystal-showcase.gif" width="240" alt="Warden Junction Crystal stitched multi-motion showcase"></a><br>
   <strong>Warden Junction Crystal</strong><br>
   <sub>A crystal-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-151-warden-junction-crystal/README.md">README</a> · <a href="pets/ravenbyte-151-warden-junction-crystal/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-152-xenon-monitor-wheel/README.md"><img src="pets/ravenbyte-152-xenon-monitor-wheel/previews/ravenbyte-152-xenon-monitor-wheel-showcase.gif" width="240" alt="Xenon Monitor Wheel stitched multi-motion showcase"></a><br>
   <strong>Xenon Monitor Wheel</strong><br>
@@ -1104,14 +1110,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mushroom-class Ravenbyte familiar that keeps patch work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-153-yonder-patch-mushroom/README.md">README</a> · <a href="pets/ravenbyte-153-yonder-patch-mushroom/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-154-zephyr-sentinel-mask/README.md"><img src="pets/ravenbyte-154-zephyr-sentinel-mask/previews/ravenbyte-154-zephyr-sentinel-mask-showcase.gif" width="240" alt="Zephyr Sentinel Mask stitched multi-motion showcase"></a><br>
   <strong>Zephyr Sentinel Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-154-zephyr-sentinel-mask/README.md">README</a> · <a href="pets/ravenbyte-154-zephyr-sentinel-mask/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-155-brass-vector-train/README.md"><img src="pets/ravenbyte-155-brass-vector-train/previews/ravenbyte-155-brass-vector-train-showcase.gif" width="240" alt="Brass Vector Train stitched multi-motion showcase"></a><br>
   <strong>Brass Vector Train</strong><br>
@@ -1124,14 +1130,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A manta-class Ravenbyte familiar that keeps yield work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-156-cobalt-yield-manta/README.md">README</a> · <a href="pets/ravenbyte-156-cobalt-yield-manta/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-157-drift-circuit-book/README.md"><img src="pets/ravenbyte-157-drift-circuit-book/previews/ravenbyte-157-drift-circuit-book-showcase.gif" width="240" alt="Drift Circuit Book stitched multi-motion showcase"></a><br>
   <strong>Drift Circuit Book</strong><br>
   <sub>A book-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-157-drift-circuit-book/README.md">README</a> · <a href="pets/ravenbyte-157-drift-circuit-book/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-158-echo-flux-key/README.md"><img src="pets/ravenbyte-158-echo-flux-key/previews/ravenbyte-158-echo-flux-key-showcase.gif" width="240" alt="Echo Flux Key stitched multi-motion showcase"></a><br>
   <strong>Echo Flux Key</strong><br>
@@ -1144,14 +1150,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A jelly-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-159-fable-beacon-jelly/README.md">README</a> · <a href="pets/ravenbyte-159-fable-beacon-jelly/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-160-grove-engine-rabbit/README.md"><img src="pets/ravenbyte-160-grove-engine-rabbit/previews/ravenbyte-160-grove-engine-rabbit-showcase.gif" width="240" alt="Grove Engine Rabbit stitched multi-motion showcase"></a><br>
   <strong>Grove Engine Rabbit</strong><br>
   <sub>A rabbit-class Ravenbyte familiar that keeps engine work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-160-grove-engine-rabbit/README.md">README</a> · <a href="pets/ravenbyte-160-grove-engine-rabbit/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-162-basilisk-latch-lantern/README.md"><img src="pets/ravenbyte-162-basilisk-latch-lantern/previews/ravenbyte-162-basilisk-latch-lantern-showcase.gif" width="240" alt="Basilisk Latch Lantern stitched multi-motion showcase"></a><br>
   <strong>Basilisk Latch Lantern</strong><br>
@@ -1164,14 +1170,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crawler-class Ravenbyte familiar that keeps oracle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-163-cipher-oracle-crawler/README.md">README</a> · <a href="pets/ravenbyte-163-cipher-oracle-crawler/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-164-dawn-relay-kite/README.md"><img src="pets/ravenbyte-164-dawn-relay-kite/previews/ravenbyte-164-dawn-relay-kite-showcase.gif" width="240" alt="Dawn Relay Kite stitched multi-motion showcase"></a><br>
   <strong>Dawn Relay Kite</strong><br>
   <sub>A kite-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-164-dawn-relay-kite/README.md">README</a> · <a href="pets/ravenbyte-164-dawn-relay-kite/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-165-ember-uplink-totem/README.md"><img src="pets/ravenbyte-165-ember-uplink-totem/previews/ravenbyte-165-ember-uplink-totem-showcase.gif" width="240" alt="Ember Uplink Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Uplink Totem</strong><br>
@@ -1184,14 +1190,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A serpent-class Ravenbyte familiar that keeps xray work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-166-frost-xray-serpent/README.md">README</a> · <a href="pets/ravenbyte-166-frost-xray-serpent/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-167-glyph-bundle-crystal/README.md"><img src="pets/ravenbyte-167-glyph-bundle-crystal/previews/ravenbyte-167-glyph-bundle-crystal-showcase.gif" width="240" alt="Glyph Bundle Crystal stitched multi-motion showcase"></a><br>
   <strong>Glyph Bundle Crystal</strong><br>
   <sub>A crystal-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-167-glyph-bundle-crystal/README.md">README</a> · <a href="pets/ravenbyte-167-glyph-bundle-crystal/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-168-harbor-event-wheel/README.md"><img src="pets/ravenbyte-168-harbor-event-wheel/previews/ravenbyte-168-harbor-event-wheel-showcase.gif" width="240" alt="Harbor Event Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Event Wheel</strong><br>
@@ -1204,14 +1210,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A mushroom-class Ravenbyte familiar that keeps audit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-169-ion-audit-mushroom/README.md">README</a> · <a href="pets/ravenbyte-169-ion-audit-mushroom/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-170-jade-delta-mask/README.md"><img src="pets/ravenbyte-170-jade-delta-mask/previews/ravenbyte-170-jade-delta-mask-showcase.gif" width="240" alt="Jade Delta Mask stitched multi-motion showcase"></a><br>
   <strong>Jade Delta Mask</strong><br>
   <sub>A mask-class Ravenbyte familiar that keeps delta work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-170-jade-delta-mask/README.md">README</a> · <a href="pets/ravenbyte-170-jade-delta-mask/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-171-keystone-graph-train/README.md"><img src="pets/ravenbyte-171-keystone-graph-train/previews/ravenbyte-171-keystone-graph-train-showcase.gif" width="240" alt="Keystone Graph Train stitched multi-motion showcase"></a><br>
   <strong>Keystone Graph Train</strong><br>
@@ -1224,14 +1230,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A manta-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-172-lumen-junction-manta/README.md">README</a> · <a href="pets/ravenbyte-172-lumen-junction-manta/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-173-morrow-monitor-book/README.md"><img src="pets/ravenbyte-173-morrow-monitor-book/previews/ravenbyte-173-morrow-monitor-book-showcase.gif" width="240" alt="Morrow Monitor Book stitched multi-motion showcase"></a><br>
   <strong>Morrow Monitor Book</strong><br>
   <sub>A book-class Ravenbyte familiar that keeps monitor work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-173-morrow-monitor-book/README.md">README</a> · <a href="pets/ravenbyte-173-morrow-monitor-book/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-174-nimbus-patch-key/README.md"><img src="pets/ravenbyte-174-nimbus-patch-key/previews/ravenbyte-174-nimbus-patch-key-showcase.gif" width="240" alt="Nimbus Patch Key stitched multi-motion showcase"></a><br>
   <strong>Nimbus Patch Key</strong><br>
@@ -1244,14 +1250,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A jelly-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-175-obsidian-sentinel-jelly/README.md">README</a> · <a href="pets/ravenbyte-175-obsidian-sentinel-jelly/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-176-prairie-vector-rabbit/README.md"><img src="pets/ravenbyte-176-prairie-vector-rabbit/previews/ravenbyte-176-prairie-vector-rabbit-showcase.gif" width="240" alt="Prairie Vector Rabbit stitched multi-motion showcase"></a><br>
   <strong>Prairie Vector Rabbit</strong><br>
   <sub>A rabbit-class Ravenbyte familiar that keeps vector work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-176-prairie-vector-rabbit/README.md">README</a> · <a href="pets/ravenbyte-176-prairie-vector-rabbit/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-177-quartz-yield-beetle/README.md"><img src="pets/ravenbyte-177-quartz-yield-beetle/previews/ravenbyte-177-quartz-yield-beetle-showcase.gif" width="240" alt="Quartz Yield Beetle stitched multi-motion showcase"></a><br>
   <strong>Quartz Yield Beetle</strong><br>
@@ -1264,14 +1270,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A lantern-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-178-rune-circuit-lantern/README.md">README</a> · <a href="pets/ravenbyte-178-rune-circuit-lantern/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-179-signal-flux-crawler/README.md"><img src="pets/ravenbyte-179-signal-flux-crawler/previews/ravenbyte-179-signal-flux-crawler-showcase.gif" width="240" alt="Signal Flux Crawler stitched multi-motion showcase"></a><br>
   <strong>Signal Flux Crawler</strong><br>
   <sub>A crawler-class Ravenbyte familiar that keeps flux work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-179-signal-flux-crawler/README.md">README</a> · <a href="pets/ravenbyte-179-signal-flux-crawler/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-180-tundra-beacon-kite/README.md"><img src="pets/ravenbyte-180-tundra-beacon-kite/previews/ravenbyte-180-tundra-beacon-kite-showcase.gif" width="240" alt="Tundra Beacon Kite stitched multi-motion showcase"></a><br>
   <strong>Tundra Beacon Kite</strong><br>
@@ -1284,14 +1290,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A totem-class Ravenbyte familiar that keeps engine work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-181-umber-engine-totem/README.md">README</a> · <a href="pets/ravenbyte-181-umber-engine-totem/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-182-violet-harvester-serpent/README.md"><img src="pets/ravenbyte-182-violet-harvester-serpent/previews/ravenbyte-182-violet-harvester-serpent-showcase.gif" width="240" alt="Violet Harvester Serpent stitched multi-motion showcase"></a><br>
   <strong>Violet Harvester Serpent</strong><br>
   <sub>A serpent-class Ravenbyte familiar that keeps harvester work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-182-violet-harvester-serpent/README.md">README</a> · <a href="pets/ravenbyte-182-violet-harvester-serpent/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-183-warden-kernel-crystal/README.md"><img src="pets/ravenbyte-183-warden-kernel-crystal/previews/ravenbyte-183-warden-kernel-crystal-showcase.gif" width="240" alt="Warden Kernel Crystal stitched multi-motion showcase"></a><br>
   <strong>Warden Kernel Crystal</strong><br>
@@ -1304,14 +1310,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A wheel-class Ravenbyte familiar that keeps nexus work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-184-xenon-nexus-wheel/README.md">README</a> · <a href="pets/ravenbyte-184-xenon-nexus-wheel/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-185-yonder-query-mushroom/README.md"><img src="pets/ravenbyte-185-yonder-query-mushroom/previews/ravenbyte-185-yonder-query-mushroom-showcase.gif" width="240" alt="Yonder Query Mushroom stitched multi-motion showcase"></a><br>
   <strong>Yonder Query Mushroom</strong><br>
   <sub>A mushroom-class Ravenbyte familiar that keeps query work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-185-yonder-query-mushroom/README.md">README</a> · <a href="pets/ravenbyte-185-yonder-query-mushroom/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-186-zephyr-triage-mask/README.md"><img src="pets/ravenbyte-186-zephyr-triage-mask/previews/ravenbyte-186-zephyr-triage-mask-showcase.gif" width="240" alt="Zephyr Triage Mask stitched multi-motion showcase"></a><br>
   <strong>Zephyr Triage Mask</strong><br>
@@ -1324,14 +1330,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A train-class Ravenbyte familiar that keeps widget work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-187-brass-widget-train/README.md">README</a> · <a href="pets/ravenbyte-187-brass-widget-train/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-188-cobalt-zenith-manta/README.md"><img src="pets/ravenbyte-188-cobalt-zenith-manta/previews/ravenbyte-188-cobalt-zenith-manta-showcase.gif" width="240" alt="Cobalt Zenith Manta stitched multi-motion showcase"></a><br>
   <strong>Cobalt Zenith Manta</strong><br>
   <sub>A manta-class Ravenbyte familiar that keeps zenith work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-188-cobalt-zenith-manta/README.md">README</a> · <a href="pets/ravenbyte-188-cobalt-zenith-manta/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-189-drift-diff-book/README.md"><img src="pets/ravenbyte-189-drift-diff-book/previews/ravenbyte-189-drift-diff-book-showcase.gif" width="240" alt="Drift Diff Book stitched multi-motion showcase"></a><br>
   <strong>Drift Diff Book</strong><br>
@@ -1344,14 +1350,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A key-class Ravenbyte familiar that keeps gate work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-190-echo-gate-key/README.md">README</a> · <a href="pets/ravenbyte-190-echo-gate-key/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-191-fable-cache-jelly/README.md"><img src="pets/ravenbyte-191-fable-cache-jelly/previews/ravenbyte-191-fable-cache-jelly-showcase.gif" width="240" alt="Fable Cache Jelly stitched multi-motion showcase"></a><br>
   <strong>Fable Cache Jelly</strong><br>
   <sub>A jelly-class Ravenbyte familiar that keeps cache work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-191-fable-cache-jelly/README.md">README</a> · <a href="pets/ravenbyte-191-fable-cache-jelly/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-192-grove-forge-rabbit/README.md"><img src="pets/ravenbyte-192-grove-forge-rabbit/previews/ravenbyte-192-grove-forge-rabbit-showcase.gif" width="240" alt="Grove Forge Rabbit stitched multi-motion showcase"></a><br>
   <strong>Grove Forge Rabbit</strong><br>
@@ -1364,14 +1370,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A beetle-class Ravenbyte familiar that keeps junction work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-193-ash-junction-beetle/README.md">README</a> · <a href="pets/ravenbyte-193-ash-junction-beetle/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-194-basilisk-monitor-lantern/README.md"><img src="pets/ravenbyte-194-basilisk-monitor-lantern/previews/ravenbyte-194-basilisk-monitor-lantern-showcase.gif" width="240" alt="Basilisk Monitor Lantern stitched multi-motion showcase"></a><br>
   <strong>Basilisk Monitor Lantern</strong><br>
   <sub>A lantern-class Ravenbyte familiar that keeps monitor work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-194-basilisk-monitor-lantern/README.md">README</a> · <a href="pets/ravenbyte-194-basilisk-monitor-lantern/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-195-cipher-patch-crawler/README.md"><img src="pets/ravenbyte-195-cipher-patch-crawler/previews/ravenbyte-195-cipher-patch-crawler-showcase.gif" width="240" alt="Cipher Patch Crawler stitched multi-motion showcase"></a><br>
   <strong>Cipher Patch Crawler</strong><br>
@@ -1384,14 +1390,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A kite-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-196-dawn-sentinel-kite/README.md">README</a> · <a href="pets/ravenbyte-196-dawn-sentinel-kite/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-197-ember-vector-totem/README.md"><img src="pets/ravenbyte-197-ember-vector-totem/previews/ravenbyte-197-ember-vector-totem-showcase.gif" width="240" alt="Ember Vector Totem stitched multi-motion showcase"></a><br>
   <strong>Ember Vector Totem</strong><br>
   <sub>A totem-class Ravenbyte familiar that keeps vector work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-197-ember-vector-totem/README.md">README</a> · <a href="pets/ravenbyte-197-ember-vector-totem/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-198-frost-yield-serpent/README.md"><img src="pets/ravenbyte-198-frost-yield-serpent/previews/ravenbyte-198-frost-yield-serpent-showcase.gif" width="240" alt="Frost Yield Serpent stitched multi-motion showcase"></a><br>
   <strong>Frost Yield Serpent</strong><br>
@@ -1404,14 +1410,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A crystal-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-199-glyph-circuit-crystal/README.md">README</a> · <a href="pets/ravenbyte-199-glyph-circuit-crystal/spritesheet.webp">spritesheet</a>
 </td>
+</tr>
+<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-200-harbor-flux-wheel/README.md"><img src="pets/ravenbyte-200-harbor-flux-wheel/previews/ravenbyte-200-harbor-flux-wheel-showcase.gif" width="240" alt="Harbor Flux Wheel stitched multi-motion showcase"></a><br>
   <strong>Harbor Flux Wheel</strong><br>
   <sub>A wheel-class Ravenbyte familiar that keeps flux work moving during long coding runs.</sub><br>
   <a href="pets/ravenbyte-200-harbor-flux-wheel/README.md">README</a> · <a href="pets/ravenbyte-200-harbor-flux-wheel/spritesheet.webp">spritesheet</a>
 </td>
-</tr>
-<tr>
 <td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
