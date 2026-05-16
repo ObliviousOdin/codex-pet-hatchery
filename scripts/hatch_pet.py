@@ -656,9 +656,34 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.ellipse((wx - 5, yy + 40, wx + 5, yy + 50), fill=accent)
             d.line((x + 18, yy + 23, x + 25, yy + 15 - pulse), fill=glow, width=2)
         elif archetype == 11:  # manta glider
-            d.polygon([(x - 26, yy + 28), (x - 5, yy + 14 + tilt), (x + 26, yy + 28), (x + 5, yy + 40), (x, yy + 52), (x - 5, yy + 40)], fill=outline)
-            d.polygon([(x - 18, yy + 29), (x - 3, yy + 19), (x + 18, yy + 29), (x + 3, yy + 37), (x, yy + 45), (x - 3, yy + 37)], fill=primary)
-            d.line((x - 12, yy + 31, x + 12, yy + 31), fill=glow, width=2)
+            # Wide glider body with animated wingbeats.  Manta familiars should
+            # read as soaring/swimming companions, not static diamond sprites.
+            flap = [0, -3, -5, -2, 2, 4][i % FRAMES]
+            if anim in {"running-right", "running-left", "running"}:
+                flap += [0, -4, -2, 3, 5, 1][i % FRAMES]
+                x += facing * [0, 2, 4, 2, 0, -2][i % FRAMES]
+            elif anim == "waving":
+                flap += [-1, -6, -8, -5, 1, 3][i % FRAMES]
+            elif anim == "jumping":
+                flap += [-3, -6, -9, -7, -2, 1][i % FRAMES]
+            elif anim == "failed":
+                flap += [4, 5, 6, 5, 4, 3][i % FRAMES]
+            elif anim == "review":
+                flap += [0, -1, -2, -1, 1, 2][i % FRAMES]
+            tail_wave = [0, 2, 4, 1, -2, -3][i % FRAMES]
+            nose = yy + 14 + tilt + (flap // 2)
+            left_tip = yy + 28 + flap
+            right_tip = yy + 28 - flap
+            tail_y = yy + 52 + tail_wave
+            outer = [(x - 28, left_tip), (x - 7, nose), (x + 27, right_tip), (x + 7, yy + 40 - flap // 2), (x, tail_y), (x - 7, yy + 40 + flap // 2)]
+            inner = [(x - 19, yy + 29 + flap // 2), (x - 3, yy + 20 + flap // 3), (x + 18, yy + 29 - flap // 2), (x + 3, yy + 37), (x, yy + 45 + tail_wave // 2), (x - 3, yy + 37)]
+            d.polygon(outer, fill=outline)
+            d.polygon(inner, fill=primary)
+            # Directional fins make left/right rows visibly distinct for the
+            # asymmetric generated queue.
+            d.polygon([(x + facing * 14, yy + 32), (x + facing * (28 + pulse), yy + 27 + sway), (x + facing * 18, yy + 37)], fill=secondary)
+            d.line((x - 13, yy + 31 + flap // 3, x + 13, yy + 31 - flap // 3), fill=glow, width=2)
+            d.line((x, yy + 44, x + facing * (9 + pulse), tail_y + 5), fill=accent, width=2)
         elif archetype == 12:  # book golem
             d.polygon([(x - 18, yy + 17), (x, yy + 22), (x, yy + 50), (x - 18, yy + 45)], fill=outline)
             d.polygon([(x + 18, yy + 17), (x, yy + 22), (x, yy + 50), (x + 18, yy + 45)], fill=outline)
