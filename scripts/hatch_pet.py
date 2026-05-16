@@ -285,6 +285,52 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
         for lx in (x - 9 - run, x + 7 + run):
             rect((lx, y + 43, lx + 5, y + 52), primary)
         draw_state_fx()
+    elif "cat" in slug:
+        # Low quadruped karakuri cat: long horizontal body, tall ears,
+        # curled clockwork tail, brass whiskers, and paw-skitter motion.
+        x = 31 + (run if anim in {"running-right", "running-left", "running"} else 0)
+        tail_swing = [0, 2, 3, 1, -1, -2][i % FRAMES]
+        # Big asymmetric curled tail drives a silhouette unlike the round oni bot.
+        d.arc((x + 11, y + 18 + tail_swing, x + 38, y + 47 + tail_swing), 115, 330, fill=outline, width=7)
+        d.arc((x + 13, y + 20 + tail_swing, x + 35, y + 44 + tail_swing), 115, 330, fill=accent, width=3)
+        d.ellipse((x + 25, y + 26 + tail_swing, x + 31, y + 32 + tail_swing), fill=glow)
+        # Long wooden chassis and patchwork side panels.
+        d.rounded_rectangle((x - 22, y + 27, x + 15, y + 45), radius=6, fill=outline)
+        d.rounded_rectangle((x - 19, y + 29, x + 12, y + 43), radius=5, fill=primary)
+        d.rectangle((x - 12, y + 31, x - 2, y + 39), fill=secondary)
+        d.rectangle((x + 1, y + 32, x + 10, y + 40), fill="#8b5e34")
+        d.line((x - 2, y + 31, x - 2, y + 40), fill=outline, width=1)
+        d.line((x + 1, y + 32, x + 1, y + 41), fill=outline, width=1)
+        # Compact head set forward with triangular ears.
+        d.polygon([(x - 25, y + 26), (x - 30, y + 13), (x - 17, y + 22)], fill=outline)
+        d.polygon([(x - 12, y + 25), (x - 7, y + 13), (x - 3, y + 25)], fill=outline)
+        d.rounded_rectangle((x - 27, y + 22, x - 4, y + 38), radius=5, fill=outline)
+        d.rounded_rectangle((x - 24, y + 24, x - 7, y + 36), radius=4, fill=secondary)
+        rect((x - 20, y + 29, x - 16, y + 31), accent if anim != "failed" else "#ff3344")
+        rect((x - 13, y + 29, x - 10, y + 31), glow if anim == "review" else accent)
+        # Brass whiskers and key slot.
+        for wy in (30, 33):
+            d.line((x - 25, y + wy - 24, x - 35, y + wy - 27), fill=glow, width=1)
+            d.line((x - 7, y + wy - 24, x + 2, y + wy - 27), fill=glow, width=1)
+        d.ellipse((x + 4, y + 24, x + 10, y + 30), fill=accent)
+        d.line((x + 10, y + 27, x + 15, y + 27), fill=accent, width=2)
+        # Four small paws make a skitter rather than a biped run.
+        paw_offsets = [(-17, 0), (-7, 2), (4, -1), (12, 1)]
+        for n, (px, lift) in enumerate(paw_offsets):
+            step = ((i + n) % 3) - 1 if anim in {"running-right", "running-left", "running"} else 0
+            py = y + 44 + (lift if anim in {"running-right", "running-left", "running"} else 0)
+            rect((x + px + step, py, x + px + step + 4, py + 8), outline)
+            rect((x + px + step + 1, py + 1, x + px + step + 3, py + 7), secondary)
+        if anim == "waving":
+            d.arc((x - 34, y + 18, x - 14, y + 38), 210, 340, fill=glow, width=2)
+            rect((x - 29, y + 36, x - 24, y + 42), accent)
+        if anim == "failed":
+            d.line((x - 20, y + 28, x - 16, y + 32), fill=outline, width=1)
+            d.line((x - 16, y + 28, x - 20, y + 32), fill=outline, width=1)
+            d.line((x - 13, y + 28, x - 9, y + 32), fill=outline, width=1)
+            d.line((x - 9, y + 28, x - 13, y + 32), fill=outline, width=1)
+            d.line((x + 18, y + 23, x + 24, y + 17), fill=accent, width=2)
+        draw_state_fx()
     elif "crab" in slug:
         x = 32
         d.ellipse((x - 18, y + 24, x + 18, y + 45), fill=outline)

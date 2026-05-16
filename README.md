@@ -33,6 +33,7 @@ The vibe is raven-dark, rune-lit, and wild-hearted: little build guardians, cour
 | Ronin Build Fox | fox-masked build guardian with servo tails and CI charms | ![Ronin Build Fox idle animation](pets/ronin-build-fox/previews/ronin-build-fox-idle.gif) | [Familiar README](pets/ronin-build-fox/README.md) |
 | Compiler Oni Mini | tiny red oni bot with a foam kanabo and lint sparks | ![Compiler Oni Mini idle animation](pets/compiler-oni-mini/previews/compiler-oni-mini-idle.gif) | [Familiar README](pets/compiler-oni-mini/README.md) |
 | Moonbase Tanuki Dev | sleepy lunar rover-tanuki with a leaf antenna and debug pouches | ![Moonbase Tanuki Dev idle animation](pets/moonbase-tanuki-dev/previews/moonbase-tanuki-dev-idle.gif) | [Familiar README](pets/moonbase-tanuki-dev/README.md) |
+| Karakuri Patch Cat | wooden clockwork cat automaton with brass whiskers and patchwork panels | ![Karakuri Patch Cat idle animation](pets/karakuri-patch-cat/previews/karakuri-patch-cat-idle.gif) | [Familiar README](pets/karakuri-patch-cat/README.md) |
 
 Each familiar includes rows for:
 
@@ -143,7 +144,6 @@ A new familiar should not look like the previous familiar with different colors.
 
 Future hatches should rotate body plans instead of making the same mecha repeatedly:
 
-- **Patchwork Karakuri Cat** — wooden clockwork cat automaton with brass whiskers.
 - **Nebula Courier Mech** — courier robot with launch-thruster running animations.
 - **Lotus Firewall Monk** — meditating cyber-monk bot with shield-petal review frames.
 - **Samurai Cache Crab** — side-stepping armor crab with cache-crystal claws.
