@@ -1,5 +1,3 @@
-# Ravenbyte Familiars
-
 <p align="center">
   <img src="assets/hero/ravenbyte-familiars-hero.gif" width="100%" alt="Ravenbyte Familiars hero animation: tiny robot companions working, reviewing, and rejoicing around a minimalist industrial console">
 </p>
