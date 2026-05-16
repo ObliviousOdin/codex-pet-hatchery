@@ -1136,6 +1136,11 @@ def main() -> None:
         spec = existing[0] if existing else PRESETS[0]
     else:
         spec = specs.get(args.pet)
+        if spec is None and args.pet.startswith("ravenbyte-"):
+            from hatch_surge import generated_specs
+
+            generated = {p.slug: p for p in generated_specs(512)}
+            spec = generated.get(args.pet)
         if spec is None:
             raise SystemExit(f"unknown pet {args.pet}; choices: {', '.join(specs)}")
     dest = hatch(spec, root, codex_home)
