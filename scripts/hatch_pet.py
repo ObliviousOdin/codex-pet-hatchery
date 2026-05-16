@@ -458,15 +458,55 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
         d.polygon([(x - 7, y + 42), (x, y + 54 + abs(run)), (x + 7, y + 42)], fill=hex_to_rgba(accent, 210))
         draw_state_fx()
     elif "heron" in slug:
-        x = 32
-        d.polygon([(x - 12, y + 20), (x + 8, y + 14), (x + 15, y + 32), (x - 7, y + 43)], fill=outline)
-        d.polygon([(x - 9, y + 22), (x + 7, y + 17), (x + 12, y + 31), (x - 5, y + 40)], fill=secondary)
-        d.polygon([(x + 5, y + 15), (x + 24, y + 18), (x + 7, y + 22)], fill=accent)
-        d.line((x - 4, y + 41, x - 9 - run, y + 53), fill=primary, width=3)
-        d.line((x + 5, y + 39, x + 11 + run, y + 53), fill=primary, width=3)
-        rect((x + 4, y + 21, x + 7, y + 23), glow)
-        if anim == "waving":
-            d.polygon([(x - 8, y + 27), (x - 24, y + 16 + i % 3), (x - 12, y + 35)], fill=hex_to_rgba(glow, 170))
+        # Origami Test Heron: a tall folded-paper wading bird with a long
+        # angular neck, direction-specific beak, crane legs, and wing panels.
+        # The silhouette is intentionally vertical/avian rather than bot/hover.
+        facing = -1 if anim == "running-left" else 1
+        x = 31 + (facing * run if anim in {"running-right", "running-left", "running"} else 0)
+        peck = 4 if anim in {"running-right", "running-left", "running"} and i in (1, 4) else 0
+        neck_bob = -2 if anim == "review" and i % 2 else 0
+        if anim == "failed":
+            peck = 7
+            neck_bob = 4
+        # Folded tail and angular paper body.
+        tail = [(x - facing * 10, y + 34), (x - facing * 27, y + 26 + (i % 2)), (x - facing * 13, y + 44)]
+        body_outer = [(x - 14, y + 23), (x + 6, y + 16), (x + 18, y + 34), (x - 5, y + 46), (x - 18, y + 37)]
+        body_inner = [(x - 10, y + 25), (x + 5, y + 19), (x + 14, y + 33), (x - 4, y + 42), (x - 14, y + 36)]
+        d.polygon(tail, fill=outline)
+        d.polygon([(px + facing * 2, py + 1) for px, py in tail], fill=hex_to_rgba(accent, 175))
+        d.polygon(body_outer, fill=outline)
+        d.polygon(body_inner, fill=secondary)
+        # Faceted wing panel changes shape by state so rows read differently.
+        wing_lift = -8 if anim in {"waving", "jumping"} and i in (1, 2, 3) else (3 if anim == "failed" else 0)
+        d.polygon([(x - 11, y + 28), (x + 8, y + 22 + wing_lift), (x + 5, y + 38), (x - 13, y + 41)], fill=primary)
+        d.line((x - 9, y + 30, x + 5, y + 24 + wing_lift), fill=glow, width=1)
+        d.line((x - 8, y + 35, x + 4, y + 37), fill=accent, width=1)
+        # Long folded neck and triangular beak face the active run direction.
+        neck = [(x + facing * 6, y + 21), (x + facing * 13, y + 10 + neck_bob), (x + facing * 18, y + 13 + neck_bob), (x + facing * 11, y + 25)]
+        d.polygon(neck, fill=outline)
+        d.polygon([(x + facing * 8, y + 21), (x + facing * 14, y + 13 + neck_bob), (x + facing * 16, y + 15 + neck_bob), (x + facing * 10, y + 24)], fill=secondary)
+        head = (x + facing * 18, y + 9 + neck_bob)
+        d.polygon([(head[0] - facing * 2, head[1] + 1), (head[0] + facing * (8 + peck), head[1] + 4), (head[0] - facing * 1, head[1] + 8)], fill=outline)
+        d.polygon([(head[0], head[1] + 3), (head[0] + facing * (7 + peck), head[1] + 4), (head[0], head[1] + 6)], fill=accent)
+        rect((head[0] - 1 if facing > 0 else head[0] - 3, head[1] + 3, head[0] + 1 if facing > 0 else head[0] - 1, head[1] + 5), glow if anim != "failed" else "#ff3344")
+        # Crane legs: alternating high-knee steps; failed state buckles.
+        step_a = [0, -3, -1, 0, 3, 1][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+        step_b = -step_a
+        if anim == "failed":
+            step_a, step_b = 4, -1
+        for lx, step, knee in ((x - 6, step_a, -5), (x + 6, step_b, 4)):
+            d.line((lx, y + 43, lx + facing * step, y + 51), fill=outline, width=4)
+            d.line((lx + facing * step, y + 51, lx + facing * (step + knee), y + 56), fill=outline, width=3)
+            d.line((lx, y + 43, lx + facing * step, y + 51), fill=primary, width=2)
+            d.line((lx + facing * step, y + 51, lx + facing * (step + knee), y + 56), fill=glow, width=1)
+        if anim == "waiting":
+            d.line((x - 18, y + 18, x - 25, y + 14 - (i % 3)), fill=glow, width=1)
+            d.line((x - 25, y + 14 - (i % 3), x - 30, y + 19), fill=accent, width=1)
+        if anim == "review":
+            d.rounded_rectangle((7, 34, 25, 46), radius=2, fill=outline)
+            d.rectangle((10, 36, 22, 43), fill="#1b263b")
+            d.line((11, 38, 20, 38), fill=glow)
+            d.line((11, 41, 18, 41), fill=accent)
         draw_state_fx()
     else:
         # Round spirit/animal automaton silhouette for oni, tanuki, cat, monk, etc.
