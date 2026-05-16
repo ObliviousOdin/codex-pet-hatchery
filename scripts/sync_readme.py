@@ -153,6 +153,17 @@ python scripts/validate_all.py
 git diff --check
 ```
 
+To grow the collection in a controlled batch while keeping the validation bar:
+
+```bash
+. .venv/bin/activate
+python scripts/hatch_surge.py --target 205
+python scripts/validate_all.py
+git diff --check
+```
+
+`hatch_surge.py` creates only missing deterministic Ravenbyte familiars, installs each package into `${{CODEX_HOME:-$HOME/.codex}}/pets/<pet-name>/`, syncs the README/hero, and leaves MP4 export disabled by default so large batches stay practical. Set `RAVENBYTE_RENDER_MP4=1` before hatching if a smaller run needs video attachments.
+
 The hatch script performs the deterministic pipeline:
 
 1. stores the intended image-generation prompt in `generated/imagegen-prompt.json`,

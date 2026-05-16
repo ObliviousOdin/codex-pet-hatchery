@@ -15,8 +15,10 @@ mecha/ninja/anime energy, but final names and silhouettes are original.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
+import os
 import shutil
 import subprocess
 from dataclasses import dataclass
@@ -508,6 +510,143 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((11, 38, 20, 38), fill=glow)
             d.line((11, 41, 18, 41), fill=accent)
         draw_state_fx()
+    elif slug.startswith("ravenbyte-"):
+        # Surge familiars: deterministic, hash-varied glyph machines designed for
+        # high-count hatching without palette-swap silhouettes. Each slug changes
+        # body plan, pose anchors, appendages, and orbiting props so validation can
+        # compare hundreds of packages mechanically.
+        seed = int(hashlib.sha256(slug.encode()).hexdigest()[:16], 16)
+        archetype = seed % 16
+        x = 20 + ((seed >> 4) % 25)
+        yy = y + ((seed >> 9) % 7) - 3
+        facing = -1 if (anim == "running-left" or (seed >> 2) & 1) else 1
+        if anim == "running-right":
+            facing = 1
+        if anim == "running-left":
+            facing = -1
+        sway = [0, 2, 1, 0, -1, -2][i % FRAMES]
+        pulse = 1 + ((seed >> (i % 8)) & 1)
+        tilt = -3 if anim in {"running-right", "running"} else (3 if anim == "running-left" else 0)
+        if anim == "failed":
+            yy += 4
+            tilt = 6
+        # Hash-specific satellite glyphs occupy different coordinates, lowering
+        # silhouette overlap while giving every familiar a signature read.
+        for n in range(3 + (seed % 3)):
+            ox = 6 + ((seed >> (n * 5 + 3)) % 52)
+            oy = 8 + ((seed >> (n * 5 + 11)) % 42)
+            r = 2 + ((seed >> (n * 3 + 19)) % 4)
+            if anim in {"waiting", "review"}:
+                oy -= (i + n) % 3
+            d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
+            d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
+        if archetype == 0:  # antenna beetle slab
+            w, h = 13 + (seed % 8), 18 + ((seed >> 5) % 8)
+            d.rounded_rectangle((x - w, yy + 20, x + w, yy + 20 + h), radius=4, fill=outline)
+            d.rounded_rectangle((x - w + 3, yy + 23, x + w - 3, yy + 18 + h), radius=3, fill=primary)
+            for side in (-1, 1):
+                d.line((x + side * w, yy + 30, x + side * (w + 7 + pulse), yy + 24 + sway), fill=accent, width=3)
+                d.line((x + side * (w - 2), yy + 40, x + side * (w + 9), yy + 48 - sway), fill=secondary, width=3)
+            d.arc((x - 20, yy + 5, x, yy + 28), 210, 330, fill=glow, width=2)
+            d.arc((x, yy + 5, x + 20, yy + 28), 210, 330, fill=glow, width=2)
+        elif archetype == 1:  # floating lantern stack
+            for k in range(3):
+                yy2 = yy + 10 + k * (10 + (seed % 3))
+                d.polygon([(x, yy2 - 6), (x + 12 + k, yy2), (x + 8, yy2 + 8), (x - 8, yy2 + 8), (x - 12 - k, yy2)], fill=outline)
+                d.polygon([(x, yy2 - 3), (x + 8 + k, yy2 + 1), (x + 5, yy2 + 6), (x - 5, yy2 + 6), (x - 8 - k, yy2 + 1)], fill=[primary, secondary, accent][k % 3])
+            d.line((x, yy + 5, x + facing * (17 + pulse), yy + 2 + sway), fill=glow, width=2)
+        elif archetype == 2:  # crawler bridge
+            d.polygon([(x - 18, yy + 29), (x - 5, yy + 16 + tilt), (x + 16, yy + 23), (x + 21, yy + 39), (x - 15, yy + 43)], fill=outline)
+            d.polygon([(x - 13, yy + 30), (x - 3, yy + 21), (x + 12, yy + 26), (x + 15, yy + 37), (x - 11, yy + 39)], fill=primary)
+            for n in range(4):
+                lx = x - 14 + n * 9
+                d.line((lx, yy + 40, lx - 6 + ((i + n) % 3), yy + 51), fill=secondary, width=3)
+        elif archetype == 3:  # crescent kite
+            d.pieslice((x - 21, yy + 10, x + 21, yy + 52), 40 + tilt, 320 + tilt, fill=outline)
+            d.pieslice((x - 16, yy + 15, x + 16, yy + 47), 45 + tilt, 315 + tilt, fill=primary)
+            d.polygon([(x, yy + 16), (x + facing * (22 + pulse), yy + 30), (x, yy + 44), (x - facing * 7, yy + 30)], fill=secondary)
+        elif archetype == 4:  # tall shrine totem
+            w = 8 + (seed % 6)
+            d.rounded_rectangle((x - w, yy + 6, x + w, yy + 49), radius=3, fill=outline)
+            d.rectangle((x - w + 3, yy + 10, x + w - 3, yy + 45), fill=primary)
+            for k in range(4):
+                d.line((x - w - 6 + (k % 2), yy + 14 + k * 8, x + w + 6 - (k % 2), yy + 14 + k * 8), fill=[secondary, accent, glow][k % 3], width=2)
+            d.polygon([(x, yy), (x + 14, yy + 9), (x - 14, yy + 9)], fill=accent)
+        elif archetype == 5:  # serpent ribbon
+            pts = []
+            for k in range(6):
+                pts.append((x - 20 + k * 8, yy + 28 + int(math.sin((i + k) / 2) * (5 + seed % 4))))
+            d.line(pts, fill=outline, width=9)
+            d.line(pts, fill=primary, width=5)
+            hx, hy = pts[-1]
+            d.polygon([(hx, hy - 6), (hx + facing * 12, hy), (hx, hy + 6)], fill=secondary)
+        elif archetype == 6:  # crystal tripod
+            d.polygon([(x, yy + 5), (x + 15, yy + 25), (x + 7, yy + 45), (x - 10, yy + 43), (x - 16, yy + 24)], fill=outline)
+            d.polygon([(x, yy + 9), (x + 10, yy + 26), (x + 5, yy + 40), (x - 7, yy + 38), (x - 11, yy + 25)], fill=secondary)
+            for lx in (-10, 0, 10):
+                d.line((x + lx, yy + 42, x + lx + sway, yy + 55), fill=accent, width=3)
+        elif archetype == 7:  # wheel drone
+            r = 15 + (seed % 5)
+            d.ellipse((x - r, yy + 20 - r, x + r, yy + 20 + r), fill=outline)
+            d.ellipse((x - r + 4, yy + 24 - r, x + r - 4, yy + 16 + r), fill=primary)
+            for a in range(0, 360, 60):
+                ang = math.radians(a + i * 18)
+                d.line((x, yy + 20, x + int(math.cos(ang) * r), yy + 20 + int(math.sin(ang) * r)), fill=glow, width=2)
+            d.line((x + facing * r, yy + 20, x + facing * (r + 12), yy + 12 + sway), fill=accent, width=3)
+        elif archetype == 8:  # mushroom relay
+            capw = 15 + (seed % 9)
+            d.pieslice((x - capw, yy + 8, x + capw, yy + 36), 180, 360, fill=outline)
+            d.pieslice((x - capw + 3, yy + 11, x + capw - 3, yy + 34), 180, 360, fill=accent)
+            d.rounded_rectangle((x - 8, yy + 27, x + 8, yy + 51), radius=4, fill=outline)
+            d.rounded_rectangle((x - 5, yy + 29, x + 5, yy + 48), radius=3, fill=secondary)
+        elif archetype == 9:  # split mask imp
+            d.polygon([(x - 18, yy + 15), (x, yy + 4), (x + 18, yy + 15), (x + 14, yy + 43), (x, yy + 52), (x - 14, yy + 43)], fill=outline)
+            d.polygon([(x - 14, yy + 17), (x, yy + 8), (x, yy + 48), (x - 10, yy + 40)], fill=primary)
+            d.polygon([(x + 14, yy + 17), (x, yy + 8), (x, yy + 48), (x + 10, yy + 40)], fill=secondary)
+            d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
+        elif archetype == 10:  # tiny train familiar
+            d.rounded_rectangle((x - 22, yy + 28, x + 18, yy + 45), radius=3, fill=outline)
+            d.rectangle((x - 18, yy + 31, x + 13, yy + 42), fill=primary)
+            d.rectangle((x + 2, yy + 18, x + 18, yy + 32), fill=secondary)
+            for wx in (x - 12, x + 8):
+                d.ellipse((wx - 5, yy + 40, wx + 5, yy + 50), fill=accent)
+            d.line((x + 18, yy + 23, x + 25, yy + 15 - pulse), fill=glow, width=2)
+        elif archetype == 11:  # manta glider
+            d.polygon([(x - 26, yy + 28), (x - 5, yy + 14 + tilt), (x + 26, yy + 28), (x + 5, yy + 40), (x, yy + 52), (x - 5, yy + 40)], fill=outline)
+            d.polygon([(x - 18, yy + 29), (x - 3, yy + 19), (x + 18, yy + 29), (x + 3, yy + 37), (x, yy + 45), (x - 3, yy + 37)], fill=primary)
+            d.line((x - 12, yy + 31, x + 12, yy + 31), fill=glow, width=2)
+        elif archetype == 12:  # book golem
+            d.polygon([(x - 18, yy + 17), (x, yy + 22), (x, yy + 50), (x - 18, yy + 45)], fill=outline)
+            d.polygon([(x + 18, yy + 17), (x, yy + 22), (x, yy + 50), (x + 18, yy + 45)], fill=outline)
+            d.polygon([(x - 14, yy + 21), (x - 2, yy + 24), (x - 2, yy + 45), (x - 14, yy + 42)], fill=secondary)
+            d.polygon([(x + 14, yy + 21), (x + 2, yy + 24), (x + 2, yy + 45), (x + 14, yy + 42)], fill=primary)
+            d.line((x, yy + 22, x, yy + 50), fill=accent, width=2)
+        elif archetype == 13:  # asymmetric key guardian
+            d.ellipse((x - 12, yy + 14, x + 12, yy + 38), fill=outline)
+            d.ellipse((x - 8, yy + 18, x + 8, yy + 34), fill=primary)
+            d.line((x + facing * 9, yy + 27, x + facing * (28 + pulse), yy + 27 + sway), fill=accent, width=5)
+            kx0, kx1 = x + facing * 22, x + facing * 31
+            d.rectangle((min(kx0, kx1), yy + 20 + sway, max(kx0, kx1), yy + 25 + sway), fill=secondary)
+            d.line((x - facing * 9, yy + 35, x - facing * 16, yy + 50), fill=glow, width=3)
+        elif archetype == 14:  # bell jellyfish
+            d.pieslice((x - 17, yy + 10, x + 17, yy + 44), 180, 360, fill=outline)
+            d.pieslice((x - 13, yy + 14, x + 13, yy + 40), 180, 360, fill=primary)
+            for n in range(5):
+                tx = x - 12 + n * 6
+                d.line((tx, yy + 29, tx + ((n + i) % 3) - 1, yy + 51), fill=[secondary, accent, glow][n % 3], width=2)
+        else:  # scaffold rabbit
+            d.rounded_rectangle((x - 12, yy + 22, x + 12, yy + 45), radius=5, fill=outline)
+            d.rounded_rectangle((x - 9, yy + 25, x + 9, yy + 42), radius=4, fill=primary)
+            d.line((x - 6, yy + 24, x - 15, yy + 4 + sway), fill=secondary, width=5)
+            d.line((x + 6, yy + 24, x + 16, yy + 7 - sway), fill=accent, width=5)
+            d.line((x - 7, yy + 44, x - 14 - pulse, yy + 53), fill=glow, width=3)
+            d.line((x + 7, yy + 44, x + 15 + pulse, yy + 53), fill=glow, width=3)
+        # Common face and state language, drawn last so it remains readable.
+        d.rectangle((x - 6, yy + 28, x + 6, yy + 30), fill=outline)
+        d.rectangle((x - 5, yy + 28, x + 5, yy + 29), fill=glow if anim != "failed" else "#ff3344")
+        if anim == "waving":
+            d.arc((x - 27, yy + 8, x - 5, yy + 30), 190, 330, fill=glow, width=2)
+        draw_state_fx()
     else:
         # Round spirit/animal automaton silhouette for oni, tanuki, cat, monk, etc.
         x = 32
@@ -679,16 +818,20 @@ def make_gifs_and_videos(spec: PetSpec, strips_dir: Path, previews_dir: Path) ->
         gif_path = previews_dir / f"{spec.slug}-{anim}.gif"
         frames[0].save(gif_path, save_all=True, append_images=frames[1:], duration=110, loop=0, disposal=2)
 
-        # MP4 via ffmpeg from GIF, best-effort.
-        mp4_path = previews_dir / f"{spec.slug}-{anim}.mp4"
-        try:
-            subprocess.run([
-                "ffmpeg", "-y", "-v", "error", "-i", str(gif_path),
-                "-movflags", "faststart", "-pix_fmt", "yuv420p", "-vf", "scale=256:256:flags=neighbor",
-                str(mp4_path),
-            ], check=True)
-        except Exception:
-            pass
+        # MP4 via ffmpeg from GIF, best-effort. Disabled by default for large
+        # batch hatches because GIFs/showcases are the README proof media and
+        # validation does not require MP4 exports. Set RAVENBYTE_RENDER_MP4=1
+        # for release runs that need video attachments.
+        if os.environ.get("RAVENBYTE_RENDER_MP4") == "1":
+            mp4_path = previews_dir / f"{spec.slug}-{anim}.mp4"
+            try:
+                subprocess.run([
+                    "ffmpeg", "-y", "-v", "error", "-i", str(gif_path),
+                    "-movflags", "faststart", "-pix_fmt", "yuv420p", "-vf", "scale=256:256:flags=neighbor",
+                    str(mp4_path),
+                ], check=True)
+            except Exception:
+                pass
 
 
 def make_pet_readme(spec: PetSpec, pet_root: Path) -> None:

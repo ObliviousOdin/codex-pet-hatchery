@@ -1,0 +1,98 @@
+# Basilisk Harvester Lantern
+
+<p align="center">
+  <img src="previews/ravenbyte-034-basilisk-harvester-lantern-showcase.gif" width="360" alt="Basilisk Harvester Lantern stitched multi-motion showcase">
+</p>
+
+**A lantern-class Ravenbyte familiar that keeps harvester work moving during long coding runs.**
+
+Basilisk Harvester Lantern is an original Codex-compatible coding familiar by **ObliviousOdin**. It is built around floating lantern stack spirit with tiny build lights, with a readable `64×64` silhouette and no copied named character, logo, costume, or insignia.
+
+## Personality
+
+Basilisk Harvester Lantern brings a distinct motion language to Ravenbyte Familiars: distinct idle, run, wave, jump, failed, waiting, and review poses rendered from the generated sprite rows.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
+
+## Animation preview
+
+| State | Preview |
+| --- | --- |
+| Idle | ![Idle](previews/ravenbyte-034-basilisk-harvester-lantern-idle.gif) |
+| Running Right | ![Running Right](previews/ravenbyte-034-basilisk-harvester-lantern-running-right.gif) |
+| Running Left | ![Running Left](previews/ravenbyte-034-basilisk-harvester-lantern-running-left.gif) |
+| Waving | ![Waving](previews/ravenbyte-034-basilisk-harvester-lantern-waving.gif) |
+| Jumping | ![Jumping](previews/ravenbyte-034-basilisk-harvester-lantern-jumping.gif) |
+| Failed | ![Failed](previews/ravenbyte-034-basilisk-harvester-lantern-failed.gif) |
+| Waiting | ![Waiting](previews/ravenbyte-034-basilisk-harvester-lantern-waiting.gif) |
+| Running | ![Running](previews/ravenbyte-034-basilisk-harvester-lantern-running.gif) |
+| Review | ![Review](previews/ravenbyte-034-basilisk-harvester-lantern-review.gif) |
+
+Full contact sheet:
+
+![Basilisk Harvester Lantern contact sheet](previews/ravenbyte-034-basilisk-harvester-lantern-contact-sheet.png)
+
+## Install
+
+From the repository root:
+
+```bash
+python3 scripts/install_pet.py ravenbyte-034-basilisk-harvester-lantern
+```
+
+Or from anywhere with Git:
+
+```bash
+PET=ravenbyte-034-basilisk-harvester-lantern; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
+```
+
+Import this sprite in Open Design:
+
+```text
+Settings → Pets → Import Codex sprite
+```
+
+Use this spritesheet after install:
+
+```text
+${CODEX_HOME:-$HOME/.codex}/pets/ravenbyte-034-basilisk-harvester-lantern/spritesheet.webp
+```
+
+## Package contents
+
+```text
+pet.json
+spritesheet.webp
+previews/
+  ravenbyte-034-basilisk-harvester-lantern-showcase.gif
+  ravenbyte-034-basilisk-harvester-lantern-idle.gif
+  ravenbyte-034-basilisk-harvester-lantern-running-right.gif
+  ravenbyte-034-basilisk-harvester-lantern-running-left.gif
+  ravenbyte-034-basilisk-harvester-lantern-waving.gif
+  ravenbyte-034-basilisk-harvester-lantern-jumping.gif
+  ravenbyte-034-basilisk-harvester-lantern-failed.gif
+  ravenbyte-034-basilisk-harvester-lantern-waiting.gif
+  ravenbyte-034-basilisk-harvester-lantern-running.gif
+  ravenbyte-034-basilisk-harvester-lantern-review.gif
+  ravenbyte-034-basilisk-harvester-lantern-contact-sheet.png
+generated/
+  base.png
+  imagegen-prompt.json
+  strips/*.png
+```
+
+## Sprite metadata
+
+- Frame size: `64×64`
+- Frames per row: `6`
+- Rows: `9`
+- Spritesheet: `384×576`
+- Symmetric design: no
+- `running-left`: drawn as a separate row because this familiar has side-specific details
+- Author: `ObliviousOdin`
+
+## Design notes
+
+The design is intentionally original. It uses broad visual language from floating lantern stack spirit with tiny build lights, pixel companions, and coding robots, but does not copy any named character, logo, or exact costume design.
