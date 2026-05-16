@@ -91,6 +91,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/karakuri-patch-cat/README.md">README</a> · <a href="pets/karakuri-patch-cat/spritesheet.webp">spritesheet</a>
 </td>
 </tr>
+<tr>
+<td width="33%" align="center" valign="top">
+  <a href="pets/nebula-courier-mech/README.md"><img src="pets/nebula-courier-mech/previews/nebula-courier-mech-showcase.gif" width="240" alt="Nebula Courier Mech stitched multi-motion showcase"></a><br>
+  <strong>Nebula Courier Mech</strong><br>
+  <sub>A star-courier micro-mech that sprints commits through hyperspace.</sub><br>
+  <a href="pets/nebula-courier-mech/README.md">README</a> · <a href="pets/nebula-courier-mech/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
 </table>
 
 Each familiar includes the same import-critical animation states:
