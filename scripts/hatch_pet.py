@@ -598,6 +598,129 @@ def make_gifs_and_videos(spec: PetSpec, strips_dir: Path, previews_dir: Path) ->
             pass
 
 
+def make_pet_readme(spec: PetSpec, pet_root: Path) -> None:
+    motion_notes = {
+        "samurai-cache-crab": (
+            "side-stepping with cache-crystal claws, kabuto-shell armor bob, "
+            "waving pincer clicks, jump-snap arcs, failed-state spark slumps, "
+            "waiting beacon dots, and review-tablet scan posture"
+        ),
+        "ramen-debug-drone": (
+            "hovering bowl-body drift, chopstick antenna wobble, steam-pixel bursts, "
+            "hot-fix serving gestures, and review-tablet scan sweeps"
+        ),
+        "origami-test-heron": (
+            "folded-paper wing tilts, long-leg test pecks, jump glides, "
+            "flaky-test alert sparks, and precise review scans"
+        ),
+    }
+    note = motion_notes.get(
+        spec.slug,
+        "distinct idle, run, wave, jump, failed, waiting, and review poses rendered from the generated sprite rows",
+    )
+    rows = "\n".join(
+        f"| {anim.replace('-', ' ').title()} | ![{anim.replace('-', ' ').title()}](previews/{spec.slug}-{anim}.gif) |"
+        for anim in ANIMS
+    )
+    mirrored = (
+        f"- `running-left`: mirrored from `running-right` because {spec.display_name} is intentionally symmetric"
+        if spec.symmetric
+        else "- `running-left`: drawn as a separate row because this familiar has side-specific details"
+    )
+    content = f"""# {spec.display_name}
+
+<p align="center">
+  <img src="previews/{spec.slug}-showcase.gif" width="360" alt="{spec.display_name} stitched multi-motion showcase">
+</p>
+
+**{spec.tagline}**
+
+{spec.display_name} is an original Codex-compatible coding familiar by **ObliviousOdin**. It is built around {spec.theme}, with a readable `64×64` silhouette and no copied named character, logo, costume, or insignia.
+
+## Personality
+
+{spec.display_name} brings a distinct motion language to Ravenbyte Familiars: {note}.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
+
+## Animation preview
+
+| State | Preview |
+| --- | --- |
+{rows}
+
+Full contact sheet:
+
+![{spec.display_name} contact sheet](previews/{spec.slug}-contact-sheet.png)
+
+## Install
+
+From the repository root:
+
+```bash
+python3 scripts/install_pet.py {spec.slug}
+```
+
+Or from anywhere with Git:
+
+```bash
+PET={spec.slug}; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${{CODEX_HOME:-$HOME/.codex}}/pets/$PET"
+```
+
+Import this sprite in Open Design:
+
+```text
+Settings → Pets → Import Codex sprite
+```
+
+Use this spritesheet after install:
+
+```text
+${{CODEX_HOME:-$HOME/.codex}}/pets/{spec.slug}/spritesheet.webp
+```
+
+## Package contents
+
+```text
+pet.json
+spritesheet.webp
+previews/
+  {spec.slug}-showcase.gif
+  {spec.slug}-idle.gif
+  {spec.slug}-running-right.gif
+  {spec.slug}-running-left.gif
+  {spec.slug}-waving.gif
+  {spec.slug}-jumping.gif
+  {spec.slug}-failed.gif
+  {spec.slug}-waiting.gif
+  {spec.slug}-running.gif
+  {spec.slug}-review.gif
+  {spec.slug}-contact-sheet.png
+generated/
+  base.png
+  imagegen-prompt.json
+  strips/*.png
+```
+
+## Sprite metadata
+
+- Frame size: `64×64`
+- Frames per row: `6`
+- Rows: `9`
+- Spritesheet: `384×576`
+- Symmetric design: {'yes' if spec.symmetric else 'no'}
+{mirrored}
+- Author: `ObliviousOdin`
+
+## Design notes
+
+The design is intentionally original. It uses broad visual language from {spec.theme}, pixel companions, and coding robots, but does not copy any named character, logo, or exact costume design.
+"""
+    (pet_root / "README.md").write_text(content)
+
+
 def validate_package(pkg: Path) -> None:
     pet_json = pkg / "pet.json"
     sheet_path = pkg / "spritesheet.webp"
@@ -681,6 +804,7 @@ def hatch(spec: PetSpec, root: Path, codex_home: Path) -> Path:
     make_contact_sheet(spec, spritesheet, previews / f"{spec.slug}-contact-sheet.png")
     make_gifs_and_videos(spec, strips, previews)
     render_showcase(pet_root)
+    make_pet_readme(spec, pet_root)
     validate_package(pet_root)
 
     # 4. Package to Codex home.

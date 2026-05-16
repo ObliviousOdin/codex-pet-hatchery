@@ -104,6 +104,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <sub>A star-courier micro-mech that sprints commits through hyperspace.</sub><br>
   <a href="pets/nebula-courier-mech/README.md">README</a> · <a href="pets/nebula-courier-mech/spritesheet.webp">spritesheet</a>
 </td>
+<td width="33%" align="center" valign="top">
+  <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
+  <strong>Samurai Cache Crab</strong><br>
+  <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
+  <a href="pets/samurai-cache-crab/README.md">README</a> · <a href="pets/samurai-cache-crab/spritesheet.webp">spritesheet</a>
+</td>
 </tr>
 </table>
 
