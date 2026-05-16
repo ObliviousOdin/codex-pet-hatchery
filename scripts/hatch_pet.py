@@ -332,6 +332,54 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x - 9, y + 28, x - 13, y + 32), fill=outline, width=1)
             d.line((x + 18, y + 23, x + 24, y + 17), fill=accent, width=2)
         draw_state_fx()
+    elif "lotus" in slug or "monk" in slug:
+        # Lotus Firewall Monk: a calm shrine-bot with a tall incense-core body,
+        # orbiting shield petals, and a cross-legged hover base. This avoids the
+        # round biped silhouette used by oni/tanuki-style familiars.
+        x = 32
+        sway = [0, 1, 2, 1, 0, -1][i % FRAMES]
+        petal_lift = -3 if anim == "jumping" and i in (2, 3) else 0
+        if anim in {"running-right", "running-left", "running"}:
+            sway += run
+        # Wide lotus shield halo around the upper body.
+        petals = [
+            (x, y + 11 + petal_lift, 0),
+            (x - 16, y + 20 + petal_lift + (i % 2), -1),
+            (x + 16, y + 20 + petal_lift + ((i + 1) % 2), 1),
+            (x - 24, y + 32 + petal_lift, -2),
+            (x + 24, y + 32 + petal_lift, 2),
+        ]
+        for px, py, lean in petals:
+            d.polygon([(px, py - 11), (px + 7 + lean, py + 1), (px, py + 13), (px - 7 + lean, py + 1)], fill=outline)
+            d.polygon([(px, py - 8), (px + 4 + lean, py + 1), (px, py + 9), (px - 4 + lean, py + 1)], fill=accent if abs(lean) != 2 else secondary)
+            d.line((px - 1, py - 5, px + lean, py + 7), fill=hex_to_rgba(glow, 190), width=1)
+        # Thin vertical monk-core, deliberately not round.
+        d.rounded_rectangle((x - 8 + sway, y + 20, x + 8 + sway, y + 48), radius=4, fill=outline)
+        d.rounded_rectangle((x - 5 + sway, y + 23, x + 5 + sway, y + 46), radius=3, fill=primary)
+        d.rectangle((x - 4 + sway, y + 27, x + 4 + sway, y + 33), fill=secondary)
+        rect((x - 5 + sway, y + 31, x + 5 + sway, y + 33), glow if anim == "review" else accent)
+        # Floating prayer beads / firewall nodes.
+        for n, bx in enumerate((x - 14, x - 10, x + 10, x + 14)):
+            by = y + 39 + ((i + n) % 2)
+            d.ellipse((bx - 2, by - 2, bx + 2, by + 2), fill=outline)
+            d.ellipse((bx - 1, by - 1, bx + 1, by + 1), fill=glow)
+        # Lotus hover base with cross-legged shape instead of feet.
+        d.polygon([(x - 22, y + 50), (x - 5, y + 43), (x + 3, y + 50)], fill=outline)
+        d.polygon([(x + 22, y + 50), (x + 5, y + 43), (x - 3, y + 50)], fill=outline)
+        d.polygon([(x - 18, y + 49), (x - 5, y + 45), (x + 1, y + 49)], fill=secondary)
+        d.polygon([(x + 18, y + 49), (x + 5, y + 45), (x - 1, y + 49)], fill=secondary)
+        d.arc((x - 22, y + 43, x + 22, y + 57), 200, 340, fill=hex_to_rgba(glow, 170), width=2)
+        if anim == "waving":
+            d.arc((x + 9, y + 18, x + 34, y + 38), 205, 335, fill=glow, width=2)
+            d.line((x + 8, y + 31, x + 21, y + 24 - (i % 3)), fill=secondary, width=3)
+        if anim == "failed":
+            d.line((x - 4 + sway, y + 27, x, y + 31), fill=outline, width=1)
+            d.line((x, y + 27, x - 4 + sway, y + 31), fill=outline, width=1)
+            d.line((x + 1 + sway, y + 27, x + 5 + sway, y + 31), fill=outline, width=1)
+            d.line((x + 5 + sway, y + 27, x + 1 + sway, y + 31), fill=outline, width=1)
+            d.line((x - 18, y + 16, x - 26, y + 10), fill=accent, width=2)
+            d.line((x + 18, y + 16, x + 26, y + 10), fill=accent, width=2)
+        draw_state_fx()
     elif "crab" in slug:
         x = 32
         d.ellipse((x - 18, y + 24, x + 18, y + 45), fill=outline)

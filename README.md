@@ -93,6 +93,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
+  <a href="pets/lotus-firewall-monk/README.md"><img src="pets/lotus-firewall-monk/previews/lotus-firewall-monk-showcase.gif" width="240" alt="Lotus Firewall Monk stitched multi-motion showcase"></a><br>
+  <strong>Lotus Firewall Monk</strong><br>
+  <sub>A cyber-monk bot that reviews diffs behind shield-petal armor.</sub><br>
+  <a href="pets/lotus-firewall-monk/README.md">README</a> · <a href="pets/lotus-firewall-monk/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/nebula-courier-mech/README.md"><img src="pets/nebula-courier-mech/previews/nebula-courier-mech-showcase.gif" width="240" alt="Nebula Courier Mech stitched multi-motion showcase"></a><br>
   <strong>Nebula Courier Mech</strong><br>
   <sub>A star-courier micro-mech that sprints commits through hyperspace.</sub><br>
