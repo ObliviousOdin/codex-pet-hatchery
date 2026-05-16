@@ -30,6 +30,7 @@ The vibe is raven-dark, rune-lit, and wild-hearted: little build guardians, cour
 | --- | --- | --- | --- |
 | Kageframe RX-07 | chibi shadow-mecha shinobi with an energy scarf | ![Kageframe RX-07 idle animation](pets/kageframe-rx07/previews/kageframe-rx07-idle.gif) | [Familiar README](pets/kageframe-rx07/README.md) |
 | Shuriken Byte Zero | hovering ninja-star courier with debug drones | ![Shuriken Byte Zero idle animation](pets/shuriken-byte-zero/previews/shuriken-byte-zero-idle.gif) | [Familiar README](pets/shuriken-byte-zero/README.md) |
+| Ronin Build Fox | fox-masked build guardian with servo tails and CI charms | ![Ronin Build Fox idle animation](pets/ronin-build-fox/previews/ronin-build-fox-idle.gif) | [Familiar README](pets/ronin-build-fox/README.md) |
 
 Each familiar includes rows for:
 
@@ -140,7 +141,6 @@ A new familiar should not look like the previous familiar with different colors.
 
 Future hatches should rotate body plans instead of making the same mecha repeatedly:
 
-- **Ronin Build Fox** — fox-masked build guardian with servo tails and CI charms.
 - **Compiler Oni Mini** — tiny red oni robot that bonks failing tests with a foam kanabo.
 - **Moonbase Tanuki Dev** — round tanuki rover with a leaf-shaped antenna and sleepy review mode.
 - **Patchwork Karakuri Cat** — wooden clockwork cat automaton with brass whiskers.
