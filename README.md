@@ -11,6 +11,7 @@ The pets are inspired by broad mecha, ninja-robot, and anime-adventure energy, b
 | Pet | Theme | Animation | More |
 | --- | --- | --- | --- |
 | Kageframe RX-07 | chibi shadow-mecha shinobi with an energy scarf | ![Kageframe RX-07 idle animation](pets/kageframe-rx07/previews/kageframe-rx07-idle.gif) | [Pet README](pets/kageframe-rx07/README.md) |
+| Shuriken Byte Zero | black-chrome ninja robot with teal debug drones | ![Shuriken Byte Zero idle animation](pets/shuriken-byte-zero/previews/shuriken-byte-zero-idle.gif) | [Pet README](pets/shuriken-byte-zero/README.md) |
 
 Each pet includes rows for:
 
@@ -109,7 +110,6 @@ The current spritesheet layout is `384×576`: six `64×64` frames per row and ni
 
 Variety matters. Future manual hatches should rotate styles instead of making the same mecha repeatedly:
 
-- **Shuriken Byte Zero** — black-chrome ninja robot with teal debug drones.
 - **Ronin Build Fox** — fox-masked build guardian with servo tails and CI charms.
 - **Compiler Oni Mini** — tiny red oni robot that bonks failing tests with a foam kanabo.
 - **Moonbase Tanuki Dev** — round tanuki rover with a leaf-shaped antenna and sleepy review mode.
