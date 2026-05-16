@@ -1493,6 +1493,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-207-obsidian-triage-jelly/README.md"><img src="pets/ravenbyte-207-obsidian-triage-jelly/previews/ravenbyte-207-obsidian-triage-jelly-showcase.gif" width="240" alt="Obsidian Triage Jelly stitched multi-motion showcase"></a><br>
+  <strong>Obsidian Triage Jelly</strong><br>
+  <sub>A jelly-class Ravenbyte familiar that keeps triage work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-207-obsidian-triage-jelly/README.md">README</a> · <a href="pets/ravenbyte-207-obsidian-triage-jelly/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
