@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sys
+from itertools import combinations
 from pathlib import Path
 from PIL import Image
 
@@ -41,12 +42,27 @@ def validate_pet(pet_dir: Path) -> list[str]:
     return errors
 
 
+def silhouette_mask(pet_dir: Path) -> set[tuple[int, int]]:
+    """Return occupied pixels for the base pose, used to prevent clone-like pets."""
+    source = pet_dir / "generated" / "base.png"
+    if not source.exists():
+        source = pet_dir / "spritesheet.webp"
+    img = Image.open(source).convert("RGBA")
+    if img.width != 64 or img.height != 64:
+        img = img.crop((0, 0, 64, 64))
+    return {(x, y) for y in range(img.height) for x in range(img.width) if img.getpixel((x, y))[3] > 24}
+
+
+def silhouette_iou(a: set[tuple[int, int]], b: set[tuple[int, int]]) -> float:
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
+
+
 def main() -> int:
-    pets = sorted((ROOT / "pets").iterdir()) if (ROOT / "pets").exists() else []
+    pets = [p for p in sorted((ROOT / "pets").iterdir()) if p.is_dir()] if (ROOT / "pets").exists() else []
     failures = 0
     for pet in pets:
-        if not pet.is_dir():
-            continue
         errors = validate_pet(pet)
         if errors:
             failures += 1
@@ -55,6 +71,16 @@ def main() -> int:
                 print(f"  - {err}")
         else:
             print(f"OK {pet.name}")
+
+    masks = {pet.name: silhouette_mask(pet) for pet in pets}
+    for left, right in combinations(pets, 2):
+        iou = silhouette_iou(masks[left.name], masks[right.name])
+        if iou > 0.78:
+            failures += 1
+            print(f"FAIL visual-variation {left.name} vs {right.name}")
+            print(f"  - silhouette overlap {iou:.2f} is too high; pets must not be palette swaps")
+        else:
+            print(f"OK visual-variation {left.name} vs {right.name}: {iou:.2f}")
     return 1 if failures else 0
 
 

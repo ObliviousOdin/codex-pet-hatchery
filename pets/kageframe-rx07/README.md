@@ -4,7 +4,7 @@
 
 **A chibi shadow-mecha shinobi that reviews code with a plasma scarf.**
 
-Kageframe RX-07 is an original Codex-compatible coding pet by **ObliviousOdin**. It blends broad ninja-mecha inspiration with a tiny desk-companion silhouette: midnight armor, a bone-white mask plate, an amber visor, and a cyan energy scarf that trails during movement.
+Kageframe RX-07 is an original Codex-compatible coding familiar by **ObliviousOdin**. It blends broad ninja-mecha inspiration with a tiny desk-companion silhouette: midnight armor, a bone-white mask plate, an amber visor, and a cyan energy scarf that trails during movement.
 
 ## Personality
 
@@ -45,7 +45,7 @@ python3 scripts/install_pet.py kageframe-rx07
 Or from anywhere with Git:
 
 ```bash
-PET=kageframe-rx07; REPO=https://github.com/ObliviousOdin/codex-pet-hatchery.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
+PET=kageframe-rx07; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
 ```
 
 Import this sprite in Open Design:

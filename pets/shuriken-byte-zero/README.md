@@ -4,7 +4,7 @@
 
 **A stealthy robot courier with spinning debug shuriken drones.**
 
-Shuriken Byte Zero is an original Codex-compatible coding pet by **ObliviousOdin**. It blends broad ninja-robot and mecha adventure inspiration into a compact black-chrome desk companion with bright teal debug drones, orange signal accents, and a fast courier silhouette designed to stay readable at `64×64`.
+Shuriken Byte Zero is an original Codex-compatible coding familiar by **ObliviousOdin**. It blends broad ninja-robot and mecha adventure inspiration into a compact black-chrome desk companion with bright teal debug drones, orange signal accents, and a fast courier silhouette designed to stay readable at `64×64`.
 
 ## Personality
 
@@ -46,7 +46,7 @@ python3 scripts/install_pet.py shuriken-byte-zero
 Or from anywhere with Git:
 
 ```bash
-PET=shuriken-byte-zero; REPO=https://github.com/ObliviousOdin/codex-pet-hatchery.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
+PET=shuriken-byte-zero; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
 ```
 
 Import this sprite in Open Design:

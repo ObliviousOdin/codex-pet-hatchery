@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic Codex/Open Design pet hatchery.
+"""Deterministic Codex/Open Design familiar generator.
 
 Generates a complete pet package:
   - generated/base.png
@@ -58,7 +58,7 @@ PRESETS: list[PetSpec] = [
         slug="kageframe-rx07",
         display_name="Kageframe RX-07",
         tagline="A chibi shadow-mecha shinobi that reviews code with a plasma scarf.",
-        theme="original ninja-mecha coding companion; Gundam-scale courage, shinobi discipline, no copied character traits",
+        theme="original ninja-mecha coding companion; giant-mecha-scale courage, shinobi discipline, no copied character traits",
         primary="#17213d",
         secondary="#eef2ff",
         accent="#ffb347",
@@ -187,7 +187,170 @@ def pix(draw: ImageDraw.ImageDraw, xy: tuple[int, int, int, int], fill: str | tu
     draw.rectangle(xy, fill=fill)
 
 
+
+def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = False) -> Image.Image | None:
+    """Draw high-variation silhouettes for non-default familiars.
+
+    The fallback mech body is intentionally reserved for Kageframe-style humanoid
+    pets. Every other preset should get a materially different body plan so the
+    collection does not become palette swaps.
+    """
+    slug = spec.slug
+    if slug == "kageframe-rx07":
+        return None
+
+    img = Image.new("RGBA", (FRAME, FRAME), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    primary, secondary, accent, glow = spec.primary, spec.secondary, spec.accent, spec.glow
+    outline = "#070912"
+    shadow = (0, 0, 0, 55)
+    bob = int(round(math.sin(i / FRAMES * math.tau) * 2))
+    run = [0, 2, 1, 0, -1, -2][i % FRAMES]
+    jump = -8 if i in (2, 3) else (-4 if i in (1, 4) else 0)
+    y = 10 + (jump if anim == "jumping" else bob if anim in {"idle", "waiting", "review"} else 0)
+    if anim == "failed":
+        y += 3
+
+    def rect(xy, fill):
+        pix(d, xy, fill)
+
+    def eye_line(cx, cy, angry=False):
+        rect((cx - 8, cy, cx + 8, cy + 2), accent)
+        if angry or anim == "failed":
+            d.line((cx - 8, cy, cx - 3, cy + 4), fill=outline, width=1)
+            d.line((cx + 8, cy, cx + 3, cy + 4), fill=outline, width=1)
+
+    # Shared state signals.
+    def draw_state_fx():
+        if anim == "waiting":
+            for n in range(3):
+                cx = 45 + n * 5
+                cy = 14 - ((i + n) % 3)
+                d.ellipse((cx, cy, cx + 2, cy + 2), fill=glow)
+        if anim == "review":
+            d.rounded_rectangle((40, 35, 57, 47), radius=2, fill=outline)
+            d.rectangle((43, 37, 54, 44), fill="#111827")
+            d.line((44, 39, 52, 39), fill=glow)
+            d.line((44, 42, 50, 42), fill=accent)
+        if anim == "jumping":
+            d.arc((18, 49, 46, 62), 205, 335, fill=hex_to_rgba(glow, 150), width=2)
+
+    d.ellipse((15, 54, 49, 60), fill=shadow)
+
+    if slug == "shuriken-byte-zero":
+        # Hovering shuriken courier: no shared humanoid mech body, large orbiting blades.
+        x = 32 + (run if anim in {"running-right", "running-left", "running"} else 0)
+        spin = i % FRAMES
+        tilt = -3 if anim in {"running-right", "running"} else (3 if anim == "running-left" else 0)
+        if anim == "failed":
+            tilt = 8
+        # Oversized orbital shuriken blades carry the silhouette.
+        for cx, cy, phase, scale in ((13, y + 21, spin, 1), (51, y + 31, spin + 2, 1)):
+            r = 8 + (phase % 2)
+            d.polygon([(cx, cy - r), (cx + 4, cy - 2), (cx, cy + 2), (cx - 4, cy - 2)], fill=outline)
+            d.polygon([(cx + r, cy), (cx + 2, cy + 4), (cx - 2, cy), (cx + 2, cy - 4)], fill=outline)
+            d.polygon([(cx, cy - r + 2), (cx + 2, cy - 1), (cx, cy + 1), (cx - 2, cy - 1)], fill=accent if phase % 2 else secondary)
+            d.polygon([(cx + r - 2, cy), (cx + 1, cy + 2), (cx - 1, cy), (cx + 1, cy - 2)], fill=glow)
+            d.arc((cx - 11, cy - 11, cx + 11, cy + 11), phase * 25, phase * 25 + 190, fill=hex_to_rgba(glow, 130), width=1)
+        # Central folded-star body, deliberately diamond/wasp-like instead of bipedal.
+        d.polygon([(x, y + 10 + tilt), (x + 17, y + 25), (x + 8, y + 44), (x - 12, y + 43), (x - 18, y + 25)], fill=outline)
+        d.polygon([(x, y + 14 + tilt), (x + 13, y + 26), (x + 6, y + 39), (x - 9, y + 38), (x - 14, y + 26)], fill=primary)
+        d.polygon([(x - 9, y + 21), (x + 11, y + 18 + tilt), (x + 7, y + 30), (x - 8, y + 32)], fill=secondary)
+        # Mask/visor is a diagonal slash across the star body.
+        d.polygon([(x - 7, y + 24), (x + 9, y + 21), (x + 8, y + 25), (x - 8, y + 28)], fill=accent)
+        if anim == "failed":
+            d.line((x - 7, y + 23, x - 1, y + 29), fill=outline, width=1)
+            d.line((x - 1, y + 23, x - 7, y + 29), fill=outline, width=1)
+            d.line((x + 3, y + 22, x + 9, y + 27), fill=outline, width=1)
+            d.line((x + 9, y + 22, x + 3, y + 27), fill=outline, width=1)
+        # Energy wake / scarf becomes the motion system instead of legs.
+        wake = abs(run) + (3 if anim in {"running-right", "running-left", "running"} else 0)
+        d.polygon([(x - 13, y + 36), (x - 30 - wake, y + 43), (x - 13, y + 45)], fill=hex_to_rgba(glow, 185))
+        d.polygon([(x + 7, y + 40), (x + 16, y + 55 + (spin % 2)), (x - 1, y + 43)], fill=hex_to_rgba(accent, 150))
+        if anim == "waving":
+            d.arc((x + 14, y + 4, x + 34, y + 24), 210, 330, fill=glow, width=2)
+        draw_state_fx()
+    elif "fox" in slug:
+        x = 31
+        # Masked fox familiar with three servo tails.
+        for t, off in enumerate((-12, 0, 12)):
+            d.polygon([(x - 5, y + 36), (x + off, y + 19 + (i + t) % 3), (x + off + 5, y + 35)], fill=outline)
+            d.polygon([(x - 3, y + 36), (x + off, y + 23 + (i + t) % 3), (x + off + 3, y + 35)], fill=accent if t == 1 else primary)
+        d.ellipse((x - 15, y + 25, x + 15, y + 45), fill=outline)
+        d.ellipse((x - 12, y + 27, x + 12, y + 43), fill=primary)
+        d.polygon([(x - 13, y + 12), (x - 20, y + 3), (x - 7, y + 8)], fill=outline)
+        d.polygon([(x + 13, y + 12), (x + 20, y + 3), (x + 7, y + 8)], fill=outline)
+        d.rounded_rectangle((x - 14, y + 9, x + 14, y + 27), radius=6, fill=secondary)
+        eye_line(x, y + 17)
+        for lx in (x - 9 - run, x + 7 + run):
+            rect((lx, y + 43, lx + 5, y + 52), primary)
+        draw_state_fx()
+    elif "crab" in slug:
+        x = 32
+        d.ellipse((x - 18, y + 24, x + 18, y + 45), fill=outline)
+        d.ellipse((x - 15, y + 26, x + 15, y + 43), fill=primary)
+        d.rectangle((x - 9, y + 27, x + 9, y + 35), fill=secondary)
+        eye_line(x, y + 30)
+        for side in (-1, 1):
+            d.arc((x + side * 17 - 12, y + 16, x + side * 17 + 12, y + 40), 210 if side < 0 else -30, 80 if side < 0 else 150, fill=outline, width=4)
+            d.pieslice((x + side * 28 - 7, y + 17, x + side * 28 + 7, y + 31), 25, 325, fill=accent)
+            for n in range(3):
+                lx = x + side * (6 + n * 6)
+                d.line((lx, y + 42, lx + side * (4 + run), y + 52), fill=secondary, width=3)
+        draw_state_fx()
+    elif "drone" in slug or "courier" in slug or "nebula" in slug:
+        x = 32
+        d.ellipse((x - 19, y + 24, x + 19, y + 43), fill=outline)
+        d.ellipse((x - 15, y + 26, x + 15, y + 41), fill=primary)
+        d.rectangle((x - 9, y + 30, x + 9, y + 34), fill=secondary)
+        eye_line(x, y + 31)
+        for px in (x - 25, x + 25):
+            d.ellipse((px - 7, y + 25, px + 7, y + 39), outline)
+            d.arc((px - 10, y + 21, px + 10, y + 43), i * 35, i * 35 + 220, fill=glow, width=2)
+        d.polygon([(x - 7, y + 42), (x, y + 54 + abs(run)), (x + 7, y + 42)], fill=hex_to_rgba(accent, 210))
+        draw_state_fx()
+    elif "heron" in slug:
+        x = 32
+        d.polygon([(x - 12, y + 20), (x + 8, y + 14), (x + 15, y + 32), (x - 7, y + 43)], fill=outline)
+        d.polygon([(x - 9, y + 22), (x + 7, y + 17), (x + 12, y + 31), (x - 5, y + 40)], fill=secondary)
+        d.polygon([(x + 5, y + 15), (x + 24, y + 18), (x + 7, y + 22)], fill=accent)
+        d.line((x - 4, y + 41, x - 9 - run, y + 53), fill=primary, width=3)
+        d.line((x + 5, y + 39, x + 11 + run, y + 53), fill=primary, width=3)
+        rect((x + 4, y + 21, x + 7, y + 23), glow)
+        if anim == "waving":
+            d.polygon([(x - 8, y + 27), (x - 24, y + 16 + i % 3), (x - 12, y + 35)], fill=hex_to_rgba(glow, 170))
+        draw_state_fx()
+    else:
+        # Round spirit/animal automaton silhouette for oni, tanuki, cat, monk, etc.
+        x = 32
+        d.ellipse((x - 17, y + 21, x + 17, y + 47), fill=outline)
+        d.ellipse((x - 14, y + 24, x + 14, y + 45), fill=primary)
+        if "oni" in slug:
+            d.polygon([(x - 10, y + 18), (x - 15, y + 4), (x - 4, y + 16)], fill=accent)
+            d.polygon([(x + 10, y + 18), (x + 15, y + 4), (x + 4, y + 16)], fill=accent)
+        elif "cat" in slug:
+            d.polygon([(x - 12, y + 22), (x - 18, y + 10), (x - 6, y + 17)], fill=secondary)
+            d.polygon([(x + 12, y + 22), (x + 18, y + 10), (x + 6, y + 17)], fill=secondary)
+            d.arc((x + 10, y + 34, x + 31, y + 55), 190, 330, fill=accent, width=3)
+        elif "tanuki" in slug:
+            d.ellipse((x - 22, y + 24, x - 13, y + 40), fill=accent)
+            d.ellipse((x + 13, y + 24, x + 22, y + 40), fill=accent)
+            d.polygon([(x, y + 11), (x + 5, y + 2), (x + 2, y + 13)], fill="#7cb518")
+        d.rounded_rectangle((x - 10, y + 28, x + 10, y + 36), radius=3, fill=secondary)
+        eye_line(x, y + 31)
+        for lx in (x - 10 - run, x + 6 + run):
+            rect((lx, y + 45, lx + 6, y + 53), secondary)
+        draw_state_fx()
+
+    if mirrored:
+        img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+    return img
+
 def draw_pet_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = False) -> Image.Image:
+    specialized = draw_specialized_frame(spec, anim, i, mirrored=mirrored)
+    if specialized is not None:
+        return specialized
+
     img = Image.new("RGBA", (FRAME, FRAME), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
 
