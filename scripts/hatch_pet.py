@@ -392,7 +392,7 @@ def hatch(spec: PetSpec, root: Path, codex_home: Path) -> Path:
         "name": spec.slug,
         "displayName": spec.display_name,
         "description": spec.tagline,
-        "author": "Hermes Hatchery for Channa",
+        "author": "ObliviousOdin",
         "frameWidth": FRAME,
         "frameHeight": FRAME,
         "framesPerRow": FRAMES,

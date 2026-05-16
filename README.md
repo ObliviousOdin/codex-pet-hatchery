@@ -8,9 +8,9 @@ The pets are inspired by broad mecha, ninja-robot, and anime-adventure energy, b
 
 ## What ships today
 
-| Pet | Theme | Preview | Install path |
+| Pet | Theme | Animation | More |
 | --- | --- | --- | --- |
-| Kageframe RX-07 | chibi shadow-mecha shinobi with an energy scarf | ![Kageframe RX-07 contact sheet](pets/kageframe-rx07/previews/kageframe-rx07-contact-sheet.png) | `pets/kageframe-rx07` |
+| Kageframe RX-07 | chibi shadow-mecha shinobi with an energy scarf | ![Kageframe RX-07 idle animation](pets/kageframe-rx07/previews/kageframe-rx07-idle.gif) | [Pet README](pets/kageframe-rx07/README.md) |
 
 Each pet includes rows for:
 
@@ -52,7 +52,7 @@ The metadata file is next to it:
 ${CODEX_HOME:-$HOME/.codex}/pets/kageframe-rx07/pet.json
 ```
 
-## Hatch a pet locally
+## Hatch a pet manually
 
 ```bash
 python3 -m venv .venv
@@ -81,6 +81,7 @@ Each pet directory is self-contained:
 
 ```text
 pets/<pet-name>/
+  README.md
   pet.json
   spritesheet.webp
   previews/
@@ -106,7 +107,7 @@ The current spritesheet layout is `384×576`: six `64×64` frames per row and ni
 
 ## Pet ideas queued
 
-Variety matters. Future hatches should rotate styles instead of making the same mecha repeatedly:
+Variety matters. Future manual hatches should rotate styles instead of making the same mecha repeatedly:
 
 - **Shuriken Byte Zero** — black-chrome ninja robot with teal debug drones.
 - **Ronin Build Fox** — fox-masked build guardian with servo tails and CI charms.
@@ -128,11 +129,11 @@ Before publishing a new pet, check:
 
 - `pet.json` exists and points to `spritesheet.webp`.
 - All required animation rows exist.
-- Contact sheet is updated in the README table.
+- The root README links to the pet README and shows an animation.
 - GIF/MP4 previews are generated.
 - The pet installs into `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/`.
 - No generated art claims to be a copyrighted character.
 
 ## Project status
 
-Early hatchery. The first pet is usable now; the hourly autonomous job adds more original pet packages and keeps this README current.
+Early hatchery. The first pet is usable now. New pets are added intentionally through manual hatches and reviewable commits.
