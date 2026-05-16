@@ -1,6 +1,8 @@
 # Moonbase Tanuki Dev
 
-![Moonbase Tanuki Dev idle animation](previews/moonbase-tanuki-dev-idle.gif)
+<p align="center">
+  <img src="previews/moonbase-tanuki-dev-showcase.gif" width="360" alt="Moonbase Tanuki Dev stitched multi-motion showcase">
+</p>
 
 **A sleepy rover-tanuki with a leaf antenna and lunar debug pouches.**
 
@@ -17,6 +19,10 @@ Moonbase Tanuki Dev is the drowsy lunar field engineer who keeps watch over long
 - slumping into static and sparks when checks fail,
 - blinking through patient wait cycles with small signal beats,
 - reviewing code like a rover scanning core samples under pale telemetry light.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -68,6 +74,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/moonbase-tanuki-dev/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  moonbase-tanuki-dev-showcase.gif
   moonbase-tanuki-dev-idle.gif
   moonbase-tanuki-dev-running-right.gif
   moonbase-tanuki-dev-running-left.gif

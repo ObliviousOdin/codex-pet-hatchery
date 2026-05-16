@@ -1,6 +1,8 @@
 # Ronin Build Fox
 
-![Ronin Build Fox idle animation](previews/ronin-build-fox-idle.gif)
+<p align="center">
+  <img src="previews/ronin-build-fox-showcase.gif" width="360" alt="Ronin Build Fox stitched multi-motion showcase">
+</p>
 
 **A fox-masked build guardian with tiny servo tails and CI charms.**
 
@@ -16,6 +18,10 @@ Ronin Build Fox is the watchful build-guardian at the edge of your terminal:
 - visibly rattled when checks fail,
 - patient during waits with charm-like status beats,
 - focused during review mode with a tiny scan panel.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -67,6 +73,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/ronin-build-fox/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  ronin-build-fox-showcase.gif
   ronin-build-fox-idle.gif
   ronin-build-fox-running-right.gif
   ronin-build-fox-running-left.gif

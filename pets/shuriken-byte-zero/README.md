@@ -1,6 +1,8 @@
 # Shuriken Byte Zero
 
-![Shuriken Byte Zero idle animation](previews/shuriken-byte-zero-idle.gif)
+<p align="center">
+  <img src="previews/shuriken-byte-zero-showcase.gif" width="360" alt="Shuriken Byte Zero stitched multi-motion showcase">
+</p>
 
 **A stealthy robot courier with spinning debug shuriken drones.**
 
@@ -16,6 +18,10 @@ Shuriken Byte Zero is the quiet delivery specialist for your coding session:
 - expressive when a command fails,
 - patient during waits,
 - focused during review mode with a tiny scanning panel.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -67,6 +73,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/shuriken-byte-zero/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  shuriken-byte-zero-showcase.gif
   shuriken-byte-zero-idle.gif
   shuriken-byte-zero-running-right.gif
   shuriken-byte-zero-running-left.gif

@@ -1,6 +1,8 @@
 # Karakuri Patch Cat
 
-![Karakuri Patch Cat idle animation](previews/karakuri-patch-cat-idle.gif)
+<p align="center">
+  <img src="previews/karakuri-patch-cat-showcase.gif" width="360" alt="Karakuri Patch Cat stitched multi-motion showcase">
+</p>
 
 **A wooden clockwork cat automaton that bats TODOs into shape.**
 
@@ -17,6 +19,10 @@ Karakuri Patch Cat is the workshop mouser for stubborn TODOs and loose regressio
 - drooping into loose screws and sparks when checks fail,
 - waiting with patient gear-click blinks and small signal beats,
 - reviewing code like a tiny bench artisan inspecting a polished mechanism.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -68,6 +74,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/karakuri-patch-cat/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  karakuri-patch-cat-showcase.gif
   karakuri-patch-cat-idle.gif
   karakuri-patch-cat-running-right.gif
   karakuri-patch-cat-running-left.gif

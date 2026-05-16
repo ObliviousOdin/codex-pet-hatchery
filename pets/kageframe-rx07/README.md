@@ -1,6 +1,8 @@
 # Kageframe RX-07
 
-![Kageframe RX-07 idle animation](previews/kageframe-rx07-idle.gif)
+<p align="center">
+  <img src="previews/kageframe-rx07-showcase.gif" width="360" alt="Kageframe RX-07 stitched multi-motion showcase">
+</p>
 
 **A chibi shadow-mecha shinobi that reviews code with a plasma scarf.**
 
@@ -15,6 +17,10 @@ Kageframe is the quiet reviewer in the corner of the terminal:
 - dramatic but cute when a command fails,
 - tablet-in-hand during review mode,
 - heroic without being noisy.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -66,6 +72,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/kageframe-rx07/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  kageframe-rx07-showcase.gif
   kageframe-rx07-idle.gif
   kageframe-rx07-running-right.gif
   kageframe-rx07-running-left.gif

@@ -24,6 +24,7 @@ from pathlib import Path
 from typing import Iterable
 
 from PIL import Image, ImageDraw
+from render_showcase_gifs import render_showcase
 
 FRAME = 64
 FRAMES = 6
@@ -631,6 +632,7 @@ def hatch(spec: PetSpec, root: Path, codex_home: Path) -> Path:
 
     make_contact_sheet(spec, spritesheet, previews / f"{spec.slug}-contact-sheet.png")
     make_gifs_and_videos(spec, strips, previews)
+    render_showcase(pet_root)
     validate_package(pet_root)
 
     # 4. Package to Codex home.

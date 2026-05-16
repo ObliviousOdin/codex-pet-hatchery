@@ -1,6 +1,8 @@
 # Compiler Oni Mini
 
-![Compiler Oni Mini idle animation](previews/compiler-oni-mini-idle.gif)
+<p align="center">
+  <img src="previews/compiler-oni-mini-showcase.gif" width="360" alt="Compiler Oni Mini stitched multi-motion showcase">
+</p>
 
 **A tiny red oni bot that bonks failing tests with a foam kanabo.**
 
@@ -16,6 +18,10 @@ Compiler Oni Mini is the cheerful test-suite bruiser under your desk lamp:
 - dramatically frazzled when checks fail,
 - patient during waits with little spark beats,
 - stern during review mode with a tiny diagnostic panel.
+
+## Showcase
+
+The top card stitches several real animation rows together — idle, run, jump, review, failed, and wave — so the familiar is not represented by a single idle loop.
 
 ## Animation preview
 
@@ -67,6 +73,7 @@ ${CODEX_HOME:-$HOME/.codex}/pets/compiler-oni-mini/spritesheet.webp
 pet.json
 spritesheet.webp
 previews/
+  compiler-oni-mini-showcase.gif
   compiler-oni-mini-idle.gif
   compiler-oni-mini-running-right.gif
   compiler-oni-mini-running-left.gif

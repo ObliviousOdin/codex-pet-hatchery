@@ -6,7 +6,7 @@ import json
 import sys
 from itertools import combinations
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageSequence
 
 ROOT = Path(__file__).resolve().parents[1]
 ANIMS = ["idle", "running-right", "running-left", "waving", "jumping", "failed", "waiting", "running", "review"]
@@ -39,6 +39,20 @@ def validate_pet(pet_dir: Path) -> list[str]:
     names = [a.get("name") for a in data.get("animations", [])]
     if names != ANIMS:
         errors.append(f"animation rows {names} != {ANIMS}")
+
+    showcase = pet_dir / "previews" / f"{pet_dir.name}-showcase.gif"
+    if not showcase.exists():
+        errors.append("missing stitched showcase GIF")
+    else:
+        try:
+            gif = Image.open(showcase)
+            frame_count = sum(1 for _ in ImageSequence.Iterator(gif))
+            if gif.size[0] < 300 or gif.size[1] < 360:
+                errors.append(f"showcase GIF too small: {gif.size}")
+            if frame_count < 30:
+                errors.append(f"showcase GIF has too few frames: {frame_count}")
+        except Exception as exc:
+            errors.append(f"bad showcase GIF: {exc}")
     return errors
 
 

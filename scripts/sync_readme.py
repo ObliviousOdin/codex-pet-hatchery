@@ -1,4 +1,56 @@
-<p align="center">
+#!/usr/bin/env python3
+"""Synchronize README.md from the current familiar packages.
+
+Keeps the public homepage honest as the recurring hatch job adds pets. The card
+grid intentionally uses stitched showcase GIFs rather than single idle loops.
+"""
+
+from __future__ import annotations
+
+import html
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+LAUNCH_ORDER = [
+    "kageframe-rx07",
+    "shuriken-byte-zero",
+    "ronin-build-fox",
+    "compiler-oni-mini",
+    "moonbase-tanuki-dev",
+    "karakuri-patch-cat",
+]
+
+
+def pet_rows() -> list[tuple[str, str, str]]:
+    pets = []
+    for d in sorted((ROOT / "pets").iterdir()):
+        if not d.is_dir() or not (d / "pet.json").exists():
+            continue
+        data = json.loads((d / "pet.json").read_text())
+        pets.append((d.name, data.get("displayName", d.name), data.get("description", "")))
+    rank = {slug: i for i, slug in enumerate(LAUNCH_ORDER)}
+    return sorted(pets, key=lambda item: rank.get(item[0], 999))
+
+
+def pet_card(slug: str, display: str, desc: str) -> str:
+    return f'''<td width="33%" align="center" valign="top">
+  <a href="pets/{slug}/README.md"><img src="pets/{slug}/previews/{slug}-showcase.gif" width="240" alt="{html.escape(display)} stitched multi-motion showcase"></a><br>
+  <strong>{html.escape(display)}</strong><br>
+  <sub>{html.escape(desc)}</sub><br>
+  <a href="pets/{slug}/README.md">README</a> · <a href="pets/{slug}/spritesheet.webp">spritesheet</a>
+</td>'''
+
+
+def pet_grid(pets: list[tuple[str, str, str]]) -> str:
+    rows = []
+    for i in range(0, len(pets), 3):
+        rows.append("<tr>\n" + "\n".join(pet_card(*p) for p in pets[i : i + 3]) + "\n</tr>")
+    return "<table>\n" + "\n".join(rows) + "\n</table>"
+
+
+def render() -> str:
+    return f'''<p align="center">
   <img src="assets/hero/ravenbyte-familiars-hero.gif" width="100%" alt="Ravenbyte Familiars hero animation: tiny robot companions working, reviewing, and rejoicing around a minimalist industrial console">
 </p>
 
@@ -50,48 +102,7 @@ The header animation is the visual north star: calm industrial product disciplin
 
 Each card below is a **stitched multi-motion showcase**, not a single idle loop. It cycles through several real rows from the import spritesheet so the README better reflects how each familiar behaves in Open Design.
 
-<table>
-<tr>
-<td width="33%" align="center" valign="top">
-  <a href="pets/kageframe-rx07/README.md"><img src="pets/kageframe-rx07/previews/kageframe-rx07-showcase.gif" width="240" alt="Kageframe RX-07 stitched multi-motion showcase"></a><br>
-  <strong>Kageframe RX-07</strong><br>
-  <sub>A chibi shadow-mecha shinobi that reviews code with a plasma scarf.</sub><br>
-  <a href="pets/kageframe-rx07/README.md">README</a> · <a href="pets/kageframe-rx07/spritesheet.webp">spritesheet</a>
-</td>
-<td width="33%" align="center" valign="top">
-  <a href="pets/shuriken-byte-zero/README.md"><img src="pets/shuriken-byte-zero/previews/shuriken-byte-zero-showcase.gif" width="240" alt="Shuriken Byte Zero stitched multi-motion showcase"></a><br>
-  <strong>Shuriken Byte Zero</strong><br>
-  <sub>A stealthy robot courier with spinning debug shuriken drones.</sub><br>
-  <a href="pets/shuriken-byte-zero/README.md">README</a> · <a href="pets/shuriken-byte-zero/spritesheet.webp">spritesheet</a>
-</td>
-<td width="33%" align="center" valign="top">
-  <a href="pets/ronin-build-fox/README.md"><img src="pets/ronin-build-fox/previews/ronin-build-fox-showcase.gif" width="240" alt="Ronin Build Fox stitched multi-motion showcase"></a><br>
-  <strong>Ronin Build Fox</strong><br>
-  <sub>A fox-masked build guardian with tiny servo tails and CI charms.</sub><br>
-  <a href="pets/ronin-build-fox/README.md">README</a> · <a href="pets/ronin-build-fox/spritesheet.webp">spritesheet</a>
-</td>
-</tr>
-<tr>
-<td width="33%" align="center" valign="top">
-  <a href="pets/compiler-oni-mini/README.md"><img src="pets/compiler-oni-mini/previews/compiler-oni-mini-showcase.gif" width="240" alt="Compiler Oni Mini stitched multi-motion showcase"></a><br>
-  <strong>Compiler Oni Mini</strong><br>
-  <sub>A tiny red oni bot that bonks failing tests with a foam kanabo.</sub><br>
-  <a href="pets/compiler-oni-mini/README.md">README</a> · <a href="pets/compiler-oni-mini/spritesheet.webp">spritesheet</a>
-</td>
-<td width="33%" align="center" valign="top">
-  <a href="pets/moonbase-tanuki-dev/README.md"><img src="pets/moonbase-tanuki-dev/previews/moonbase-tanuki-dev-showcase.gif" width="240" alt="Moonbase Tanuki Dev stitched multi-motion showcase"></a><br>
-  <strong>Moonbase Tanuki Dev</strong><br>
-  <sub>A sleepy rover-tanuki with a leaf antenna and lunar debug pouches.</sub><br>
-  <a href="pets/moonbase-tanuki-dev/README.md">README</a> · <a href="pets/moonbase-tanuki-dev/spritesheet.webp">spritesheet</a>
-</td>
-<td width="33%" align="center" valign="top">
-  <a href="pets/karakuri-patch-cat/README.md"><img src="pets/karakuri-patch-cat/previews/karakuri-patch-cat-showcase.gif" width="240" alt="Karakuri Patch Cat stitched multi-motion showcase"></a><br>
-  <strong>Karakuri Patch Cat</strong><br>
-  <sub>A wooden clockwork cat automaton that bats TODOs into shape.</sub><br>
-  <a href="pets/karakuri-patch-cat/README.md">README</a> · <a href="pets/karakuri-patch-cat/spritesheet.webp">spritesheet</a>
-</td>
-</tr>
-</table>
+{pet_grid(pet_rows())}
 
 Each familiar includes the same import-critical animation states:
 
@@ -110,7 +121,7 @@ Each familiar includes the same import-critical animation states:
 From any machine with Python 3 and Git:
 
 ```bash
-PET=kageframe-rx07; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${CODEX_HOME:-$HOME/.codex}/pets/$PET"
+PET=kageframe-rx07; REPO=https://github.com/ObliviousOdin/ravenbyte-familiars.git; TMP=$(mktemp -d); git clone --depth 1 "$REPO" "$TMP" && python3 "$TMP/scripts/install_pet.py" "$PET" && echo "Installed to ${{CODEX_HOME:-$HOME/.codex}}/pets/$PET"
 ```
 
 Then import the generated sprite package in Open Design:
@@ -122,13 +133,13 @@ Settings → Pets → Import Codex sprite
 Choose:
 
 ```text
-${CODEX_HOME:-$HOME/.codex}/pets/kageframe-rx07/spritesheet.webp
+${{CODEX_HOME:-$HOME/.codex}}/pets/kageframe-rx07/spritesheet.webp
 ```
 
 The metadata file is next to it:
 
 ```text
-${CODEX_HOME:-$HOME/.codex}/pets/kageframe-rx07/pet.json
+${{CODEX_HOME:-$HOME/.codex}}/pets/kageframe-rx07/pet.json
 ```
 
 ## Hatch a familiar manually
@@ -152,7 +163,7 @@ The hatch script performs the deterministic pipeline:
 6. validates dimensions and animation rows,
 7. exports contact sheets plus per-state GIF/MP4 previews,
 8. renders a stitched multi-motion `previews/<pet>-showcase.gif`,
-9. packages the familiar into `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/`.
+9. packages the familiar into `${{CODEX_HOME:-$HOME/.codex}}/pets/<pet-name>/`.
 
 To regenerate README media after adding familiars:
 
@@ -233,9 +244,19 @@ Before publishing a new familiar, check:
 - All required animation rows exist.
 - The root README links to the familiar README and shows aligned stitched showcase GIFs.
 - GIF/MP4 previews are generated.
-- The familiar installs into `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/`.
+- The familiar installs into `${{CODEX_HOME:-$HOME/.codex}}/pets/<pet-name>/`.
 - The new familiar is structurally distinct from earlier familiars.
 
 ## Project status
 
 Early collection. The current familiars are usable now. New familiars are added as reviewable commits with validated packages.
+'''
+
+
+def main() -> None:
+    (ROOT / "README.md").write_text(render())
+    print("README.md")
+
+
+if __name__ == "__main__":
+    main()
