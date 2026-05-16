@@ -636,9 +636,17 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x + 11, yy + 45, x + 24 + pulse, yy + 52), fill=primary, width=3)
             d.line((x + facing * (capw - 5), cap_y + 8, x + facing * (capw + 8), cap_y + 1 + sway), fill=glow, width=2)
         elif archetype == 9:  # split mask imp
-            d.polygon([(x - 18, yy + 15), (x, yy + 4), (x + 18, yy + 15), (x + 14, yy + 43), (x, yy + 52), (x - 14, yy + 43)], fill=outline)
-            d.polygon([(x - 14, yy + 17), (x, yy + 8), (x, yy + 48), (x - 10, yy + 40)], fill=primary)
-            d.polygon([(x + 14, yy + 17), (x, yy + 8), (x, yy + 48), (x + 10, yy + 40)], fill=secondary)
+            # Wide cheek fins and dangling tassels keep mask familiars from
+            # collapsing into wheel/lantern-like ovals in silhouette checks.
+            d.polygon([(x - 16, yy + 15), (x, yy + 3), (x + 17, yy + 16), (x + 12, yy + 40), (x, yy + 50), (x - 13, yy + 41)], fill=outline)
+            d.polygon([(x - 12, yy + 17), (x, yy + 8), (x, yy + 45), (x - 8, yy + 38)], fill=primary)
+            d.polygon([(x + 13, yy + 18), (x, yy + 8), (x, yy + 45), (x + 8, yy + 38)], fill=secondary)
+            d.polygon([(x - 16, yy + 23), (x - 33 - pulse, yy + 16 + sway), (x - 27, yy + 31)], fill=outline)
+            d.polygon([(x + 17, yy + 23), (x + 31 + pulse, yy + 35 - sway), (x + 25, yy + 18)], fill=outline)
+            d.polygon([(x - 19, yy + 24), (x - 29 - pulse, yy + 19 + sway), (x - 25, yy + 28)], fill=accent)
+            d.polygon([(x + 19, yy + 24), (x + 28 + pulse, yy + 32 - sway), (x + 24, yy + 21)], fill=glow)
+            d.line((x - 7, yy + 45, x - 19, yy + 58), fill=accent, width=3)
+            d.line((x + 7, yy + 45, x + 19, yy + 57), fill=glow, width=3)
             d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
         elif archetype == 10:  # tiny train familiar
             d.rounded_rectangle((x - 22, yy + 28, x + 18, yy + 45), radius=3, fill=outline)
