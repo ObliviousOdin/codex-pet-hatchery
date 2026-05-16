@@ -105,6 +105,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/nebula-courier-mech/README.md">README</a> · <a href="pets/nebula-courier-mech/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ramen-debug-drone/README.md"><img src="pets/ramen-debug-drone/previews/ramen-debug-drone-showcase.gif" width="240" alt="Ramen Debug Drone stitched multi-motion showcase"></a><br>
+  <strong>Ramen Debug Drone</strong><br>
+  <sub>A noodle-shop hover drone that serves hot fixes in a tiny bowl.</sub><br>
+  <a href="pets/ramen-debug-drone/README.md">README</a> · <a href="pets/ramen-debug-drone/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>

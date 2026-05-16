@@ -393,6 +393,59 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 lx = x + side * (6 + n * 6)
                 d.line((lx, y + 42, lx + side * (4 + run), y + 52), fill=secondary, width=3)
         draw_state_fx()
+    elif slug == "ramen-debug-drone":
+        # Ramen Debug Drone: an asymmetric noodle-bowl hover familiar, not the
+        # oval courier body. The bowl, steam curls, chopstick antenna, and ladle
+        # arm create a distinct silhouette and motion language.
+        x = 32
+        bowl_y = y + 30
+        steam_phase = (i % FRAMES) - 2
+        tilt = 2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0)
+        if anim == "failed":
+            tilt = 5
+        # Wide ramen bowl hull with heavy rim.
+        d.pieslice((x - 24, bowl_y - 7 + tilt, x + 24, bowl_y + 31 + tilt), 0, 180, fill=outline)
+        d.rectangle((x - 23, bowl_y + 9 + tilt, x + 23, bowl_y + 18 + tilt), fill=outline)
+        d.pieslice((x - 20, bowl_y - 4 + tilt, x + 20, bowl_y + 27 + tilt), 0, 180, fill=secondary)
+        d.rectangle((x - 19, bowl_y + 9 + tilt, x + 19, bowl_y + 16 + tilt), fill=primary)
+        d.rectangle((x - 13, bowl_y + 4 + tilt, x + 13, bowl_y + 8 + tilt), fill=accent)
+        # Noodles across the rim; failed frames spill one strand lower.
+        for nx in range(-14, 15, 7):
+            drop = 7 if anim == "failed" and nx > 3 else 2 + ((i + nx) % 3)
+            d.line((x + nx, bowl_y + 5 + tilt, x + nx + 3, bowl_y + 5 + drop + tilt), fill="#fff3b0", width=2)
+        # Tiny face panel embedded in bowl.
+        if anim == "failed":
+            d.line((x - 8, bowl_y + 12 + tilt, x - 3, bowl_y + 16 + tilt), fill=glow, width=2)
+            d.line((x - 3, bowl_y + 12 + tilt, x - 8, bowl_y + 16 + tilt), fill=glow, width=2)
+            d.line((x + 3, bowl_y + 12 + tilt, x + 8, bowl_y + 16 + tilt), fill=glow, width=2)
+            d.line((x + 8, bowl_y + 12 + tilt, x + 3, bowl_y + 16 + tilt), fill=glow, width=2)
+        else:
+            eye_line(x, bowl_y + 12 + tilt)
+        # Uneven hover pods below the bowl.
+        left_pod_y = bowl_y + 20 + (run if anim in {"running-right", "running-left", "running"} else 0)
+        right_pod_y = bowl_y + 18 - (run if anim in {"running-right", "running-left", "running"} else 0)
+        d.ellipse((x - 24, left_pod_y, x - 11, left_pod_y + 8), fill=outline)
+        d.ellipse((x + 12, right_pod_y, x + 25, right_pod_y + 8), fill=outline)
+        d.arc((x - 26, left_pod_y - 3, x - 9, left_pod_y + 11), i * 45, i * 45 + 220, fill=glow, width=2)
+        d.arc((x + 10, right_pod_y - 3, x + 27, right_pod_y + 11), 180 + i * 45, 400 + i * 45, fill=glow, width=2)
+        # Asymmetric chopstick antenna and serving ladle arm.
+        d.line((x + 10, bowl_y - 6 + tilt, x + 22, bowl_y - 25 + steam_phase), fill=outline, width=4)
+        d.line((x + 12, bowl_y - 6 + tilt, x + 24, bowl_y - 24 + steam_phase), fill=accent, width=2)
+        ladle_lift = -9 if anim == "waving" and i in (1, 2, 3) else 0
+        d.line((x - 18, bowl_y + 2 + tilt, x - 33, bowl_y - 9 + ladle_lift), fill=outline, width=4)
+        d.ellipse((x - 39, bowl_y - 14 + ladle_lift, x - 30, bowl_y - 5 + ladle_lift), fill=accent)
+        # Steam curls are the signature waiting/review/readability cue.
+        for sx, phase in ((x - 10, 0), (x, 2), (x + 8, 4)):
+            top = bowl_y - 19 - ((i + phase) % 4)
+            d.arc((sx - 5, top, sx + 5, top + 14), 90, 265, fill=hex_to_rgba(glow, 170), width=2)
+        if anim == "review":
+            d.rounded_rectangle((42, 20, 59, 32), radius=2, fill=outline)
+            d.rectangle((45, 22, 56, 29), fill="#1b263b")
+            d.line((46, 24, 54, 24), fill=glow)
+            d.line((46, 27, 52, 27), fill=accent)
+        if anim == "jumping":
+            d.arc((18, 51, 47, 63), 205, 335, fill=hex_to_rgba(glow, 150), width=2)
+        draw_state_fx()
     elif "drone" in slug or "courier" in slug or "nebula" in slug:
         x = 32
         d.ellipse((x - 19, y + 24, x + 19, y + 43), fill=outline)
