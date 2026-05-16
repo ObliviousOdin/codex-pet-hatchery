@@ -1,19 +1,42 @@
 # Ravenbyte Familiars
 
-**Tiny mythic coding companions for Codex-compatible and Open Design pet import workflows.**
+<p align="center">
+  <img src="assets/hero/ravenbyte-familiars-hero.gif" width="100%" alt="Ravenbyte Familiars hero animation: tiny robot companions working, reviewing, and rejoicing around a minimalist industrial console">
+</p>
 
-Ravenbyte Familiars is an **ObliviousOdin** sprite collection: original animated familiars packaged with `pet.json` and `spritesheet.webp` so they can be imported into Open Design via **Settings → Pets → Import Codex sprite**.
+<p align="center">
+  <strong>Tiny mythic coding companions for Codex-compatible and Open Design pet import workflows.</strong><br>
+  Original animated familiars packaged with <code>pet.json</code> and <code>spritesheet.webp</code>.
+</p>
 
-The vibe is raven-dark, rune-lit, and wild-hearted: little build guardians, courier spirits, mecha shinobi, fox masks, oni bots, rover tanuki, and other desk-sized familiars for long coding nights. The adventure energy is intentional; the designs, names, palettes, silhouettes, and lore stay original.
+<p align="center">
+  <a href="#familiars">Familiars</a> ·
+  <a href="#one-command-install">Install</a> ·
+  <a href="#package-format">Package format</a> ·
+  <a href="#variation-standard">Variation standard</a> ·
+  <a href="#development-and-verification">Development</a>
+</p>
 
-## Brand tone
+---
 
-- **Voice:** artifact-like, playful, sharp, never corporate.
-- **Mood:** dark workshop, tiny familiars, bright debug magic.
-- **Promise:** small companions with distinct silhouettes and useful import packages.
-- **Rule:** no palette-swap familiars. Each new pet needs a materially different body plan, motion language, or signature prop.
+## What this is
 
-## Palette
+**Ravenbyte Familiars** is an **ObliviousOdin** sprite collection for long coding nights: raven-dark, rune-lit, wild-hearted little machines and spirits that can be imported through **Settings → Pets → Import Codex sprite**.
+
+The repo is intentionally practical: each familiar ships as a complete import package, with animation previews, a per-familiar README, deterministic generation artifacts, and validation scripts.
+
+## Design direction
+
+The header animation is the visual north star: calm industrial product discipline, precise panels, useful machines, and tiny companions that make the workbench feel alive. The collection should feel premium and restrained, not childish or corporate.
+
+| Principle | Meaning here |
+| --- | --- |
+| Useful first | Every familiar has a real importable package, not just preview art. |
+| Less, but better | Strong silhouettes, few accents, readable motion at `64×64`. |
+| Original mythology | Broad mecha/spirit/adventure energy, no copied characters or logos. |
+| Built to verify | `pet.json`, spritesheet dimensions, previews, and visual variation are checked before publishing. |
+
+## Brand palette
 
 | Token | Hex | Use |
 | --- | --- | --- |
@@ -26,26 +49,58 @@ The vibe is raven-dark, rune-lit, and wild-hearted: little build guardians, cour
 
 ## Familiars
 
-| Familiar | Theme | Animation | More |
-| --- | --- | --- | --- |
-| Kageframe RX-07 | chibi shadow-mecha shinobi with an energy scarf | ![Kageframe RX-07 idle animation](pets/kageframe-rx07/previews/kageframe-rx07-idle.gif) | [Familiar README](pets/kageframe-rx07/README.md) |
-| Shuriken Byte Zero | hovering ninja-star courier with debug drones | ![Shuriken Byte Zero idle animation](pets/shuriken-byte-zero/previews/shuriken-byte-zero-idle.gif) | [Familiar README](pets/shuriken-byte-zero/README.md) |
-| Ronin Build Fox | fox-masked build guardian with servo tails and CI charms | ![Ronin Build Fox idle animation](pets/ronin-build-fox/previews/ronin-build-fox-idle.gif) | [Familiar README](pets/ronin-build-fox/README.md) |
-| Compiler Oni Mini | tiny red oni bot with a foam kanabo and lint sparks | ![Compiler Oni Mini idle animation](pets/compiler-oni-mini/previews/compiler-oni-mini-idle.gif) | [Familiar README](pets/compiler-oni-mini/README.md) |
-| Moonbase Tanuki Dev | sleepy lunar rover-tanuki with a leaf antenna and debug pouches | ![Moonbase Tanuki Dev idle animation](pets/moonbase-tanuki-dev/previews/moonbase-tanuki-dev-idle.gif) | [Familiar README](pets/moonbase-tanuki-dev/README.md) |
-| Karakuri Patch Cat | wooden clockwork cat automaton with brass whiskers and patchwork panels | ![Karakuri Patch Cat idle animation](pets/karakuri-patch-cat/previews/karakuri-patch-cat-idle.gif) | [Familiar README](pets/karakuri-patch-cat/README.md) |
+<table>
+<tr>
+<td width="33%" align="center" valign="top">
+  <a href="pets/kageframe-rx07/README.md"><img src="pets/kageframe-rx07/previews/kageframe-rx07-idle.gif" width="128" alt="Kageframe RX-07 idle animation"></a><br>
+  <strong>Kageframe RX-07</strong><br>
+  <sub>A chibi shadow-mecha shinobi that reviews code with a plasma scarf.</sub><br>
+  <a href="pets/kageframe-rx07/README.md">README</a> · <a href="pets/kageframe-rx07/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
+  <a href="pets/shuriken-byte-zero/README.md"><img src="pets/shuriken-byte-zero/previews/shuriken-byte-zero-idle.gif" width="128" alt="Shuriken Byte Zero idle animation"></a><br>
+  <strong>Shuriken Byte Zero</strong><br>
+  <sub>A stealthy robot courier with spinning debug shuriken drones.</sub><br>
+  <a href="pets/shuriken-byte-zero/README.md">README</a> · <a href="pets/shuriken-byte-zero/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
+  <a href="pets/ronin-build-fox/README.md"><img src="pets/ronin-build-fox/previews/ronin-build-fox-idle.gif" width="128" alt="Ronin Build Fox idle animation"></a><br>
+  <strong>Ronin Build Fox</strong><br>
+  <sub>A fox-masked build guardian with tiny servo tails and CI charms.</sub><br>
+  <a href="pets/ronin-build-fox/README.md">README</a> · <a href="pets/ronin-build-fox/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
+  <a href="pets/compiler-oni-mini/README.md"><img src="pets/compiler-oni-mini/previews/compiler-oni-mini-idle.gif" width="128" alt="Compiler Oni Mini idle animation"></a><br>
+  <strong>Compiler Oni Mini</strong><br>
+  <sub>A tiny red oni bot that bonks failing tests with a foam kanabo.</sub><br>
+  <a href="pets/compiler-oni-mini/README.md">README</a> · <a href="pets/compiler-oni-mini/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
+  <a href="pets/moonbase-tanuki-dev/README.md"><img src="pets/moonbase-tanuki-dev/previews/moonbase-tanuki-dev-idle.gif" width="128" alt="Moonbase Tanuki Dev idle animation"></a><br>
+  <strong>Moonbase Tanuki Dev</strong><br>
+  <sub>A sleepy rover-tanuki with a leaf antenna and lunar debug pouches.</sub><br>
+  <a href="pets/moonbase-tanuki-dev/README.md">README</a> · <a href="pets/moonbase-tanuki-dev/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
+  <a href="pets/karakuri-patch-cat/README.md"><img src="pets/karakuri-patch-cat/previews/karakuri-patch-cat-idle.gif" width="128" alt="Karakuri Patch Cat idle animation"></a><br>
+  <strong>Karakuri Patch Cat</strong><br>
+  <sub>A wooden clockwork cat automaton that bats TODOs into shape.</sub><br>
+  <a href="pets/karakuri-patch-cat/README.md">README</a> · <a href="pets/karakuri-patch-cat/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+</table>
 
-Each familiar includes rows for:
+Each familiar includes the same import-critical animation states:
 
-- `idle`
-- `running-right`
-- `running-left`
-- `waving`
-- `jumping`
-- `failed`
-- `waiting`
-- `running`
-- `review`
+<table>
+<tr>
+<td><code>idle</code></td><td><code>running-right</code></td><td><code>running-left</code></td>
+<td><code>waving</code></td><td><code>jumping</code></td><td><code>failed</code></td>
+<td><code>waiting</code></td><td><code>running</code></td><td><code>review</code></td>
+</tr>
+</table>
 
 `running-left` is mirrored from `running-right` only for genuinely symmetric familiars.
 
@@ -88,14 +143,20 @@ git diff --check
 
 The hatch script performs the deterministic pipeline:
 
-1. stores the intended `$imagegen` prompt in `generated/imagegen-prompt.json`,
-2. creates/extracts a base look into `generated/base.png`,
+1. stores the intended image-generation prompt in `generated/imagegen-prompt.json`,
+2. creates or extracts a base look into `generated/base.png`,
 3. composes row strips under `generated/strips/`,
 4. builds `spritesheet.webp`,
 5. writes `pet.json`,
 6. validates dimensions and animation rows,
 7. exports contact sheets plus GIF/MP4 previews,
 8. packages the familiar into `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/`.
+
+To regenerate the README hero after adding familiars:
+
+```bash
+python scripts/render_readme_hero.py
+```
 
 ## Package format
 
@@ -153,8 +214,8 @@ Future hatches should rotate body plans instead of making the same mecha repeate
 ## Development and verification
 
 ```bash
-python scripts/hatch_pet.py --pet kageframe-rx07 --root .
 python scripts/validate_all.py
+python scripts/render_readme_hero.py
 git diff --check
 ```
 
@@ -162,11 +223,11 @@ Before publishing a new familiar, check:
 
 - `pet.json` exists and points to `spritesheet.webp`.
 - All required animation rows exist.
-- The root README links to the familiar README and shows an animation.
+- The root README links to the familiar README and shows aligned animations.
 - GIF/MP4 previews are generated.
 - The familiar installs into `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/`.
 - The new familiar is structurally distinct from earlier familiars.
 
 ## Project status
 
-Early collection. The first familiars are usable now. New familiars are added as reviewable commits with validated packages.
+Early collection. The current familiars are usable now. New familiars are added as reviewable commits with validated packages.
