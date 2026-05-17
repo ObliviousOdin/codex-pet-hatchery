@@ -670,13 +670,58 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             for lx in (-10, 0, 10):
                 d.line((x + lx, yy + 42, x + lx + sway, yy + 55), fill=accent, width=3)
         elif archetype == 7:  # wheel drone
-            r = 15 + (seed % 5)
-            d.ellipse((x - r, yy + 20 - r, x + r, yy + 20 + r), fill=outline)
-            d.ellipse((x - r + 4, yy + 24 - r, x + r - 4, yy + 16 + r), fill=primary)
-            for a in range(0, 360, 60):
-                ang = math.radians(a + i * 18)
-                d.line((x, yy + 20, x + int(math.cos(ang) * r), yy + 20 + int(math.sin(ang) * r)), fill=glow, width=2)
-            d.line((x + facing * r, yy + 20, x + facing * (r + 12), yy + 12 + sway), fill=accent, width=3)
+            if slug == "ravenbyte-264-harbor-audit-wheel":
+                # Harbor Audit Wheel: make this wheel-class familiar read as a
+                # dockside winch buoy, not another crystal/tripod silhouette.
+                # The low offset tire, high crane mast, dangling audit hook, and
+                # side fenders materially reduce overlap with prior crystal pets.
+                roll = [0, 2, 5, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
+                hub_x = max(20, min(44, x - 8 + facing * (roll // 2)))
+                hub_y = yy + 39 + (2 if anim == "failed" else 0)
+                r = 13
+                mast_x = hub_x + facing * (15 + pulse)
+                mast_top = yy + 5 + (sway if anim in {"waiting", "review"} else 0)
+                # Pier skid / shadow.
+                d.rounded_rectangle((hub_x - 27, yy + 54, hub_x + 29, yy + 59), radius=2, fill=outline)
+                d.rectangle((hub_x - 22, yy + 55, hub_x + 24, yy + 57), fill=accent)
+                # Offset tire body.
+                d.ellipse((hub_x - r - 2, hub_y - r - 2, hub_x + r + 2, hub_y + r + 2), fill=outline)
+                d.ellipse((hub_x - r + 2, hub_y - r + 2, hub_x + r - 2, hub_y + r - 2), fill=primary)
+                d.ellipse((hub_x - 5, hub_y - 5, hub_x + 5, hub_y + 5), fill=secondary)
+                for a in range(0, 360, 90):
+                    ang = math.radians(a + i * 28 + (0 if facing == 1 else 12))
+                    d.line((hub_x, hub_y, hub_x + int(math.cos(ang) * (r - 2)), hub_y + int(math.sin(ang) * (r - 2))), fill=glow, width=2)
+                # Tall asymmetric harbor crane mast and audit hook.
+                d.line((hub_x + facing * 8, hub_y - 7, mast_x, mast_top), fill=outline, width=5)
+                d.line((hub_x + facing * 8, hub_y - 7, mast_x, mast_top), fill=secondary, width=3)
+                boom_end = mast_x - facing * (22 + pulse)
+                boom_y = mast_top + 5 + (sway // 2)
+                d.line((mast_x, mast_top, boom_end, boom_y), fill=outline, width=4)
+                d.line((mast_x, mast_top, boom_end, boom_y), fill=glow, width=2)
+                hook_y = yy + 24 + (i % 3 if anim in {"waiting", "review"} else 0)
+                d.line((boom_end, boom_y, boom_end, hook_y), fill=outline, width=2)
+                d.arc((boom_end - 6, hook_y - 1, boom_end + 6, hook_y + 11), 20, 300, fill=accent, width=3)
+                # Harbor fenders / audit pennants create a broad, non-crystal read.
+                for n in range(3):
+                    fx = hub_x - 25 + n * 12 + (roll if n == 2 and anim in {"running-right", "running-left", "running"} else 0)
+                    fy = yy + 43 + ((i + n) % 2)
+                    d.rounded_rectangle((fx - 4, fy - 7, fx + 4, fy + 7), radius=3, fill=outline)
+                    d.rectangle((fx - 2, fy - 5, fx + 2, fy + 5), fill=glow if n % 2 else accent)
+                if anim == "waving":
+                    d.line((mast_x, yy + 18, mast_x + facing * (13 + pulse), yy + 10 + sway), fill=accent, width=3)
+                    d.polygon([(mast_x + facing * 13, yy + 9 + sway), (mast_x + facing * 24, yy + 14 + sway), (mast_x + facing * 13, yy + 19 + sway)], fill=glow)
+                if anim == "review":
+                    d.rectangle((boom_end - 5, hook_y + 12, boom_end + 13, hook_y + 20), fill=outline)
+                    d.rectangle((boom_end - 3, hook_y + 14, boom_end + 11, hook_y + 18), fill=primary)
+                    d.line((boom_end + 12, hook_y + 14, boom_end + 24, hook_y + 8 + sway), fill=glow, width=2)
+            else:
+                r = 15 + (seed % 5)
+                d.ellipse((x - r, yy + 20 - r, x + r, yy + 20 + r), fill=outline)
+                d.ellipse((x - r + 4, yy + 24 - r, x + r - 4, yy + 16 + r), fill=primary)
+                for a in range(0, 360, 60):
+                    ang = math.radians(a + i * 18)
+                    d.line((x, yy + 20, x + int(math.cos(ang) * r), yy + 20 + int(math.sin(ang) * r)), fill=glow, width=2)
+                d.line((x + facing * r, yy + 20, x + facing * (r + 12), yy + 12 + sway), fill=accent, width=3)
         elif archetype == 8:  # mushroom relay
             # Broad cap + offset sprout dish keeps mushroom familiars visually
             # distinct from crystal/totem silhouettes in large generated sets.
