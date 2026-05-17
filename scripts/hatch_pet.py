@@ -825,12 +825,46 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 if anim in {"running-right", "running-left", "running"}:
                     d.line((x - facing * 23, tail_y + 1, x - facing * 31, tail_y + 6 + sway), fill=glow, width=2)
         elif archetype == 13:  # asymmetric key guardian
-            d.ellipse((x - 12, yy + 14, x + 12, yy + 38), fill=outline)
-            d.ellipse((x - 8, yy + 18, x + 8, yy + 34), fill=primary)
-            d.line((x + facing * 9, yy + 27, x + facing * (28 + pulse), yy + 27 + sway), fill=accent, width=5)
-            kx0, kx1 = x + facing * 22, x + facing * 31
-            d.rectangle((min(kx0, kx1), yy + 20 + sway, max(kx0, kx1), yy + 25 + sway), fill=secondary)
-            d.line((x - facing * 9, yy + 35, x - facing * 16, yy + 50), fill=glow, width=3)
+            # Key-class familiars need to read as more than a static lollipop.
+            # Give the bow, shaft, teeth, tether, and beacon halo independent
+            # state motion so showcases prove multiple authored motions.
+            step = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+            spin = [0, 2, 4, 1, -2, -3][i % FRAMES]
+            wave = [0, -3, -6, -3, 1, 3][i % FRAMES] if anim == "waving" else 0
+            if anim in {"running-right", "running-left", "running"}:
+                x += facing * step
+                yy += [0, -1, -2, -1, 1, 2][i % FRAMES]
+            if anim == "failed":
+                yy += 3
+                spin = 6
+            if anim == "jumping":
+                spin -= 3
+            bow_cy = yy + 25 + spin // 3
+            d.ellipse((x - 15, bow_cy - 14, x + 15, bow_cy + 14), fill=outline)
+            d.ellipse((x - 10, bow_cy - 9, x + 10, bow_cy + 9), fill=primary)
+            d.ellipse((x - 4, bow_cy - 4, x + 4, bow_cy + 4), fill=outline)
+            # Directional shaft and teeth; left/right rows are intentionally not mirrored copies.
+            shaft_y = yy + 28 + sway + wave // 3
+            d.line((x + facing * 10, shaft_y, x + facing * (31 + pulse), shaft_y + spin // 2), fill=outline, width=7)
+            d.line((x + facing * 10, shaft_y, x + facing * (31 + pulse), shaft_y + spin // 2), fill=accent, width=4)
+            tooth_x = x + facing * (25 + pulse)
+            d.rectangle((min(tooth_x, tooth_x + facing * 11), shaft_y - 8, max(tooth_x, tooth_x + facing * 11), shaft_y - 3), fill=secondary)
+            d.rectangle((min(tooth_x + facing * 5, tooth_x + facing * 15), shaft_y + 4, max(tooth_x + facing * 5, tooth_x + facing * 15), shaft_y + 9), fill=glow)
+            # Tether and beacon tag sell motion in waving/review states.
+            tail_x = x - facing * 11
+            d.line((tail_x, yy + 35, tail_x - facing * (11 + pulse), yy + 51 - spin), fill=outline, width=5)
+            d.line((tail_x, yy + 35, tail_x - facing * (11 + pulse), yy + 51 - spin), fill=glow, width=3)
+            tag_x = tail_x - facing * (13 + pulse)
+            d.polygon([(tag_x, yy + 49 - spin), (tag_x - facing * 6, yy + 54 - spin + wave // 2), (tag_x, yy + 58 - spin)], fill=accent)
+            if anim == "waving":
+                d.arc((x - 27, yy + 5 + wave, x + 27, yy + 35), 205, 335, fill=glow, width=3)
+                d.line((x - facing * 3, yy + 15, x - facing * 20, yy + 7 + wave), fill=secondary, width=2)
+            if anim == "review":
+                d.arc((x - 24, yy + 5, x + 24, yy + 47), 210, 330, fill=accent, width=2)
+                d.line((x + facing * 18, yy + 18, x + facing * 34, yy + 8 + spin), fill=glow, width=2)
+            if anim == "failed":
+                d.line((x - 8, bow_cy - 8, x + 8, bow_cy + 8), fill="#ff3344", width=2)
+                d.line((x + 8, bow_cy - 8, x - 8, bow_cy + 8), fill="#ff3344", width=2)
         elif archetype == 14:  # bell jellyfish
             # Bell jelly familiars are asymmetric: a side scanner fin and
             # direction-leaning tendrils make running-left genuinely distinct
