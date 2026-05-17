@@ -1719,6 +1719,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-240-prairie-xray-rabbit/README.md">README</a> · <a href="pets/ravenbyte-240-prairie-xray-rabbit/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-241-quartz-bundle-beetle/README.md"><img src="pets/ravenbyte-241-quartz-bundle-beetle/previews/ravenbyte-241-quartz-bundle-beetle-showcase.gif" width="240" alt="Quartz Bundle Beetle stitched multi-motion showcase"></a><br>
+  <strong>Quartz Bundle Beetle</strong><br>
+  <sub>A beetle-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-241-quartz-bundle-beetle/README.md">README</a> · <a href="pets/ravenbyte-241-quartz-bundle-beetle/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
