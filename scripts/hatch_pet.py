@@ -780,6 +780,25 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 sy = yy + 14 - n * 3 - (pulse if anim != "failed" else -1)
                 rr = 2 + n
                 d.ellipse((sx - rr, sy - rr, sx + rr, sy + rr), fill=glow if n % 2 else secondary)
+            if anim == "waving":
+                # A semaphore flag makes the train's wave read clearly even
+                # though it has no arms.
+                mast_x = x + 19
+                mast_top = yy + 9 + [0, -2, -4, -2, 1, 2][i % FRAMES]
+                d.line((mast_x, yy + 24, mast_x, mast_top), fill=outline, width=2)
+                flag_tip = mast_x + facing * (9 + pulse)
+                d.polygon([(mast_x, mast_top), (flag_tip, mast_top + 3 + sway), (mast_x, mast_top + 8)], fill=accent)
+                d.line((mast_x + facing, mast_top + 2, flag_tip - facing, mast_top + 4 + sway), fill=glow, width=1)
+            elif anim == "failed":
+                # Drooping hazard sign and jittering sparks keep failure from
+                # looking like a barely-shifted idle frame.
+                sign_x = x - 24 + [0, 1, -1, 0, 1, -1][i % FRAMES]
+                d.line((sign_x, yy + 28, sign_x - 5, yy + 42), fill=outline, width=2)
+                d.polygon([(sign_x - 7, yy + 25), (sign_x + 2, yy + 27), (sign_x - 4, yy + 35)], fill=accent)
+                for n in range(4):
+                    sx = x + 24 + n * 3
+                    sy = yy + 18 + ((i + n) % 4)
+                    d.line((sx, sy, sx + 2, sy - 3), fill=glow if n % 2 else accent, width=1)
         elif archetype == 11:  # manta glider
             # Wide glider body with animated wingbeats.  Manta familiars should
             # read as soaring/swimming companions, not static diamond sprites.
