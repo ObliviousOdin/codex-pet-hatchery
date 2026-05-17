@@ -938,6 +938,26 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.arc((x - 30, tail_y - 7, x + 30, tail_y + 7), 190, 350, fill=accent, width=2)
                 if anim in {"running-right", "running-left", "running"}:
                     d.line((x - facing * 23, tail_y + 1, x - facing * 31, tail_y + 6 + sway), fill=glow, width=2)
+            if slug == "ravenbyte-269-morrow-patch-book":
+                # Patch Book almost overlapped an older lantern stack in the
+                # alpha-mask check. Add a low repair-bench silhouette, separated
+                # patch tabs, and a side needle mast so it reads as a mending
+                # codex rather than a vertical hanging lantern.
+                bench_y = yy + 53 + bob
+                d.rounded_rectangle((x - 30, bench_y - 3, x + 28, bench_y + 3), radius=2, fill=outline)
+                d.rectangle((x - 25, bench_y - 1, x + 23, bench_y + 1), fill=accent)
+                for n, tab_x in enumerate((x - 24, x - 14, x + 17, x + 27)):
+                    lift = ((i + n) % 2) if anim in {"running-right", "running-left", "running", "waiting"} else 0
+                    d.rectangle((tab_x - 3, yy + 39 - lift, tab_x + 3, yy + 48 - lift), fill=outline)
+                    d.rectangle((tab_x - 2, yy + 41 - lift, tab_x + 2, yy + 46 - lift), fill=glow if n % 2 else accent)
+                mast_x = x - facing * (22 + pulse)
+                d.line((x - facing * 14, yy + 25, mast_x, yy + 6 + sway), fill=outline, width=4)
+                d.line((x - facing * 14, yy + 25, mast_x, yy + 6 + sway), fill=secondary, width=2)
+                d.ellipse((mast_x - 4, yy + 3 + sway, mast_x + 4, yy + 11 + sway), fill=glow)
+                if anim == "failed":
+                    d.line((x - 25, bench_y - 7, x + 25, bench_y + 5), fill="#ff3344", width=2)
+                elif anim == "review":
+                    d.line((mast_x, yy + 7 + sway, mast_x - facing * 12, yy + 1), fill=accent, width=2)
         elif archetype == 13:  # asymmetric key guardian
             # Key-class familiars need to read as more than a static lollipop.
             # Give the bow, shaft, teeth, tether, and beacon halo independent
