@@ -1645,6 +1645,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-229-ember-widget-totem/README.md">README</a> · <a href="pets/ravenbyte-229-ember-widget-totem/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-230-frost-zenith-serpent/README.md"><img src="pets/ravenbyte-230-frost-zenith-serpent/previews/ravenbyte-230-frost-zenith-serpent-showcase.gif" width="240" alt="Frost Zenith Serpent stitched multi-motion showcase"></a><br>
+  <strong>Frost Zenith Serpent</strong><br>
+  <sub>A serpent-class Ravenbyte familiar that keeps zenith work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-230-frost-zenith-serpent/README.md">README</a> · <a href="pets/ravenbyte-230-frost-zenith-serpent/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
