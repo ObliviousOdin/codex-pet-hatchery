@@ -557,14 +557,25 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             tilt = 6
         # Hash-specific satellite glyphs occupy different coordinates, lowering
         # silhouette overlap while giving every familiar a signature read.
-        for n in range(3 + (seed % 3)):
-            ox = 6 + ((seed >> (n * 5 + 3)) % 52)
-            oy = 8 + ((seed >> (n * 5 + 11)) % 42)
-            r = 2 + ((seed >> (n * 3 + 19)) % 4)
-            if anim in {"waiting", "review"}:
-                oy -= (i + n) % 3
-            d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
-            d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
+        if archetype == 2:
+            # Crawler-class familiars get a low, bridge-like trail instead of
+            # generic orbiting glyphs. This keeps their base silhouette from
+            # overlapping tall mask/imp familiars while preserving a signature
+            # dependency-path read.
+            for n in range(5):
+                ox = x - 25 + n * 12 + ((seed >> (n + 7)) % 3)
+                oy = yy + 54 + ((i + n) % 2)
+                d.rounded_rectangle((ox - 4, oy - 2, ox + 4, oy + 2), radius=2, fill=outline)
+                d.rectangle((ox - 2, oy - 1, ox + 2, oy + 1), fill=glow if n % 2 else accent)
+        else:
+            for n in range(3 + (seed % 3)):
+                ox = 6 + ((seed >> (n * 5 + 3)) % 52)
+                oy = 8 + ((seed >> (n * 5 + 11)) % 42)
+                r = 2 + ((seed >> (n * 3 + 19)) % 4)
+                if anim in {"waiting", "review"}:
+                    oy -= (i + n) % 3
+                d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
+                d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
         if archetype == 0:  # antenna beetle slab
             w, h = 13 + (seed % 8), 18 + ((seed >> 5) % 8)
             d.rounded_rectangle((x - w, yy + 20, x + w, yy + 20 + h), radius=4, fill=outline)
@@ -581,11 +592,26 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.polygon([(x, yy2 - 3), (x + 8 + k, yy2 + 1), (x + 5, yy2 + 6), (x - 5, yy2 + 6), (x - 8 - k, yy2 + 1)], fill=[primary, secondary, accent][k % 3])
             d.line((x, yy + 5, x + facing * (17 + pulse), yy + 2 + sway), fill=glow, width=2)
         elif archetype == 2:  # crawler bridge
-            d.polygon([(x - 18, yy + 29), (x - 5, yy + 16 + tilt), (x + 16, yy + 23), (x + 21, yy + 39), (x - 15, yy + 43)], fill=outline)
-            d.polygon([(x - 13, yy + 30), (x - 3, yy + 21), (x + 12, yy + 26), (x + 15, yy + 37), (x - 11, yy + 39)], fill=primary)
-            for n in range(4):
-                lx = x - 14 + n * 9
-                d.line((lx, yy + 40, lx - 6 + ((i + n) % 3), yy + 51), fill=secondary, width=3)
+            # Long, low dependency bridge with separated legs and antenna masts.
+            # The flattened footprint deliberately differs from the tall split
+            # masks in the generated queue while still animating like a crawler.
+            stride = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
+            deck_y = yy + 36 + (1 if anim == "failed" else 0)
+            nose = x + facing * (28 + pulse)
+            tail = x - facing * 27
+            d.rounded_rectangle((x - 28, deck_y - 5, x + 25, deck_y + 8), radius=5, fill=outline)
+            d.rounded_rectangle((x - 24, deck_y - 2, x + 20, deck_y + 5), radius=3, fill=primary)
+            d.polygon([(nose, deck_y - 3), (nose + facing * 8, deck_y + 3), (nose, deck_y + 9)], fill=outline)
+            d.polygon([(tail, deck_y - 1), (tail - facing * 9, deck_y + 5), (tail, deck_y + 10)], fill=accent)
+            for n in range(6):
+                lx = x - 23 + n * 9
+                foot = lx + (-3 if n % 2 else 4) + stride
+                d.line((lx, deck_y + 7, foot, yy + 54 - (n % 2)), fill=secondary, width=3)
+                d.rectangle((foot - 3, yy + 53 - (n % 2), foot + 4, yy + 56 - (n % 2)), fill=outline)
+            for n in range(3):
+                mx = x - 16 + n * 15
+                d.line((mx, deck_y - 4, mx + facing * (3 + n), deck_y - 16 - pulse + n), fill=glow, width=2)
+                d.ellipse((mx + facing * (2 + n) - 2, deck_y - 18 - pulse + n, mx + facing * (2 + n) + 2, deck_y - 14 - pulse + n), fill=accent if n == 1 else glow)
         elif archetype == 3:  # crescent kite
             # Slender asymmetric glider: use separated wing/tail points instead
             # of a filled oval so kite familiars do not collapse into mask-like
