@@ -1573,6 +1573,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-219-brass-xray-train/README.md"><img src="pets/ravenbyte-219-brass-xray-train/previews/ravenbyte-219-brass-xray-train-showcase.gif" width="240" alt="Brass Xray Train stitched multi-motion showcase"></a><br>
+  <strong>Brass Xray Train</strong><br>
+  <sub>A train-class Ravenbyte familiar that keeps xray work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-219-brass-xray-train/README.md">README</a> · <a href="pets/ravenbyte-219-brass-xray-train/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/ravenbyte-220-cobalt-bundle-manta/README.md"><img src="pets/ravenbyte-220-cobalt-bundle-manta/previews/ravenbyte-220-cobalt-bundle-manta-showcase.gif" width="240" alt="Cobalt Bundle Manta stitched multi-motion showcase"></a><br>
   <strong>Cobalt Bundle Manta</strong><br>
   <sub>A manta-class Ravenbyte familiar that keeps bundle work moving during long coding runs.</sub><br>
