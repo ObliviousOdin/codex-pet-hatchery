@@ -587,9 +587,32 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 lx = x - 14 + n * 9
                 d.line((lx, yy + 40, lx - 6 + ((i + n) % 3), yy + 51), fill=secondary, width=3)
         elif archetype == 3:  # crescent kite
-            d.pieslice((x - 21, yy + 10, x + 21, yy + 52), 40 + tilt, 320 + tilt, fill=outline)
-            d.pieslice((x - 16, yy + 15, x + 16, yy + 47), 45 + tilt, 315 + tilt, fill=primary)
-            d.polygon([(x, yy + 16), (x + facing * (22 + pulse), yy + 30), (x, yy + 44), (x - facing * 7, yy + 30)], fill=secondary)
+            # Slender asymmetric glider: use separated wing/tail points instead
+            # of a filled oval so kite familiars do not collapse into mask-like
+            # silhouettes in large collection validation.
+            wing = 24 + (seed % 5)
+            nose = yy + 13 + tilt
+            mid = yy + 30 + sway // 2
+            tail = yy + 50 - sway
+            outer = [
+                (x - facing * 8, mid - 2),
+                (x + facing * wing, nose),
+                (x + facing * (wing - 5), mid + 8),
+                (x + facing * 7, tail),
+                (x - facing * 13, mid + 6),
+            ]
+            inner = [
+                (x - facing * 3, mid),
+                (x + facing * (wing - 8), nose + 5),
+                (x + facing * (wing - 10), mid + 6),
+                (x + facing * 5, tail - 6),
+                (x - facing * 8, mid + 5),
+            ]
+            d.polygon(outer, fill=outline)
+            d.polygon(inner, fill=primary)
+            d.line((x - facing * 14, mid + 8, x - facing * (25 + pulse), yy + 56 - sway), fill=accent, width=3)
+            d.line((x + facing * 3, mid + 2, x + facing * (wing + 8), mid - 5 - pulse), fill=glow, width=2)
+            d.polygon([(x + facing * 3, mid - 6), (x + facing * (18 + pulse), mid), (x + facing * 2, mid + 9)], fill=secondary)
         elif archetype == 4:  # tall shrine totem
             w = 8 + (seed % 6)
             d.rounded_rectangle((x - w, yy + 6, x + w, yy + 49), radius=3, fill=outline)
