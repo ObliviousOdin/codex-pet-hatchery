@@ -1839,6 +1839,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-258-basilisk-oracle-lantern/README.md">README</a> · <a href="pets/ravenbyte-258-basilisk-oracle-lantern/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-259-cipher-relay-crawler/README.md"><img src="pets/ravenbyte-259-cipher-relay-crawler/previews/ravenbyte-259-cipher-relay-crawler-showcase.gif" width="240" alt="Cipher Relay Crawler stitched multi-motion showcase"></a><br>
+  <strong>Cipher Relay Crawler</strong><br>
+  <sub>A crawler-class Ravenbyte familiar that keeps relay work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-259-cipher-relay-crawler/README.md">README</a> · <a href="pets/ravenbyte-259-cipher-relay-crawler/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
