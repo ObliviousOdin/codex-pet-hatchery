@@ -772,11 +772,31 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.rectangle((min(kx0, kx1), yy + 20 + sway, max(kx0, kx1), yy + 25 + sway), fill=secondary)
             d.line((x - facing * 9, yy + 35, x - facing * 16, yy + 50), fill=glow, width=3)
         elif archetype == 14:  # bell jellyfish
-            d.pieslice((x - 17, yy + 10, x + 17, yy + 44), 180, 360, fill=outline)
+            # Bell jelly familiars are asymmetric: a side scanner fin and
+            # direction-leaning tendrils make running-left genuinely distinct
+            # from running-right instead of a duplicated row.
+            swim = [0, 2, 4, 2, 0, -2][i % FRAMES]
+            if anim in {"running-right", "running-left", "running"}:
+                x += facing * swim
+                yy += [0, -1, -2, -1, 1, 2][i % FRAMES]
+            bell_w = 17 + (pulse % 2)
+            d.pieslice((x - bell_w, yy + 10, x + bell_w, yy + 44), 180, 360, fill=outline)
             d.pieslice((x - 13, yy + 14, x + 13, yy + 40), 180, 360, fill=primary)
+            # Directional scanner fin / delta rudder.
+            d.polygon(
+                [(x + facing * 11, yy + 24), (x + facing * (26 + pulse), yy + 18 + sway), (x + facing * 18, yy + 35)],
+                fill=secondary,
+            )
+            d.line((x + facing * 9, yy + 28, x + facing * (24 + pulse), yy + 25 + sway), fill=glow, width=2)
             for n in range(5):
                 tx = x - 12 + n * 6
-                d.line((tx, yy + 29, tx + ((n + i) % 3) - 1, yy + 51), fill=[secondary, accent, glow][n % 3], width=2)
+                lean = facing * (2 + ((n + i) % 3)) if anim in {"running-right", "running-left", "running"} else ((n + i) % 3) - 1
+                d.line((tx, yy + 29, tx + lean, yy + 51), fill=[secondary, accent, glow][n % 3], width=2)
+            if anim == "review":
+                ax0, ax1 = x - facing * 28, x - facing * 6
+                d.arc((min(ax0, ax1), yy + 10, max(ax0, ax1), yy + 34), 200, 330, fill=accent, width=2)
+            if anim == "failed":
+                d.line((x - 11, yy + 22, x + 10, yy + 37), fill="#ff3344", width=2)
         else:  # scaffold rabbit
             d.rounded_rectangle((x - 12, yy + 22, x + 12, yy + 45), radius=5, fill=outline)
             d.rounded_rectangle((x - 9, yy + 25, x + 9, yy + 42), radius=4, fill=primary)

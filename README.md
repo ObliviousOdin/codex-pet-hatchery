@@ -1599,6 +1599,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-222-echo-audit-key/README.md">README</a> · <a href="pets/ravenbyte-222-echo-audit-key/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-223-fable-delta-jelly/README.md"><img src="pets/ravenbyte-223-fable-delta-jelly/previews/ravenbyte-223-fable-delta-jelly-showcase.gif" width="240" alt="Fable Delta Jelly stitched multi-motion showcase"></a><br>
+  <strong>Fable Delta Jelly</strong><br>
+  <sub>A jelly-class Ravenbyte familiar that keeps delta work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-223-fable-delta-jelly/README.md">README</a> · <a href="pets/ravenbyte-223-fable-delta-jelly/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
