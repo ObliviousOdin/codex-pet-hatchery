@@ -1933,6 +1933,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-273-quartz-circuit-beetle/README.md"><img src="pets/ravenbyte-273-quartz-circuit-beetle/previews/ravenbyte-273-quartz-circuit-beetle-showcase.gif" width="240" alt="Quartz Circuit Beetle stitched multi-motion showcase"></a><br>
+  <strong>Quartz Circuit Beetle</strong><br>
+  <sub>A beetle-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-273-quartz-circuit-beetle/README.md">README</a> · <a href="pets/ravenbyte-273-quartz-circuit-beetle/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
