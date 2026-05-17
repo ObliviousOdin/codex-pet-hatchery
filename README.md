@@ -1665,6 +1665,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-232-harbor-gate-wheel/README.md">README</a> · <a href="pets/ravenbyte-232-harbor-gate-wheel/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-233-ion-cache-mushroom/README.md"><img src="pets/ravenbyte-233-ion-cache-mushroom/previews/ravenbyte-233-ion-cache-mushroom-showcase.gif" width="240" alt="Ion Cache Mushroom stitched multi-motion showcase"></a><br>
+  <strong>Ion Cache Mushroom</strong><br>
+  <sub>A mushroom-class Ravenbyte familiar that keeps cache work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-233-ion-cache-mushroom/README.md">README</a> · <a href="pets/ravenbyte-233-ion-cache-mushroom/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
