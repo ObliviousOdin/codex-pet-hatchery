@@ -740,18 +740,68 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x + 11, yy + 45, x + 24 + pulse, yy + 52), fill=primary, width=3)
             d.line((x + facing * (capw - 5), cap_y + 8, x + facing * (capw + 8), cap_y + 1 + sway), fill=glow, width=2)
         elif archetype == 9:  # split mask imp
-            # Wide cheek fins and dangling tassels keep mask familiars from
-            # collapsing into wheel/lantern-like ovals in silhouette checks.
-            d.polygon([(x - 16, yy + 15), (x, yy + 3), (x + 17, yy + 16), (x + 12, yy + 40), (x, yy + 50), (x - 13, yy + 41)], fill=outline)
-            d.polygon([(x - 12, yy + 17), (x, yy + 8), (x, yy + 45), (x - 8, yy + 38)], fill=primary)
-            d.polygon([(x + 13, yy + 18), (x, yy + 8), (x, yy + 45), (x + 8, yy + 38)], fill=secondary)
-            d.polygon([(x - 16, yy + 23), (x - 33 - pulse, yy + 16 + sway), (x - 27, yy + 31)], fill=outline)
-            d.polygon([(x + 17, yy + 23), (x + 31 + pulse, yy + 35 - sway), (x + 25, yy + 18)], fill=outline)
-            d.polygon([(x - 19, yy + 24), (x - 29 - pulse, yy + 19 + sway), (x - 25, yy + 28)], fill=accent)
-            d.polygon([(x + 19, yy + 24), (x + 28 + pulse, yy + 32 - sway), (x + 24, yy + 21)], fill=glow)
-            d.line((x - 7, yy + 45, x - 19, yy + 58), fill=accent, width=3)
-            d.line((x + 7, yy + 45, x + 19, yy + 57), fill=glow, width=3)
-            d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
+            if slug == "ravenbyte-266-jade-graph-mask":
+                # Jade Graph Mask: break away from the default tall imp-mask
+                # silhouette. This familiar is a low, side-mounted graph visor
+                # riding on three data-node legs with a tall asymmetric antenna,
+                # so it does not read as a palette/costume swap of earlier masks.
+                step = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(22, min(42, x + facing * step))
+                base_y = yy + 34 + (2 if anim == "failed" else 0)
+                brow = [0, -1, -2, -1, 1, 2][i % FRAMES]
+                # Offset crescent visor body, intentionally wide and shallow.
+                d.rounded_rectangle((cx - 25, base_y - 10, cx + 20, base_y + 9), radius=8, fill=outline)
+                d.rounded_rectangle((cx - 21, base_y - 7, cx + 16, base_y + 6), radius=6, fill=primary)
+                d.polygon([(cx - 20, base_y - 7), (cx - 3, base_y - 13 + brow), (cx + 15, base_y - 6), (cx + 5, base_y + 1), (cx - 14, base_y + 2)], fill=secondary)
+                d.rectangle((cx - 17, base_y - 2 + brow, cx + 11, base_y + 1 + brow), fill=glow)
+                # Graph nodes and connecting edges are the signature prop.
+                nodes = [
+                    (cx - 25, yy + 17 + sway),
+                    (cx - 8, yy + 10 - pulse),
+                    (cx + 12, yy + 17 - sway),
+                    (cx + 25, yy + 27 + pulse),
+                ]
+                for a, b in zip(nodes, nodes[1:]):
+                    d.line((a[0], a[1], b[0], b[1]), fill=outline, width=4)
+                    d.line((a[0], a[1], b[0], b[1]), fill=glow, width=2)
+                for n, (nx, ny) in enumerate(nodes):
+                    r = 4 if n in (1, 3) else 3
+                    d.ellipse((nx - r - 1, ny - r - 1, nx + r + 1, ny + r + 1), fill=outline)
+                    d.ellipse((nx - r, ny - r, nx + r, ny + r), fill=accent if n % 2 else glow)
+                # Tripod data legs keep the bottom silhouette unlike a hanging tassel mask.
+                for n, lx in enumerate((cx - 17, cx, cx + 16)):
+                    foot = lx + [-4, 2, 5][n] + (step if n == 2 else -step // 2)
+                    d.line((lx, base_y + 7, foot, yy + 55 - (n % 2)), fill=outline, width=4)
+                    d.line((lx, base_y + 7, foot, yy + 55 - (n % 2)), fill=secondary if n == 1 else accent, width=2)
+                    d.rectangle((foot - 4, yy + 54 - (n % 2), foot + 4, yy + 58 - (n % 2)), fill=outline)
+                # State-specific motions read clearly in the stitched showcase.
+                if anim == "waving":
+                    wx = cx + facing * 21
+                    d.line((wx, base_y - 2, wx + facing * (13 + pulse), yy + 14 + sway), fill=outline, width=4)
+                    d.line((wx, base_y - 2, wx + facing * (13 + pulse), yy + 14 + sway), fill=accent, width=2)
+                    d.ellipse((wx + facing * 13 - 3, yy + 11 + sway, wx + facing * 13 + 3, yy + 17 + sway), fill=glow)
+                if anim == "review":
+                    tx0, tx1 = cx + facing * 18 - 2, cx + facing * 34 + 2
+                    sx0, sx1 = cx + facing * 20, cx + facing * 32
+                    d.rectangle((min(tx0, tx1), base_y + 10, max(tx0, tx1), base_y + 22), fill=outline)
+                    d.rectangle((min(sx0, sx1), base_y + 12, max(sx0, sx1), base_y + 19), fill=primary)
+                    d.line((cx + facing * 21, base_y + 14, cx + facing * 31, base_y + 14), fill=glow, width=1)
+                if anim == "failed":
+                    d.line((cx - 20, yy + 18, cx - 27, yy + 8), fill=accent, width=2)
+                    d.line((cx + 18, yy + 16, cx + 27, yy + 9), fill=accent, width=2)
+            else:
+                # Wide cheek fins and dangling tassels keep mask familiars from
+                # collapsing into wheel/lantern-like ovals in silhouette checks.
+                d.polygon([(x - 16, yy + 15), (x, yy + 3), (x + 17, yy + 16), (x + 12, yy + 40), (x, yy + 50), (x - 13, yy + 41)], fill=outline)
+                d.polygon([(x - 12, yy + 17), (x, yy + 8), (x, yy + 45), (x - 8, yy + 38)], fill=primary)
+                d.polygon([(x + 13, yy + 18), (x, yy + 8), (x, yy + 45), (x + 8, yy + 38)], fill=secondary)
+                d.polygon([(x - 16, yy + 23), (x - 33 - pulse, yy + 16 + sway), (x - 27, yy + 31)], fill=outline)
+                d.polygon([(x + 17, yy + 23), (x + 31 + pulse, yy + 35 - sway), (x + 25, yy + 18)], fill=outline)
+                d.polygon([(x - 19, yy + 24), (x - 29 - pulse, yy + 19 + sway), (x - 25, yy + 28)], fill=accent)
+                d.polygon([(x + 19, yy + 24), (x + 28 + pulse, yy + 32 - sway), (x + 24, yy + 21)], fill=glow)
+                d.line((x - 7, yy + 45, x - 19, yy + 58), fill=accent, width=3)
+                d.line((x + 7, yy + 45, x + 19, yy + 57), fill=glow, width=3)
+                d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
         elif archetype == 10:  # tiny train familiar
             # Low locomotive silhouette with separated chimney, caboose, wheels,
             # and smoke puffs. This intentionally avoids the arched bridge/crawler
