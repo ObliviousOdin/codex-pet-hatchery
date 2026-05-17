@@ -672,12 +672,33 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x + 7, yy + 45, x + 19, yy + 57), fill=glow, width=3)
             d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
         elif archetype == 10:  # tiny train familiar
-            d.rounded_rectangle((x - 22, yy + 28, x + 18, yy + 45), radius=3, fill=outline)
-            d.rectangle((x - 18, yy + 31, x + 13, yy + 42), fill=primary)
-            d.rectangle((x + 2, yy + 18, x + 18, yy + 32), fill=secondary)
-            for wx in (x - 12, x + 8):
-                d.ellipse((wx - 5, yy + 40, wx + 5, yy + 50), fill=accent)
-            d.line((x + 18, yy + 23, x + 25, yy + 15 - pulse), fill=glow, width=2)
+            # Low locomotive silhouette with separated chimney, caboose, wheels,
+            # and smoke puffs. This intentionally avoids the arched bridge/crawler
+            # footprint that earlier train hatches could overlap in alpha masks.
+            roll = [0, 2, 4, 2, 0, -2][i % FRAMES]
+            if anim in {"running-right", "running-left", "running"}:
+                x += facing * roll
+            if anim == "failed":
+                yy += 3
+            track_y = yy + 50
+            d.line((x - 27, track_y, x + 28, track_y), fill=outline, width=2)
+            d.rounded_rectangle((x - 25, yy + 32, x + 12, yy + 44), radius=3, fill=outline)
+            d.rectangle((x - 21, yy + 34, x + 8, yy + 41), fill=primary)
+            d.rectangle((x + 9, yy + 23, x + 24, yy + 43), fill=outline)
+            d.rectangle((x + 12, yy + 27, x + 21, yy + 40), fill=secondary)
+            d.rectangle((x - 19, yy + 22, x - 12, yy + 33), fill=outline)
+            d.rectangle((x - 17, yy + 19, x - 10, yy + 23), fill=accent)
+            d.polygon([(x + 24, yy + 31), (x + 31, yy + 36), (x + 24, yy + 42)], fill=glow)
+            for n, wx in enumerate((x - 18, x - 4, x + 14)):
+                r = 5 if n != 1 else 4
+                d.ellipse((wx - r - 1, yy + 40 - r, wx + r + 1, yy + 40 + r), fill=outline)
+                d.ellipse((wx - r, yy + 40 - r, wx + r, yy + 40 + r), fill=accent if n != 1 else glow)
+                d.line((wx, yy + 40, wx + ((i + n) % 3) - 1, yy + 40 - r), fill=outline, width=1)
+            for n in range(3):
+                sx = x - 17 - n * 7 - (i % 2)
+                sy = yy + 14 - n * 3 - (pulse if anim != "failed" else -1)
+                rr = 2 + n
+                d.ellipse((sx - rr, sy - rr, sx + rr, sy + rr), fill=glow if n % 2 else secondary)
         elif archetype == 11:  # manta glider
             # Wide glider body with animated wingbeats.  Manta familiars should
             # read as soaring/swimming companions, not static diamond sprites.
@@ -708,11 +729,41 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x - 13, yy + 31 + flap // 3, x + 13, yy + 31 - flap // 3), fill=glow, width=2)
             d.line((x, yy + 44, x + facing * (9 + pulse), tail_y + 5), fill=accent, width=2)
         elif archetype == 12:  # book golem
-            d.polygon([(x - 18, yy + 17), (x, yy + 22), (x, yy + 50), (x - 18, yy + 45)], fill=outline)
-            d.polygon([(x + 18, yy + 17), (x, yy + 22), (x, yy + 50), (x + 18, yy + 45)], fill=outline)
-            d.polygon([(x - 14, yy + 21), (x - 2, yy + 24), (x - 2, yy + 45), (x - 14, yy + 42)], fill=secondary)
-            d.polygon([(x + 14, yy + 21), (x + 2, yy + 24), (x + 2, yy + 45), (x + 14, yy + 42)], fill=primary)
+            # Open-book familiars need visible page language, not a static badge.
+            # Animate the covers differently per state: running skims forward,
+            # waving flips a bright page, failed droops, and review projects a
+            # scan bookmark.  This keeps book-class hatches from reading as a
+            # one-motion/static pet in README showcases.
+            page = [0, 3, 6, 3, -2, -4][i % FRAMES]
+            bob = [0, -1, -2, -1, 1, 2][i % FRAMES]
+            if anim in {"running-right", "running-left", "running"}:
+                x += facing * [0, 2, 4, 2, 0, -2][i % FRAMES]
+                yy += bob
+                page += facing * [0, 2, 4, 1, -2, -3][i % FRAMES]
+            elif anim == "waving":
+                page += [0, 5, 9, 5, 1, -2][i % FRAMES]
+            elif anim == "failed":
+                page = -5 + [0, -1, -2, -1, 0, 1][i % FRAMES]
+            elif anim == "review":
+                page += [0, 1, 3, 5, 3, 1][i % FRAMES]
+            left_outer = [(x - 18 - page // 3, yy + 17 + bob), (x, yy + 22), (x, yy + 50), (x - 18 + page // 4, yy + 45 - bob)]
+            right_outer = [(x + 18 + page // 2, yy + 17 - bob), (x, yy + 22), (x, yy + 50), (x + 18 - page // 3, yy + 45 + bob)]
+            left_inner = [(x - 14 - page // 3, yy + 21 + bob), (x - 2, yy + 24), (x - 2, yy + 45), (x - 14 + page // 4, yy + 42 - bob)]
+            right_inner = [(x + 14 + page // 2, yy + 21 - bob), (x + 2, yy + 24), (x + 2, yy + 45), (x + 14 - page // 3, yy + 42 + bob)]
+            d.polygon(left_outer, fill=outline)
+            d.polygon(right_outer, fill=outline)
+            d.polygon(left_inner, fill=secondary)
+            d.polygon(right_inner, fill=primary)
             d.line((x, yy + 22, x, yy + 50), fill=accent, width=2)
+            d.line((x - 11, yy + 29 + bob, x - 4, yy + 31 + bob), fill=glow, width=1)
+            d.line((x + 5, yy + 34 - bob, x + 13 + page // 3, yy + 36 - bob), fill=secondary, width=1)
+            if anim == "waving":
+                d.arc((x + 7, yy + 8 - page // 2, x + 31, yy + 31), 200, 335, fill=glow, width=2)
+                d.line((x + 14, yy + 20, x + 24 + page // 2, yy + 12 - bob), fill=accent, width=2)
+            if anim == "review":
+                d.line((x + facing * 13, yy + 24, x + facing * (27 + page), yy + 16 + bob), fill=glow, width=2)
+                bx0, bx1 = x + facing * 20, x + facing * 25
+                d.rectangle((min(bx0, bx1), yy + 13, max(bx0, bx1), yy + 17), fill=accent)
         elif archetype == 13:  # asymmetric key guardian
             d.ellipse((x - 12, yy + 14, x + 12, yy + 38), fill=outline)
             d.ellipse((x - 8, yy + 18, x + 8, yy + 34), fill=primary)
