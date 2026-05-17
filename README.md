@@ -1919,6 +1919,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-270-nimbus-sentinel-key/README.md">README</a> · <a href="pets/ravenbyte-270-nimbus-sentinel-key/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-271-obsidian-vector-jelly/README.md"><img src="pets/ravenbyte-271-obsidian-vector-jelly/previews/ravenbyte-271-obsidian-vector-jelly-showcase.gif" width="240" alt="Obsidian Vector Jelly stitched multi-motion showcase"></a><br>
+  <strong>Obsidian Vector Jelly</strong><br>
+  <sub>A jelly-class Ravenbyte familiar that keeps vector work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-271-obsidian-vector-jelly/README.md">README</a> · <a href="pets/ravenbyte-271-obsidian-vector-jelly/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
