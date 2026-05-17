@@ -10,9 +10,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
-import subprocess
-import tempfile
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -132,52 +129,12 @@ def render_showcase(pet_dir: Path) -> Path:
                 global_idx += 1
 
     out = pet_dir / "previews" / f"{pet_dir.name}-showcase.gif"
-    ffmpeg = shutil.which("ffmpeg")
-    if ffmpeg:
-        with tempfile.TemporaryDirectory(prefix="ravenbyte-showcase-") as tmp:
-            tmp_dir = Path(tmp)
-            for idx, frame in enumerate(output_frames):
-                frame.save(tmp_dir / f"frame_{idx:03d}.png")
-            palette = tmp_dir / "palette.png"
-            frame_pattern = str(tmp_dir / "frame_%03d.png")
-            subprocess.run(
-                [
-                    ffmpeg,
-                    "-y",
-                    "-v",
-                    "error",
-                    "-framerate",
-                    "12",
-                    "-i",
-                    frame_pattern,
-                    "-vf",
-                    "palettegen=max_colors=128",
-                    str(palette),
-                ],
-                check=True,
-            )
-            subprocess.run(
-                [
-                    ffmpeg,
-                    "-y",
-                    "-v",
-                    "error",
-                    "-framerate",
-                    "12",
-                    "-i",
-                    frame_pattern,
-                    "-i",
-                    str(palette),
-                    "-lavfi",
-                    "paletteuse=dither=bayer",
-                    "-loop",
-                    "0",
-                    str(out),
-                ],
-                check=True,
-            )
-    else:
-        output_frames[0].save(out, save_all=True, append_images=output_frames[1:], duration=88, loop=0, disposal=2, optimize=False)
+    # Save via Pillow rather than ffmpeg. On some runner/decoder combinations,
+    # ffmpeg paletteuse output is reported as 60 frames but decodes as a static
+    # first frame in Pillow, which weakens the README proof that this is a
+    # stitched multi-motion preview. Let Pillow quantize the RGB frames together
+    # at write time so the decoded GIF preserves frame-to-frame motion.
+    output_frames[0].save(out, save_all=True, append_images=output_frames[1:], duration=88, loop=0, disposal=2, optimize=False)
     return out
 
 

@@ -6,7 +6,7 @@ import json
 import sys
 from itertools import combinations
 from pathlib import Path
-from PIL import Image, ImageSequence
+from PIL import Image, ImageSequence, ImageChops
 
 ROOT = Path(__file__).resolve().parents[1]
 ANIMS = ["idle", "running-right", "running-left", "waving", "jumping", "failed", "waiting", "running", "review"]
@@ -46,11 +46,18 @@ def validate_pet(pet_dir: Path) -> list[str]:
     else:
         try:
             gif = Image.open(showcase)
-            frame_count = sum(1 for _ in ImageSequence.Iterator(gif))
+            frames = [frame.convert("RGB").copy() for frame in ImageSequence.Iterator(gif)]
+            frame_count = len(frames)
+            unique_frames: list[Image.Image] = []
+            for frame in frames:
+                if not any(ImageChops.difference(frame, seen).getbbox() is None for seen in unique_frames):
+                    unique_frames.append(frame)
             if gif.size[0] < 300 or gif.size[1] < 360:
                 errors.append(f"showcase GIF too small: {gif.size}")
             if frame_count < 30:
                 errors.append(f"showcase GIF has too few frames: {frame_count}")
+            if len(unique_frames) < 12:
+                errors.append(f"showcase GIF is too static: only {len(unique_frames)} unique frames")
         except Exception as exc:
             errors.append(f"bad showcase GIF: {exc}")
     return errors
