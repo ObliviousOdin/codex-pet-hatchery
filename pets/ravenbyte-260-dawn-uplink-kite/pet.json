@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "name": "ravenbyte-260-dawn-uplink-kite",
+  "displayName": "Dawn Uplink Kite",
+  "description": "A kite-class Ravenbyte familiar that keeps uplink work moving during long coding runs.",
+  "author": "ObliviousOdin",
+  "frameWidth": 64,
+  "frameHeight": 64,
+  "framesPerRow": 6,
+  "spritesheet": "spritesheet.webp",
+  "symmetric": false,
+  "animations": [
+    {
+      "name": "idle",
+      "row": 0,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    },
+    {
+      "name": "running-right",
+      "row": 1,
+      "frames": 6,
+      "fps": 9,
+      "loop": true
+    },
+    {
+      "name": "running-left",
+      "row": 2,
+      "frames": 6,
+      "fps": 9,
+      "loop": true
+    },
+    {
+      "name": "waving",
+      "row": 3,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    },
+    {
+      "name": "jumping",
+      "row": 4,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    },
+    {
+      "name": "failed",
+      "row": 5,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    },
+    {
+      "name": "waiting",
+      "row": 6,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    },
+    {
+      "name": "running",
+      "row": 7,
+      "frames": 6,
+      "fps": 9,
+      "loop": true
+    },
+    {
+      "name": "review",
+      "row": 8,
+      "frames": 6,
+      "fps": 7,
+      "loop": true
+    }
+  ],
+  "states": {
+    "idle": "idle",
+    "running-right": "running-right",
+    "running-left": "running-left",
+    "waving": "waving",
+    "jumping": "jumping",
+    "failed": "failed",
+    "waiting": "waiting",
+    "running": "running",
+    "review": "review"
+  },
+  "install": {
+    "codexHomeRelativePath": "pets/ravenbyte-260-dawn-uplink-kite",
+    "openDesign": "Settings \u2192 Pets \u2192 Import Codex sprite"
+  }
+}
