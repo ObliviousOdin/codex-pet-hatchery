@@ -614,12 +614,22 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x + facing * 3, mid + 2, x + facing * (wing + 8), mid - 5 - pulse), fill=glow, width=2)
             d.polygon([(x + facing * 3, mid - 6), (x + facing * (18 + pulse), mid), (x + facing * 2, mid + 9)], fill=secondary)
         elif archetype == 4:  # tall shrine totem
+            # Totems are intentionally asymmetric: a side pennant, directional
+            # review mast, and run-step offset keep left/right rows from being
+            # accidental mirrors or identical static pillars.
             w = 8 + (seed % 6)
-            d.rounded_rectangle((x - w, yy + 6, x + w, yy + 49), radius=3, fill=outline)
-            d.rectangle((x - w + 3, yy + 10, x + w - 3, yy + 45), fill=primary)
+            run_step = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+            x += facing * run_step
+            pennant = 8 + pulse
+            d.rounded_rectangle((x - w, yy + 6 + abs(run_step) // 2, x + w, yy + 49), radius=3, fill=outline)
+            d.rectangle((x - w + 3, yy + 10 + abs(run_step) // 2, x + w - 3, yy + 45), fill=primary)
             for k in range(4):
-                d.line((x - w - 6 + (k % 2), yy + 14 + k * 8, x + w + 6 - (k % 2), yy + 14 + k * 8), fill=[secondary, accent, glow][k % 3], width=2)
+                yk = yy + 14 + k * 8 + (sway if k == 0 and anim in {"waving", "waiting"} else 0)
+                d.line((x - w - 6 + (k % 2), yk, x + w + 6 - (k % 2), yk), fill=[secondary, accent, glow][k % 3], width=2)
             d.polygon([(x, yy), (x + 14, yy + 9), (x - 14, yy + 9)], fill=accent)
+            d.line((x + facing * (w + 2), yy + 13, x + facing * (w + 2), yy + 32), fill=outline, width=2)
+            d.polygon([(x + facing * (w + 3), yy + 14), (x + facing * (w + 3 + pennant), yy + 18 + sway), (x + facing * (w + 3), yy + 23)], fill=secondary)
+            d.line((x - facing * (w + 2), yy + 39, x - facing * (w + 10 + pulse), yy + 47 - sway), fill=glow, width=2)
         elif archetype == 5:  # serpent ribbon
             pts = []
             for k in range(6):
