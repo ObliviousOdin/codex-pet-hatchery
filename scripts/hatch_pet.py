@@ -800,6 +800,30 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.line((x + facing * 13, yy + 24, x + facing * (27 + page), yy + 16 + bob), fill=glow, width=2)
                 bx0, bx1 = x + facing * 20, x + facing * 25
                 d.rectangle((min(bx0, bx1), yy + 13, max(bx0, bx1), yy + 17), fill=accent)
+            if slug == "ravenbyte-253-drift-flux-book":
+                # Flux Book needs to differ materially from earlier book/mask
+                # silhouettes. Give it a wind-swept codex mast, separated page
+                # pennants, and a low ribbon tail so the base silhouette is not a
+                # clone of prior open-book familiars while preserving its book read.
+                mast_x = x + facing * 19
+                d.line((mast_x, yy + 10 + bob, mast_x - facing * 7, yy + 1 + bob), fill=outline, width=4)
+                d.line((mast_x, yy + 10 + bob, mast_x - facing * 7, yy + 1 + bob), fill=glow, width=2)
+                for n in range(3):
+                    px = mast_x - facing * (8 + n * 5)
+                    py = yy + 4 + n * 7 + ((i + n) % 2)
+                    d.polygon(
+                        [(px, py), (px - facing * (8 + n), py + 3), (px, py + 7), (px + facing * 2, py + 3)],
+                        fill=outline,
+                    )
+                    d.polygon(
+                        [(px, py + 1), (px - facing * (5 + n), py + 3), (px, py + 5), (px + facing, py + 3)],
+                        fill=accent if n % 2 else glow,
+                    )
+                tail_y = yy + 51 + bob
+                d.arc((x - 31, tail_y - 8, x + 31, tail_y + 8), 190, 350, fill=outline, width=4)
+                d.arc((x - 30, tail_y - 7, x + 30, tail_y + 7), 190, 350, fill=accent, width=2)
+                if anim in {"running-right", "running-left", "running"}:
+                    d.line((x - facing * 23, tail_y + 1, x - facing * 31, tail_y + 6 + sway), fill=glow, width=2)
         elif archetype == 13:  # asymmetric key guardian
             d.ellipse((x - 12, yy + 14, x + 12, yy + 38), fill=outline)
             d.ellipse((x - 8, yy + 18, x + 8, yy + 34), fill=primary)

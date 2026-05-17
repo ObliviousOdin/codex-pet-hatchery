@@ -1799,6 +1799,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-252-cobalt-circuit-manta/README.md">README</a> · <a href="pets/ravenbyte-252-cobalt-circuit-manta/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-253-drift-flux-book/README.md"><img src="pets/ravenbyte-253-drift-flux-book/previews/ravenbyte-253-drift-flux-book-showcase.gif" width="240" alt="Drift Flux Book stitched multi-motion showcase"></a><br>
+  <strong>Drift Flux Book</strong><br>
+  <sub>A book-class Ravenbyte familiar that keeps flux work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-253-drift-flux-book/README.md">README</a> · <a href="pets/ravenbyte-253-drift-flux-book/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
