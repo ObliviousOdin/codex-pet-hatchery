@@ -1779,6 +1779,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-249-yonder-sentinel-mushroom/README.md">README</a> · <a href="pets/ravenbyte-249-yonder-sentinel-mushroom/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-250-zephyr-vector-mask/README.md"><img src="pets/ravenbyte-250-zephyr-vector-mask/previews/ravenbyte-250-zephyr-vector-mask-showcase.gif" width="240" alt="Zephyr Vector Mask stitched multi-motion showcase"></a><br>
+  <strong>Zephyr Vector Mask</strong><br>
+  <sub>A mask-class Ravenbyte familiar that keeps vector work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-250-zephyr-vector-mask/README.md">README</a> · <a href="pets/ravenbyte-250-zephyr-vector-mask/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
