@@ -2299,6 +2299,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-327-glyph-gate-crystal/README.md">README</a> · <a href="pets/ravenbyte-327-glyph-gate-crystal/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-328-harbor-cache-wheel/README.md"><img src="pets/ravenbyte-328-harbor-cache-wheel/previews/ravenbyte-328-harbor-cache-wheel-showcase.gif" width="240" alt="Harbor Cache Wheel stitched multi-motion showcase"></a><br>
+  <strong>Harbor Cache Wheel</strong><br>
+  <sub>A wheel-class Ravenbyte familiar that keeps cache work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-328-harbor-cache-wheel/README.md">README</a> · <a href="pets/ravenbyte-328-harbor-cache-wheel/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
