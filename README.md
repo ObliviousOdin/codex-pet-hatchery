@@ -2145,6 +2145,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-304-prairie-zenith-rabbit/README.md">README</a> · <a href="pets/ravenbyte-304-prairie-zenith-rabbit/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-305-quartz-diff-beetle/README.md"><img src="pets/ravenbyte-305-quartz-diff-beetle/previews/ravenbyte-305-quartz-diff-beetle-showcase.gif" width="240" alt="Quartz Diff Beetle stitched multi-motion showcase"></a><br>
+  <strong>Quartz Diff Beetle</strong><br>
+  <sub>A beetle-class Ravenbyte familiar that keeps diff work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-305-quartz-diff-beetle/README.md">README</a> · <a href="pets/ravenbyte-305-quartz-diff-beetle/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
