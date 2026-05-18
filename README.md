@@ -2039,6 +2039,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-288-grove-index-rabbit/README.md">README</a> · <a href="pets/ravenbyte-288-grove-index-rabbit/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-289-ash-monitor-beetle/README.md"><img src="pets/ravenbyte-289-ash-monitor-beetle/previews/ravenbyte-289-ash-monitor-beetle-showcase.gif" width="240" alt="Ash Monitor Beetle stitched multi-motion showcase"></a><br>
+  <strong>Ash Monitor Beetle</strong><br>
+  <sub>A beetle-class Ravenbyte familiar that keeps monitor work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-289-ash-monitor-beetle/README.md">README</a> · <a href="pets/ravenbyte-289-ash-monitor-beetle/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
