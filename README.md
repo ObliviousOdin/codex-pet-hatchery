@@ -2165,6 +2165,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-307-signal-cache-crawler/README.md">README</a> · <a href="pets/ravenbyte-307-signal-cache-crawler/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-308-tundra-forge-kite/README.md"><img src="pets/ravenbyte-308-tundra-forge-kite/previews/ravenbyte-308-tundra-forge-kite-showcase.gif" width="240" alt="Tundra Forge Kite stitched multi-motion showcase"></a><br>
+  <strong>Tundra Forge Kite</strong><br>
+  <sub>A kite-class Ravenbyte familiar that keeps forge work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-308-tundra-forge-kite/README.md">README</a> · <a href="pets/ravenbyte-308-tundra-forge-kite/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
