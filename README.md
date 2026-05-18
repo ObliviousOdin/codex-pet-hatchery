@@ -2185,6 +2185,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-310-violet-latch-serpent/README.md">README</a> · <a href="pets/ravenbyte-310-violet-latch-serpent/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-311-warden-oracle-crystal/README.md"><img src="pets/ravenbyte-311-warden-oracle-crystal/previews/ravenbyte-311-warden-oracle-crystal-showcase.gif" width="240" alt="Warden Oracle Crystal stitched multi-motion showcase"></a><br>
+  <strong>Warden Oracle Crystal</strong><br>
+  <sub>A crystal-class Ravenbyte familiar that keeps oracle work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-311-warden-oracle-crystal/README.md">README</a> · <a href="pets/ravenbyte-311-warden-oracle-crystal/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>

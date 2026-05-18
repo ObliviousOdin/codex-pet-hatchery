@@ -665,10 +665,47 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             hx, hy = pts[-1]
             d.polygon([(hx, hy - 6), (hx + facing * 12, hy), (hx, hy + 6)], fill=secondary)
         elif archetype == 6:  # crystal tripod
-            d.polygon([(x, yy + 5), (x + 15, yy + 25), (x + 7, yy + 45), (x - 10, yy + 43), (x - 16, yy + 24)], fill=outline)
-            d.polygon([(x, yy + 9), (x + 10, yy + 26), (x + 5, yy + 40), (x - 7, yy + 38), (x - 11, yy + 25)], fill=secondary)
-            for lx in (-10, 0, 10):
-                d.line((x + lx, yy + 42, x + lx + sway, yy + 55), fill=accent, width=3)
+            # Faceted tripod with state-specific motion: running scuttles on
+            # three legs, waiting/review pulses orbit shards, and failed shows
+            # animated crack/spark frames instead of freezing as a static gem.
+            step = [0, 3, 1, -1, -3, 1][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
+            lean = facing * (2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0))
+            if anim == "jumping":
+                lean = [0, 1, 2, 0, -1, -2][i % FRAMES]
+            top = (x + lean, yy + 5)
+            right = (x + 15 + lean, yy + 25)
+            lower_right = (x + 7 + step // 2, yy + 45)
+            lower_left = (x - 10 + step // 3, yy + 43)
+            left = (x - 16 + lean, yy + 24)
+            d.polygon([top, right, lower_right, lower_left, left], fill=outline)
+            d.polygon(
+                [
+                    (top[0], top[1] + 4),
+                    (x + 10 + lean, yy + 26),
+                    (x + 5 + step // 2, yy + 40),
+                    (x - 7 + step // 3, yy + 38),
+                    (x - 11 + lean, yy + 25),
+                ],
+                fill=secondary,
+            )
+            d.line((top[0], top[1] + 5, x - 2 + step // 2, yy + 39), fill=glow, width=2)
+            d.line((x - 10 + lean, yy + 25, x + 9 + lean, yy + 26), fill=primary, width=2)
+            leg_phase = [0, 3, 1, -1, -3, 1][i % FRAMES]
+            for idx, lx in enumerate((-12, 0, 12)):
+                foot = x + lx + (leg_phase if idx != 1 else -leg_phase // 2)
+                d.line((x + lx // 2, yy + 42, foot, yy + 55 - (idx % 2)), fill=outline, width=4)
+                d.line((x + lx // 2, yy + 42, foot, yy + 55 - (idx % 2)), fill=accent, width=2)
+            if anim == "failed":
+                crack = [(x - 2, yy + 12), (x + 3 + (i % 2), yy + 20), (x - 1, yy + 28), (x + 5, yy + 36)]
+                d.line(crack, fill=outline, width=2)
+                spark_x = x + [-18, 17, -14, 14, -10, 12][i % FRAMES]
+                spark_y = yy + [15, 19, 23, 17, 27, 21][i % FRAMES]
+                d.line((spark_x - 3, spark_y, spark_x + 3, spark_y), fill=glow, width=2)
+                d.line((spark_x, spark_y - 3, spark_x, spark_y + 3), fill=glow, width=2)
+            elif anim in {"waiting", "review"}:
+                shard_x = x + facing * (18 + (i % 3))
+                shard_y = yy + 11 + ((i + seed) % 4)
+                d.polygon([(shard_x, shard_y - 4), (shard_x + 4, shard_y), (shard_x, shard_y + 4), (shard_x - 4, shard_y)], fill=glow)
         elif archetype == 7:  # wheel drone
             if slug == "ravenbyte-264-harbor-audit-wheel":
                 # Harbor Audit Wheel: make this wheel-class familiar read as a
