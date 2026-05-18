@@ -648,19 +648,54 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             # Totems are intentionally asymmetric: a side pennant, directional
             # review mast, and run-step offset keep left/right rows from being
             # accidental mirrors or identical static pillars.
-            w = 8 + (seed % 6)
-            run_step = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
-            x += facing * run_step
-            pennant = 8 + pulse
-            d.rounded_rectangle((x - w, yy + 6 + abs(run_step) // 2, x + w, yy + 49), radius=3, fill=outline)
-            d.rectangle((x - w + 3, yy + 10 + abs(run_step) // 2, x + w - 3, yy + 45), fill=primary)
-            for k in range(4):
-                yk = yy + 14 + k * 8 + (sway if k == 0 and anim in {"waving", "waiting"} else 0)
-                d.line((x - w - 6 + (k % 2), yk, x + w + 6 - (k % 2), yk), fill=[secondary, accent, glow][k % 3], width=2)
-            d.polygon([(x, yy), (x + 14, yy + 9), (x - 14, yy + 9)], fill=accent)
-            d.line((x + facing * (w + 2), yy + 13, x + facing * (w + 2), yy + 32), fill=outline, width=2)
-            d.polygon([(x + facing * (w + 3), yy + 14), (x + facing * (w + 3 + pennant), yy + 18 + sway), (x + facing * (w + 3), yy + 23)], fill=secondary)
-            d.line((x - facing * (w + 2), yy + 39, x - facing * (w + 10 + pulse), yy + 47 - sway), fill=glow, width=2)
+            if slug == "ravenbyte-325-ember-zenith-totem":
+                # Ember Zenith Totem: render as a broad brazier-gate familiar
+                # rather than another narrow shrine pillar. The twin side pylons,
+                # low ember basin, arcing flame crown, and stepping feet give this
+                # queued totem a materially different mask from earlier totems.
+                run_step = [0, 3, 5, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(31, min(33, x + facing * (run_step // 2)))
+                base_y = yy + 41 + (2 if anim == "failed" else 0)
+                flame = 3 + pulse + (1 if anim in {"waiting", "review"} else 0)
+                d.rounded_rectangle((cx - 28, base_y + 8, cx + 28, base_y + 14), radius=3, fill=outline)
+                d.rectangle((cx - 23, base_y + 10, cx + 23, base_y + 12), fill=accent)
+                for side in (-1, 1):
+                    px = cx + side * (18 + (run_step if side == facing else 0))
+                    d.rounded_rectangle((px - 6, yy + 17, px + 6, base_y + 9), radius=3, fill=outline)
+                    d.rectangle((px - 3, yy + 21, px + 3, base_y + 5), fill=primary if side == -1 else secondary)
+                    d.line((px, yy + 18, px + side * (7 + pulse), yy + 9 + sway), fill=glow, width=3)
+                    d.ellipse((px + side * (7 + pulse) - 3, yy + 7 + sway, px + side * (7 + pulse) + 3, yy + 13 + sway), fill=accent)
+                    foot = px + side * (4 + run_step // 2)
+                    d.line((px, base_y + 7, foot, yy + 58), fill=outline, width=4)
+                    d.line((px, base_y + 7, foot, yy + 58), fill=secondary, width=2)
+                d.arc((cx - 24, yy + 4 + sway, cx + 24, yy + 36 + sway), 200, 340, fill=outline, width=5)
+                d.arc((cx - 22, yy + 6 + sway, cx + 22, yy + 34 + sway), 200, 340, fill=glow, width=2)
+                d.polygon([(cx, yy + 10 - flame), (cx + 8, yy + 24), (cx + 3, yy + 31), (cx - 7, yy + 25)], fill=outline)
+                d.polygon([(cx, yy + 14 - flame), (cx + 5, yy + 24), (cx + 2, yy + 28), (cx - 4, yy + 24)], fill=accent)
+                if anim == "review":
+                    d.rectangle((cx - 9, base_y - 5, cx + 9, base_y + 5), fill=outline)
+                    d.rectangle((cx - 6, base_y - 3, cx + 6, base_y + 3), fill=primary)
+                    d.line((cx + 9, base_y - 2, cx + 22, base_y - 10 + sway), fill=glow, width=2)
+                elif anim == "waving":
+                    d.line((cx + facing * 20, yy + 25, cx + facing * (31 + pulse), yy + 18 + sway), fill=accent, width=3)
+                    d.polygon([(cx + facing * 31, yy + 17 + sway), (cx + facing * 41, yy + 22 + sway), (cx + facing * 31, yy + 27 + sway)], fill=glow)
+                elif anim == "failed":
+                    d.line((cx - 11, yy + 23, cx + 10, yy + 34), fill=outline, width=2)
+                    d.line((cx + 10, yy + 23, cx - 11, yy + 34), fill=outline, width=2)
+            else:
+                w = 8 + (seed % 6)
+                run_step = [0, 2, 4, 2, 0, -2][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                x += facing * run_step
+                pennant = 8 + pulse
+                d.rounded_rectangle((x - w, yy + 6 + abs(run_step) // 2, x + w, yy + 49), radius=3, fill=outline)
+                d.rectangle((x - w + 3, yy + 10 + abs(run_step) // 2, x + w - 3, yy + 45), fill=primary)
+                for k in range(4):
+                    yk = yy + 14 + k * 8 + (sway if k == 0 and anim in {"waving", "waiting"} else 0)
+                    d.line((x - w - 6 + (k % 2), yk, x + w + 6 - (k % 2), yk), fill=[secondary, accent, glow][k % 3], width=2)
+                d.polygon([(x, yy), (x + 14, yy + 9), (x - 14, yy + 9)], fill=accent)
+                d.line((x + facing * (w + 2), yy + 13, x + facing * (w + 2), yy + 32), fill=outline, width=2)
+                d.polygon([(x + facing * (w + 3), yy + 14), (x + facing * (w + 3 + pennant), yy + 18 + sway), (x + facing * (w + 3), yy + 23)], fill=secondary)
+                d.line((x - facing * (w + 2), yy + 39, x - facing * (w + 10 + pulse), yy + 47 - sway), fill=glow, width=2)
         elif archetype == 5:  # serpent ribbon
             pts = []
             for k in range(6):
