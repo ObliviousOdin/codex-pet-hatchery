@@ -740,7 +740,59 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.line((x + 11, yy + 45, x + 24 + pulse, yy + 52), fill=primary, width=3)
             d.line((x + facing * (capw - 5), cap_y + 8, x + facing * (capw + 8), cap_y + 1 + sway), fill=glow, width=2)
         elif archetype == 9:  # split mask imp
-            if slug == "ravenbyte-266-jade-graph-mask":
+            if slug == "ravenbyte-282-zephyr-widget-mask":
+                # Zephyr Widget Mask: break away from an older key-guardian
+                # silhouette. Render it as a wide floating dashboard mask with
+                # offset widget pods and wind-vane whiskers rather than a tall
+                # key-like body, keeping the familiar visibly original while
+                # preserving its mask/widget theme.
+                step = [0, 3, 5, 2, -1, -3][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(24, min(40, x + facing * step))
+                dash_y = yy + 31 + (2 if anim == "failed" else 0)
+                blink = [0, 1, 2, 1, 0, -1][i % FRAMES]
+                # A shallow dashboard face makes the body plan wide and low.
+                d.rounded_rectangle((cx - 28, dash_y - 10, cx + 26, dash_y + 10), radius=9, fill=outline)
+                d.rounded_rectangle((cx - 24, dash_y - 7, cx + 22, dash_y + 7), radius=6, fill=primary)
+                d.polygon([(cx - 22, dash_y - 7), (cx - 3, dash_y - 12 + blink), (cx + 20, dash_y - 5), (cx + 12, dash_y + 4), (cx - 18, dash_y + 3)], fill=secondary)
+                d.rectangle((cx - 18, dash_y - 2 + blink, cx + 14, dash_y + 1 + blink), fill=glow)
+                # Floating widget pods and connecting telemetry lines are the
+                # signature prop and reduce overlap with key/mask silhouettes.
+                pods = [
+                    (cx - 30, yy + 17 + sway, 4),
+                    (cx - 12, yy + 8 - pulse, 3),
+                    (cx + 14, yy + 11 + blink, 4),
+                    (cx + 31, yy + 24 - sway, 3),
+                ]
+                for a, b in zip(pods, pods[1:]):
+                    d.line((a[0], a[1], b[0], b[1]), fill=outline, width=3)
+                    d.line((a[0], a[1], b[0], b[1]), fill=glow, width=1)
+                for n, (px, py, rr) in enumerate(pods):
+                    d.rounded_rectangle((px - rr - 2, py - rr - 2, px + rr + 2, py + rr + 2), radius=3, fill=outline)
+                    d.rectangle((px - rr, py - rr, px + rr, py + rr), fill=accent if n % 2 else glow)
+                # Wind-vane whiskers and low skids keep the bottom silhouette
+                # different from dangling tassel masks.
+                for side in (-1, 1):
+                    d.line((cx + side * 19, dash_y + 5, cx + side * (33 + pulse), yy + 46 - side * sway), fill=outline, width=3)
+                    d.line((cx + side * 19, dash_y + 5, cx + side * (33 + pulse), yy + 46 - side * sway), fill=accent if side < 0 else glow, width=1)
+                for n, lx in enumerate((cx - 20, cx + 2, cx + 22)):
+                    foot = lx + [-5, 2, 5][n] + (step if n == 2 else -step // 2)
+                    d.line((lx, dash_y + 8, foot, yy + 55 - (n % 2)), fill=outline, width=3)
+                    d.line((lx, dash_y + 8, foot, yy + 55 - (n % 2)), fill=secondary, width=1)
+                    d.rectangle((foot - 5, yy + 54 - (n % 2), foot + 5, yy + 58 - (n % 2)), fill=outline)
+                if anim == "waving":
+                    wx = cx - facing * 25
+                    d.line((wx, dash_y - 5, wx - facing * (13 + pulse), yy + 13 + sway), fill=outline, width=4)
+                    d.line((wx, dash_y - 5, wx - facing * (13 + pulse), yy + 13 + sway), fill=glow, width=2)
+                    d.polygon([(wx - facing * 13, yy + 11 + sway), (wx - facing * 23, yy + 17 + sway), (wx - facing * 13, yy + 22 + sway)], fill=accent)
+                if anim == "review":
+                    scan_x = cx + facing * 30
+                    d.rectangle((scan_x - 6, dash_y + 12, scan_x + 13, dash_y + 22), fill=outline)
+                    d.rectangle((scan_x - 3, dash_y + 14, scan_x + 10, dash_y + 19), fill=primary)
+                    d.line((scan_x + 12, dash_y + 15, scan_x + 23, dash_y + 9 + sway), fill=glow, width=2)
+                if anim == "failed":
+                    d.line((cx - 26, yy + 19, cx - 35, yy + 10), fill=accent, width=2)
+                    d.line((cx + 24, yy + 16, cx + 35, yy + 8), fill=accent, width=2)
+            elif slug == "ravenbyte-266-jade-graph-mask":
                 # Jade Graph Mask: break away from the default tall imp-mask
                 # silhouette. This familiar is a low, side-mounted graph visor
                 # riding on three data-node legs with a tall asymmetric antenna,
