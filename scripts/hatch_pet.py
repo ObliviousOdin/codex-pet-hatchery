@@ -578,6 +578,11 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
         if archetype == 0:  # antenna beetle slab
             w, h = 13 + (seed % 8), 18 + ((seed >> 5) % 8)
+            # Beetle-class familiars have wide legs/antennae; keep future queued
+            # beetles inside the 64px frame instead of clipping against an edge.
+            x = max(w + 11, min(63 - (w + 11), x))
+            if anim == "failed":
+                yy -= 7
             d.rounded_rectangle((x - w, yy + 20, x + w, yy + 20 + h), radius=4, fill=outline)
             d.rounded_rectangle((x - w + 3, yy + 23, x + w - 3, yy + 18 + h), radius=3, fill=primary)
             for side in (-1, 1):
