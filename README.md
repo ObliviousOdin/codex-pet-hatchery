@@ -2319,6 +2319,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-330-jade-index-mask/README.md">README</a> · <a href="pets/ravenbyte-330-jade-index-mask/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-331-keystone-latch-train/README.md"><img src="pets/ravenbyte-331-keystone-latch-train/previews/ravenbyte-331-keystone-latch-train-showcase.gif" width="240" alt="Keystone Latch Train stitched multi-motion showcase"></a><br>
+  <strong>Keystone Latch Train</strong><br>
+  <sub>A train-class Ravenbyte familiar that keeps latch work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-331-keystone-latch-train/README.md">README</a> · <a href="pets/ravenbyte-331-keystone-latch-train/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
