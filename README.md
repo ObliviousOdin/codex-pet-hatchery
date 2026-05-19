@@ -2579,6 +2579,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-369-quartz-flux-beetle/README.md">README</a> · <a href="pets/ravenbyte-369-quartz-flux-beetle/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-370-rune-beacon-lantern/README.md"><img src="pets/ravenbyte-370-rune-beacon-lantern/previews/ravenbyte-370-rune-beacon-lantern-showcase.gif" width="240" alt="Rune Beacon Lantern stitched multi-motion showcase"></a><br>
+  <strong>Rune Beacon Lantern</strong><br>
+  <sub>A lantern-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-370-rune-beacon-lantern/README.md">README</a> · <a href="pets/ravenbyte-370-rune-beacon-lantern/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
