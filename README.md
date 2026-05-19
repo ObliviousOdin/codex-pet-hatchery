@@ -2339,6 +2339,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-333-morrow-relay-book/README.md">README</a> · <a href="pets/ravenbyte-333-morrow-relay-book/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-334-nimbus-uplink-key/README.md"><img src="pets/ravenbyte-334-nimbus-uplink-key/previews/ravenbyte-334-nimbus-uplink-key-showcase.gif" width="240" alt="Nimbus Uplink Key stitched multi-motion showcase"></a><br>
+  <strong>Nimbus Uplink Key</strong><br>
+  <sub>A key-class Ravenbyte familiar that keeps uplink work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-334-nimbus-uplink-key/README.md">README</a> · <a href="pets/ravenbyte-334-nimbus-uplink-key/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
