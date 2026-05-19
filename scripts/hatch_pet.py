@@ -957,6 +957,50 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 if anim == "failed":
                     d.line((cx - 20, yy + 18, cx - 27, yy + 8), fill=accent, width=2)
                     d.line((cx + 18, yy + 16, cx + 27, yy + 9), fill=accent, width=2)
+            elif slug == "ravenbyte-346-zephyr-yield-mask":
+                # Zephyr Yield Mask: make the yield/sign theme read as a wind
+                # glider standard instead of another hanging split-mask oval.
+                # The high crescent sail, off-center triangular face, and long
+                # streamer legs deliberately reduce overlap with older masks.
+                step = [0, 3, 5, 2, -1, -3][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(23, min(41, x + facing * step))
+                sail_y = yy + 10 + (sway if anim in {"idle", "waiting", "review"} else 0)
+                face_y = yy + 29 + (2 if anim == "failed" else 0)
+                vane = [0, -2, -4, -1, 2, 4][i % FRAMES]
+                # Crescent wind-sail mounted above the mask gives a tall, open silhouette.
+                d.arc((cx - 31, sail_y - 5 + vane // 2, cx + 29, sail_y + 23 - vane // 2), 190, 350, fill=outline, width=5)
+                d.arc((cx - 27, sail_y - 3 + vane // 2, cx + 25, sail_y + 20 - vane // 2), 195, 345, fill=glow, width=2)
+                d.line((cx - 26, sail_y + 13, cx + 27, sail_y + 7 + vane), fill=outline, width=3)
+                d.line((cx - 22, sail_y + 12, cx + 23, sail_y + 8 + vane), fill=secondary, width=1)
+                # Triangular yield-mask face, intentionally offset and compact.
+                tri = [(cx - 19, face_y - 5), (cx + 18, face_y + 2 + vane // 3), (cx - 4, face_y + 24)]
+                inner = [(cx - 13, face_y - 1), (cx + 10, face_y + 4 + vane // 3), (cx - 3, face_y + 17)]
+                d.polygon(tri, fill=outline)
+                d.polygon(inner, fill=primary)
+                d.polygon([(cx - 9, face_y + 3), (cx + 5, face_y + 6), (cx - 3, face_y + 13)], fill=secondary)
+                d.line((cx - 9, face_y + 6 + sway // 2, cx + 7, face_y + 9 + sway // 2), fill=accent, width=2)
+                # Separate wind buoys and streamer legs make motion visible in the showcase.
+                buoys = [(cx - 27, yy + 30 + pulse), (cx + 25, yy + 24 - pulse), (cx + 18, yy + 48 + sway)]
+                for bx, by in buoys:
+                    d.ellipse((bx - 4, by - 4, bx + 4, by + 4), fill=outline)
+                    d.ellipse((bx - 2, by - 2, bx + 2, by + 2), fill=glow)
+                    d.line((cx, face_y + 8, bx, by), fill=hex_to_rgba(glow, 145), width=1)
+                for n, lx in enumerate((cx - 12, cx + 1, cx + 12)):
+                    foot = lx + [-8, 3, 9][n] + (step if n == 2 else -step // 2)
+                    d.line((lx, face_y + 18, foot, yy + 59 - (n % 2)), fill=outline, width=3)
+                    d.line((lx, face_y + 18, foot, yy + 59 - (n % 2)), fill=accent if n != 1 else glow, width=1)
+                if anim == "waving":
+                    flag_x = cx - facing * 19
+                    d.line((flag_x, face_y + 2, flag_x - facing * (15 + pulse), yy + 14 + sway), fill=outline, width=3)
+                    d.polygon([(flag_x - facing * 15, yy + 11 + sway), (flag_x - facing * 29, yy + 17 + sway), (flag_x - facing * 15, yy + 22 + sway)], fill=accent)
+                if anim == "review":
+                    panel_x = cx + facing * 24
+                    d.rectangle((panel_x - 7, face_y + 19, panel_x + 11, face_y + 29), fill=outline)
+                    d.rectangle((panel_x - 4, face_y + 21, panel_x + 8, face_y + 26), fill=primary)
+                    d.line((panel_x - 3, face_y + 23, panel_x + 7, face_y + 23), fill=glow, width=1)
+                if anim == "failed":
+                    d.line((cx - 25, yy + 16, cx - 35, yy + 7), fill=accent, width=2)
+                    d.line((cx + 18, yy + 12, cx + 29, yy + 5), fill=accent, width=2)
             else:
                 # Wide cheek fins and dangling tassels keep mask familiars from
                 # collapsing into wheel/lantern-like ovals in silhouette checks.
