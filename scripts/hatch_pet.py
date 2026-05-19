@@ -1219,24 +1219,54 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             if anim in {"running-right", "running-left", "running"}:
                 x += facing * swim
                 yy += [0, -1, -2, -1, 1, 2][i % FRAMES]
-            bell_w = 17 + (pulse % 2)
-            d.pieslice((x - bell_w, yy + 10, x + bell_w, yy + 44), 180, 360, fill=outline)
-            d.pieslice((x - 13, yy + 14, x + 13, yy + 40), 180, 360, fill=primary)
-            # Directional scanner fin / delta rudder.
-            d.polygon(
-                [(x + facing * 11, yy + 24), (x + facing * (26 + pulse), yy + 18 + sway), (x + facing * 18, yy + 35)],
-                fill=secondary,
-            )
-            d.line((x + facing * 9, yy + 28, x + facing * (24 + pulse), yy + 25 + sway), fill=glow, width=2)
-            for n in range(5):
-                tx = x - 12 + n * 6
-                lean = facing * (2 + ((n + i) % 3)) if anim in {"running-right", "running-left", "running"} else ((n + i) % 3) - 1
-                d.line((tx, yy + 29, tx + lean, yy + 51), fill=[secondary, accent, glow][n % 3], width=2)
-            if anim == "review":
-                ax0, ax1 = x - facing * 28, x - facing * 6
-                d.arc((min(ax0, ax1), yy + 10, max(ax0, ax1), yy + 34), 200, 330, fill=accent, width=2)
-            if anim == "failed":
-                d.line((x - 11, yy + 22, x + 10, yy + 37), fill="#ff3344", width=2)
+            if slug == "ravenbyte-351-fable-harvester-jelly":
+                # Fable Harvester Jelly gets a tall umbrella bell, crop-scythe
+                # tendrils, and a side seed-pod scanner so it does not read like
+                # the recent broad wheel/key silhouettes in the queue.
+                bell_w = 12 + (pulse % 2)
+                dome_y = yy + 7 + sway // 2
+                d.pieslice((x - bell_w, dome_y, x + bell_w, dome_y + 30), 180, 360, fill=outline)
+                d.pieslice((x - 9, dome_y + 4, x + 9, dome_y + 26), 180, 360, fill=primary)
+                d.rectangle((x - 10, dome_y + 21, x + 10, dome_y + 25), fill=outline)
+                d.rectangle((x - 7, dome_y + 21, x + 7, dome_y + 23), fill=secondary)
+                pod_x = x + facing * (20 + pulse)
+                d.ellipse((pod_x - 5, yy + 16 + sway, pod_x + 5, yy + 28 + sway), fill=outline)
+                d.ellipse((pod_x - 3, yy + 18 + sway, pod_x + 3, yy + 25 + sway), fill=accent)
+                d.line((x + facing * 9, yy + 24, pod_x - facing * 3, yy + 22 + sway), fill=glow, width=2)
+                for n, tx in enumerate((x - 9, x - 4, x + 1, x + 6, x + 11)):
+                    length = 18 + ((n + i) % 4) * 2
+                    lean = facing * (4 + ((n + i) % 3)) if anim in {"running-right", "running-left", "running"} else ((n + i) % 3) - 1
+                    end_y = min(62, yy + 30 + length)
+                    d.line((tx, yy + 29, tx + lean, end_y), fill=[secondary, accent, glow][n % 3], width=2)
+                    if n in (1, 3):
+                        d.arc((tx + lean - 6, end_y - 8, tx + lean + 6, end_y + 4), 230, 335, fill=glow, width=1)
+                if anim == "waving":
+                    d.arc((x - 18, yy + 2, x + 18, yy + 32), 205, 335, fill=glow, width=2)
+                if anim == "review":
+                    ax0, ax1 = x - facing * 24, x - facing * 5
+                    d.arc((min(ax0, ax1), yy + 7, max(ax0, ax1), yy + 35), 200, 330, fill=accent, width=2)
+                    d.line((pod_x, yy + 17 + sway, pod_x + facing * 7, yy + 7), fill=glow, width=2)
+                if anim == "failed":
+                    d.line((x - 8, yy + 19, x + 8, yy + 33), fill="#ff3344", width=2)
+            else:
+                bell_w = 17 + (pulse % 2)
+                d.pieslice((x - bell_w, yy + 10, x + bell_w, yy + 44), 180, 360, fill=outline)
+                d.pieslice((x - 13, yy + 14, x + 13, yy + 40), 180, 360, fill=primary)
+                # Directional scanner fin / delta rudder.
+                d.polygon(
+                    [(x + facing * 11, yy + 24), (x + facing * (26 + pulse), yy + 18 + sway), (x + facing * 18, yy + 35)],
+                    fill=secondary,
+                )
+                d.line((x + facing * 9, yy + 28, x + facing * (24 + pulse), yy + 25 + sway), fill=glow, width=2)
+                for n in range(5):
+                    tx = x - 12 + n * 6
+                    lean = facing * (2 + ((n + i) % 3)) if anim in {"running-right", "running-left", "running"} else ((n + i) % 3) - 1
+                    d.line((tx, yy + 29, tx + lean, yy + 51), fill=[secondary, accent, glow][n % 3], width=2)
+                if anim == "review":
+                    ax0, ax1 = x - facing * 28, x - facing * 6
+                    d.arc((min(ax0, ax1), yy + 10, max(ax0, ax1), yy + 34), 200, 330, fill=accent, width=2)
+                if anim == "failed":
+                    d.line((x - 11, yy + 22, x + 10, yy + 37), fill="#ff3344", width=2)
         else:  # scaffold rabbit
             d.rounded_rectangle((x - 12, yy + 22, x + 12, yy + 45), radius=5, fill=outline)
             d.rounded_rectangle((x - 9, yy + 25, x + 9, yy + 42), radius=4, fill=primary)
