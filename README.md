@@ -2545,6 +2545,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-364-lumen-patch-manta/README.md">README</a> · <a href="pets/ravenbyte-364-lumen-patch-manta/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-365-morrow-sentinel-book/README.md"><img src="pets/ravenbyte-365-morrow-sentinel-book/previews/ravenbyte-365-morrow-sentinel-book-showcase.gif" width="240" alt="Morrow Sentinel Book stitched multi-motion showcase"></a><br>
+  <strong>Morrow Sentinel Book</strong><br>
+  <sub>A book-class Ravenbyte familiar that keeps sentinel work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-365-morrow-sentinel-book/README.md">README</a> · <a href="pets/ravenbyte-365-morrow-sentinel-book/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
