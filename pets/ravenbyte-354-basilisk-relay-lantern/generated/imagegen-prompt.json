@@ -1,0 +1,4 @@
+{
+  "imagegen_prompt": "Tiny original Codex pet sprite: Basilisk Relay Lantern. floating lantern stack spirit with tiny build lights. chibi full-body pixel art, transparent background, thick outline, readable at 64x64, no text, no logos.",
+  "note": "If $imagegen is configured, generate base.png from this prompt before running compose. This run used deterministic vector fallback because imagegen was unavailable."
+}
