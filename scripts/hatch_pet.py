@@ -1058,16 +1058,23 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             else:
                 # Wide cheek fins and dangling tassels keep mask familiars from
                 # collapsing into wheel/lantern-like ovals in silhouette checks.
-                d.polygon([(x - 16, yy + 15), (x, yy + 3), (x + 17, yy + 16), (x + 12, yy + 40), (x, yy + 50), (x - 13, yy + 41)], fill=outline)
-                d.polygon([(x - 12, yy + 17), (x, yy + 8), (x, yy + 45), (x - 8, yy + 38)], fill=primary)
-                d.polygon([(x + 13, yy + 18), (x, yy + 8), (x, yy + 45), (x + 8, yy + 38)], fill=secondary)
-                d.polygon([(x - 16, yy + 23), (x - 33 - pulse, yy + 16 + sway), (x - 27, yy + 31)], fill=outline)
-                d.polygon([(x + 17, yy + 23), (x + 31 + pulse, yy + 35 - sway), (x + 25, yy + 18)], fill=outline)
-                d.polygon([(x - 19, yy + 24), (x - 29 - pulse, yy + 19 + sway), (x - 25, yy + 28)], fill=accent)
-                d.polygon([(x + 19, yy + 24), (x + 28 + pulse, yy + 32 - sway), (x + 24, yy + 21)], fill=glow)
-                d.line((x - 7, yy + 45, x - 19, yy + 58), fill=accent, width=3)
-                d.line((x + 7, yy + 45, x + 19, yy + 57), fill=glow, width=3)
-                d.rectangle((x - 9, yy + 26, x + 9, yy + 29), fill=glow)
+                # The generated queue marks masks as asymmetric, so running-left
+                # must be a separately directed row rather than an accidental copy
+                # of running-right. Lean the face, fins, and tassels into the
+                # current direction while preserving a split-mask read.
+                step = [0, 3, 5, 2, -1, -3][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(25, min(39, x + facing * step))
+                lean = facing * (2 if anim in {"running-right", "running-left", "running"} else 0)
+                d.polygon([(cx - 16, yy + 15 + lean), (cx, yy + 3), (cx + 17, yy + 16 - lean), (cx + 12, yy + 40), (cx, yy + 50), (cx - 13, yy + 41)], fill=outline)
+                d.polygon([(cx - 12, yy + 17 + lean), (cx, yy + 8), (cx, yy + 45), (cx - 8, yy + 38)], fill=primary)
+                d.polygon([(cx + 13, yy + 18 - lean), (cx, yy + 8), (cx, yy + 45), (cx + 8, yy + 38)], fill=secondary)
+                d.polygon([(cx - 16, yy + 23), (cx - 33 - pulse - facing * 2, yy + 16 + sway), (cx - 27, yy + 31)], fill=outline)
+                d.polygon([(cx + 17, yy + 23), (cx + 31 + pulse + facing * 2, yy + 35 - sway), (cx + 25, yy + 18)], fill=outline)
+                d.polygon([(cx - 19, yy + 24), (cx - 29 - pulse - facing * 2, yy + 19 + sway), (cx - 25, yy + 28)], fill=accent)
+                d.polygon([(cx + 19, yy + 24), (cx + 28 + pulse + facing * 2, yy + 32 - sway), (cx + 24, yy + 21)], fill=glow)
+                d.line((cx - 7, yy + 45, cx - 19 - facing * 2, yy + 58), fill=accent, width=3)
+                d.line((cx + 7, yy + 45, cx + 19 + facing * 2, yy + 57), fill=glow, width=3)
+                d.rectangle((cx - 9 + facing, yy + 26, cx + 9 + facing, yy + 29), fill=glow)
         elif archetype == 10:  # tiny train familiar
             # Low locomotive silhouette with separated chimney, caboose, wheels,
             # and smoke puffs. This intentionally avoids the arched bridge/crawler
