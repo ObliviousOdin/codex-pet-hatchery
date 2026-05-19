@@ -747,8 +747,62 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             # Faceted tripod with state-specific motion: running scuttles on
             # three legs, waiting/review pulses orbit shards, and failed shows
             # animated crack/spark frames instead of freezing as a static gem.
-            step = [0, 3, 1, -1, -3, 1][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
-            lean = facing * (2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0))
+            if slug == "ravenbyte-359-glyph-audit-crystal":
+                # Glyph Audit Crystal must not collapse into a costume swap of
+                # earlier crystal-tripod familiars. Render it as a low audit
+                # prism dais: three separated crystal teeth on a long checksum
+                # rail, an overhead glyph arch, and a side loupe scanner. The
+                # silhouette is wide/open instead of a single central pentagon.
+                step = [0, 3, 5, 2, -1, -3][i % FRAMES] if anim in {"running-right", "running-left", "running"} else 0
+                cx = max(31, min(33, x + facing * (step // 2)))
+                rail_y = yy + 48 + (2 if anim == "failed" else 0)
+                arch_y = yy + 8 + (sway if anim in {"idle", "waiting", "review"} else 0)
+                d.rounded_rectangle((cx - 29, rail_y - 4, cx + 30, rail_y + 5), radius=3, fill=outline)
+                d.rectangle((cx - 24, rail_y - 1, cx + 25, rail_y + 2), fill=primary)
+                # Three separate prism teeth create a sawtooth crystal read.
+                teeth = [
+                    (cx - 19 + step // 2, yy + 28, 8, 18, secondary),
+                    (cx + 1 - step // 3, yy + 20 + sway // 2, 10, 26, accent),
+                    (cx + 20 + step, yy + 31, 7, 15, glow),
+                ]
+                for tx, ty, tw, th, color in teeth:
+                    d.polygon([(tx, ty - th // 2), (tx + tw, ty), (tx + tw // 2, ty + th), (tx - tw, ty + th - 3)], fill=outline)
+                    d.polygon([(tx, ty - th // 2 + 4), (tx + tw - 3, ty + 1), (tx + tw // 2, ty + th - 4), (tx - tw + 3, ty + th - 5)], fill=color)
+                    d.line((tx, ty - th // 2 + 5, tx + tw // 2, ty + th - 5), fill=primary, width=1)
+                # Open audit arch and loupe scanner are the signature props.
+                d.arc((cx - 31, arch_y - 5, cx + 30, arch_y + 32), 200, 340, fill=outline, width=4)
+                d.arc((cx - 27, arch_y - 2, cx + 26, arch_y + 29), 205, 335, fill=glow, width=2)
+                loupe_x = cx + facing * (27 + pulse)
+                loupe_y = yy + 20 + (sway if anim in {"waiting", "review"} else 0)
+                d.ellipse((loupe_x - 6, loupe_y - 6, loupe_x + 6, loupe_y + 6), fill=outline)
+                d.ellipse((loupe_x - 3, loupe_y - 3, loupe_x + 3, loupe_y + 3), fill=secondary)
+                d.line((loupe_x - facing * 4, loupe_y + 5, loupe_x - facing * 14, rail_y - 5), fill=outline, width=3)
+                d.line((loupe_x - facing * 4, loupe_y + 5, loupe_x - facing * 14, rail_y - 5), fill=accent, width=1)
+                for n, foot_x in enumerate((cx - 24, cx - 4, cx + 18)):
+                    walk = step if n == 2 else -step // 2
+                    d.line((foot_x, rail_y + 4, foot_x + walk, yy + 58 - (n % 2)), fill=outline, width=3)
+                    d.line((foot_x, rail_y + 4, foot_x + walk, yy + 58 - (n % 2)), fill=glow if n == 1 else accent, width=1)
+                if anim == "waving":
+                    flag_x = cx - facing * 27
+                    d.line((flag_x, yy + 31, flag_x - facing * (14 + pulse), yy + 17 + sway), fill=outline, width=3)
+                    d.polygon([(flag_x - facing * 14, yy + 15 + sway), (flag_x - facing * 27, yy + 21 + sway), (flag_x - facing * 14, yy + 27 + sway)], fill=accent)
+                if anim == "review":
+                    panel_x = cx - facing * 26
+                    d.rectangle((panel_x - 7, rail_y - 17, panel_x + 11, rail_y - 7), fill=outline)
+                    d.rectangle((panel_x - 4, rail_y - 15, panel_x + 8, rail_y - 10), fill=primary)
+                    d.line((panel_x + 10, rail_y - 14, panel_x + 22, rail_y - 22 + sway), fill=glow, width=2)
+                if anim == "failed":
+                    d.line((cx - 24, yy + 26, cx + 25, yy + 44), fill="#ff3344", width=2)
+                    d.line((cx + 4, yy + 12, cx + 10, yy + 23), fill="#ff3344", width=2)
+                d.rectangle((cx - 9, yy + 31, cx + 9, yy + 33), fill=outline)
+                d.rectangle((cx - 7, yy + 31, cx + 7, yy + 32), fill=glow if anim != "failed" else "#ff3344")
+                draw_state_fx()
+                if mirrored:
+                    img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+                return img
+            else:
+                step = [0, 3, 1, -1, -3, 1][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
+                lean = facing * (2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0))
             if anim == "jumping":
                 lean = [0, 1, 2, 0, -1, -2][i % FRAMES]
             top = (x + lean, yy + 5)
