@@ -568,14 +568,28 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 d.rounded_rectangle((ox - 4, oy - 2, ox + 4, oy + 2), radius=2, fill=outline)
                 d.rectangle((ox - 2, oy - 1, ox + 2, oy + 1), fill=glow if n % 2 else accent)
         else:
-            for n in range(3 + (seed % 3)):
-                ox = 6 + ((seed >> (n * 5 + 3)) % 52)
-                oy = 8 + ((seed >> (n * 5 + 11)) % 42)
-                r = 2 + ((seed >> (n * 3 + 19)) % 4)
-                if anim in {"waiting", "review"}:
-                    oy -= (i + n) % 3
-                d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
-                d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
+            if slug == "ravenbyte-338-rune-audit-lantern":
+                # Rune Audit Lantern gets a distinct high, vertical silhouette:
+                # tiny crown motes and side audit pips avoid the broad low bridge
+                # mask that crawler-class familiars use.
+                crown_y = yy + 4 + (1 if anim in {"waiting", "review"} else 0)
+                for ox, oy, r, color in [
+                    (x - 11, crown_y + sway, 2, glow),
+                    (x + 13, crown_y - sway, 2, accent),
+                    (x + facing * 23, yy + 24 - pulse, 3, glow),
+                    (x - facing * 20, yy + 40 + pulse, 2, accent),
+                ]:
+                    d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
+                    d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=color)
+            else:
+                for n in range(3 + (seed % 3)):
+                    ox = 6 + ((seed >> (n * 5 + 3)) % 52)
+                    oy = 8 + ((seed >> (n * 5 + 11)) % 42)
+                    r = 2 + ((seed >> (n * 3 + 19)) % 4)
+                    if anim in {"waiting", "review"}:
+                        oy -= (i + n) % 3
+                    d.ellipse((ox - r - 1, oy - r - 1, ox + r + 1, oy + r + 1), fill=outline)
+                    d.ellipse((ox - r, oy - r, ox + r, oy + r), fill=glow if n % 2 else accent)
         if archetype == 0:  # antenna beetle slab
             w, h = 13 + (seed % 8), 18 + ((seed >> 5) % 8)
             # Beetle-class familiars have wide legs/antennae; keep future queued
@@ -591,11 +605,36 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
             d.arc((x - 20, yy + 5, x, yy + 28), 210, 330, fill=glow, width=2)
             d.arc((x, yy + 5, x + 20, yy + 28), 210, 330, fill=glow, width=2)
         elif archetype == 1:  # floating lantern stack
-            for k in range(3):
-                yy2 = yy + 10 + k * (10 + (seed % 3))
-                d.polygon([(x, yy2 - 6), (x + 12 + k, yy2), (x + 8, yy2 + 8), (x - 8, yy2 + 8), (x - 12 - k, yy2)], fill=outline)
-                d.polygon([(x, yy2 - 3), (x + 8 + k, yy2 + 1), (x + 5, yy2 + 6), (x - 5, yy2 + 6), (x - 8 - k, yy2 + 1)], fill=[primary, secondary, accent][k % 3])
-            d.line((x, yy + 5, x + facing * (17 + pulse), yy + 2 + sway), fill=glow, width=2)
+            if slug == "ravenbyte-338-rune-audit-lantern":
+                # A narrow hanging audit lantern with a hooked crown, vertical
+                # rune lens, dangling tag, and side scanner. It reads as a tall
+                # suspended familiar rather than the low multi-leg crawler body.
+                cx = max(24, min(40, x))
+                bob = sway if anim not in {"running-right", "running-left", "running"} else [0, -1, -2, -1, 0, 1][i % FRAMES]
+                top = yy + 11 + bob
+                body_top = top + 8
+                body_bottom = top + 42
+                d.arc((cx - 13, top - 10, cx + 13, top + 8), 190, 350, fill=outline, width=3)
+                d.line((cx, top - 8, cx, body_top), fill=glow, width=2)
+                d.polygon([(cx, body_top - 6), (cx + 10, body_top), (cx + 7, body_top + 7), (cx - 7, body_top + 7), (cx - 10, body_top)], fill=outline)
+                d.polygon([(cx, body_top - 2), (cx + 6, body_top + 1), (cx + 4, body_top + 5), (cx - 4, body_top + 5), (cx - 6, body_top + 1)], fill=accent)
+                d.rounded_rectangle((cx - 9, body_top + 5, cx + 9, body_bottom), radius=4, fill=outline)
+                d.rounded_rectangle((cx - 5, body_top + 9, cx + 5, body_bottom - 5), radius=3, fill=primary)
+                d.line((cx - 6, body_top + 17, cx + 6, body_top + 17), fill=glow, width=2)
+                d.line((cx - 5, body_top + 26, cx + 5, body_top + 23), fill=secondary, width=2)
+                tag_x = cx - facing * (11 + pulse)
+                d.line((cx, body_bottom, tag_x, body_bottom + 9), fill=outline, width=2)
+                d.polygon([(tag_x - 4, body_bottom + 8), (tag_x + 5, body_bottom + 9), (tag_x + 2, body_bottom + 17), (tag_x - 5, body_bottom + 15)], fill=secondary)
+                scan_x = cx + facing * (15 + pulse)
+                d.line((cx + facing * 8, body_top + 20, scan_x, body_top + 16 + sway), fill=glow, width=2)
+                d.ellipse((scan_x - 4, body_top + 12 + sway, scan_x + 4, body_top + 20 + sway), fill=outline)
+                d.ellipse((scan_x - 2, body_top + 14 + sway, scan_x + 2, body_top + 18 + sway), fill=glow)
+            else:
+                for k in range(3):
+                    yy2 = yy + 10 + k * (10 + (seed % 3))
+                    d.polygon([(x, yy2 - 6), (x + 12 + k, yy2), (x + 8, yy2 + 8), (x - 8, yy2 + 8), (x - 12 - k, yy2)], fill=outline)
+                    d.polygon([(x, yy2 - 3), (x + 8 + k, yy2 + 1), (x + 5, yy2 + 6), (x - 5, yy2 + 6), (x - 8 - k, yy2 + 1)], fill=[primary, secondary, accent][k % 3])
+                d.line((x, yy + 5, x + facing * (17 + pulse), yy + 2 + sway), fill=glow, width=2)
         elif archetype == 2:  # crawler bridge
             # Long, low dependency bridge with separated legs and antenna masts.
             # The flattened footprint deliberately differs from the tall split
