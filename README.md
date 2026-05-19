@@ -2625,6 +2625,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-376-xenon-triage-wheel/README.md">README</a> · <a href="pets/ravenbyte-376-xenon-triage-wheel/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-377-yonder-widget-mushroom/README.md"><img src="pets/ravenbyte-377-yonder-widget-mushroom/previews/ravenbyte-377-yonder-widget-mushroom-showcase.gif" width="240" alt="Yonder Widget Mushroom stitched multi-motion showcase"></a><br>
+  <strong>Yonder Widget Mushroom</strong><br>
+  <sub>A mushroom-class Ravenbyte familiar that keeps widget work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-377-yonder-widget-mushroom/README.md">README</a> · <a href="pets/ravenbyte-377-yonder-widget-mushroom/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
