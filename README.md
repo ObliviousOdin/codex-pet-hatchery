@@ -2705,6 +2705,14 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-388-dawn-yield-kite/README.md">README</a> · <a href="pets/ravenbyte-388-dawn-yield-kite/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-389-ember-circuit-totem/README.md"><img src="pets/ravenbyte-389-ember-circuit-totem/previews/ravenbyte-389-ember-circuit-totem-showcase.gif" width="240" alt="Ember Circuit Totem stitched multi-motion showcase"></a><br>
+  <strong>Ember Circuit Totem</strong><br>
+  <sub>A totem-class Ravenbyte familiar that keeps circuit work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-389-ember-circuit-totem/README.md">README</a> · <a href="pets/ravenbyte-389-ember-circuit-totem/spritesheet.webp">spritesheet</a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
