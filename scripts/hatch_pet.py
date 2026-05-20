@@ -802,7 +802,7 @@ def draw_specialized_frame(spec: PetSpec, anim: str, i: int, mirrored: bool = Fa
                 return img
             else:
                 step = [0, 3, 1, -1, -3, 1][i % FRAMES] if anim in {"running-right", "running-left", "running"} else sway
-                lean = facing * (2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0))
+                lean = 2 if anim in {"running-right", "running"} else (-2 if anim == "running-left" else 0)
             if anim == "jumping":
                 lean = [0, 1, 2, 0, -1, -2][i % FRAMES]
             top = (x + lean, yy + 5)

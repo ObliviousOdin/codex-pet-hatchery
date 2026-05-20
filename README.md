@@ -2719,6 +2719,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-390-frost-flux-serpent/README.md">README</a> · <a href="pets/ravenbyte-390-frost-flux-serpent/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-391-glyph-beacon-crystal/README.md"><img src="pets/ravenbyte-391-glyph-beacon-crystal/previews/ravenbyte-391-glyph-beacon-crystal-showcase.gif" width="240" alt="Glyph Beacon Crystal stitched multi-motion showcase"></a><br>
+  <strong>Glyph Beacon Crystal</strong><br>
+  <sub>A crystal-class Ravenbyte familiar that keeps beacon work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-391-glyph-beacon-crystal/README.md">README</a> · <a href="pets/ravenbyte-391-glyph-beacon-crystal/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
