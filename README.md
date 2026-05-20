@@ -2853,6 +2853,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-411-brass-event-train/README.md"><img src="pets/ravenbyte-411-brass-event-train/previews/ravenbyte-411-brass-event-train-showcase.gif" width="240" alt="Brass Event Train stitched multi-motion showcase"></a><br>
+  <strong>Brass Event Train</strong><br>
+  <sub>A train-class Ravenbyte familiar that keeps event work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-411-brass-event-train/README.md">README</a> · <a href="pets/ravenbyte-411-brass-event-train/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
