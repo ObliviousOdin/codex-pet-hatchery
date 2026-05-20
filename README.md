@@ -2699,6 +2699,12 @@ Each card below is a **stitched multi-motion showcase**, not a single idle loop.
   <a href="pets/ravenbyte-387-cipher-vector-crawler/README.md">README</a> · <a href="pets/ravenbyte-387-cipher-vector-crawler/spritesheet.webp">spritesheet</a>
 </td>
 <td width="33%" align="center" valign="top">
+  <a href="pets/ravenbyte-388-dawn-yield-kite/README.md"><img src="pets/ravenbyte-388-dawn-yield-kite/previews/ravenbyte-388-dawn-yield-kite-showcase.gif" width="240" alt="Dawn Yield Kite stitched multi-motion showcase"></a><br>
+  <strong>Dawn Yield Kite</strong><br>
+  <sub>A kite-class Ravenbyte familiar that keeps yield work moving during long coding runs.</sub><br>
+  <a href="pets/ravenbyte-388-dawn-yield-kite/README.md">README</a> · <a href="pets/ravenbyte-388-dawn-yield-kite/spritesheet.webp">spritesheet</a>
+</td>
+<td width="33%" align="center" valign="top">
   <a href="pets/samurai-cache-crab/README.md"><img src="pets/samurai-cache-crab/previews/samurai-cache-crab-showcase.gif" width="240" alt="Samurai Cache Crab stitched multi-motion showcase"></a><br>
   <strong>Samurai Cache Crab</strong><br>
   <sub>A side-stepping armor crab that guards build artifacts and cache hits.</sub><br>
